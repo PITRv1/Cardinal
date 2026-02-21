@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\borok\\Documents\\Programming\\Vadasz2026\\VadaszTest\\",
+  "WorkspaceRootPath": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Vadasz2026\\VadaszTest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2548ECD7-9759-749F-C06D-3B6D87657EA1}|VadaszTest\\VadaszTest.csproj|c:\\users\\borok\\documents\\programming\\vadasz2026\\vadasztest\\vadasztest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2548ECD7-9759-749F-C06D-3B6D87657EA1}|VadaszTest\\VadaszTest.csproj|c:\\users\\borok\\documents\\github\\cardinal\\vadasz2026\\vadasztest\\vadasztest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2548ECD7-9759-749F-C06D-3B6D87657EA1}|VadaszTest\\VadaszTest.csproj|solutionrelative:vadasztest\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\borok\\Documents\\Programming\\Vadasz2026\\VadaszTest\\VadaszTest\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Vadasz2026\\VadaszTest\\VadaszTest\\Program.cs",
               "RelativeDocumentMoniker": "VadaszTest\\Program.cs",
-              "ToolTip": "C:\\Users\\borok\\Documents\\Programming\\Vadasz2026\\VadaszTest\\VadaszTest\\Program.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Vadasz2026\\VadaszTest\\VadaszTest\\Program.cs",
               "RelativeToolTip": "VadaszTest\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAowP4BAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAAwBcCAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-19T21:08:59.927Z",
               "EditorCaption": ""

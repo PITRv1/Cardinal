@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\borok\\Documents\\Programming\\Vadasz2026\\VadaszTest\\VadaszTest\\VadaszTest.csproj",
+      "projectUniqueName": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Vadasz2026\\VadaszTest\\VadaszTest\\VadaszTest.csproj",
       "projectName": "VadaszTest",
-      "projectPath": "C:\\Users\\borok\\Documents\\Programming\\Vadasz2026\\VadaszTest\\VadaszTest\\VadaszTest.csproj",
+      "projectPath": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Vadasz2026\\VadaszTest\\VadaszTest\\VadaszTest.csproj",
       "packagesPath": "C:\\Users\\borok\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\borok\\Documents\\Programming\\Vadasz2026\\VadaszTest\\VadaszTest\\obj\\",
+      "outputPath": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Vadasz2026\\VadaszTest\\VadaszTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
