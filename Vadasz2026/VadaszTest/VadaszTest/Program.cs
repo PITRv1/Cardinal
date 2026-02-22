@@ -12,27 +12,6 @@ namespace VadaszTest
             var testMap = @"..\\..\\..\\..\\..\\..\\Vadasz2026\\mars_map_50x50.csv";
             MapEditor mapEditor = new MapEditor();
             mapEditor.Loop();
-
-            //var map = new Map();
-            //map.SetMap(testMap);
-
-            //Console.Error.WriteLine($"Mineral clusters: {map.MineralClusters.Count}");
-            //Console.Error.WriteLine($"ImportantNodes:   {map.ImportantNodes.Count}");
-
-            //int maxDays = 5;
-            //int maxTime = 48 * maxDays;
-
-            //var result = Planner.FindBestPlan(map, maxTime);
-
-            //Console.WriteLine($"Minerals collected: {result.MineralCount} / {map.MineralClusters.Count}");
-            //Console.WriteLine($"Time used:          {result.Time} half-hours ({result.Time / 2.0:F1} hours)");
-            //Console.WriteLine($"Final battery:      {result.Battery}");
-            //Console.WriteLine($"Returned to start:  {(result.PositionIndex == 0 ? "YES" : "NO")}");
-            //if (result.MineralCount == 0)
-            //    Console.WriteLine("  (no valid route found that mines and returns home within the time limit)");
-
-            //Planner.ReconstructFullPath(result, map);
-            //map.PrintMap();
         }
     }
 
@@ -87,19 +66,50 @@ namespace VadaszTest
         }
         public void LoadMap()
         {
-            while (true)
+            var files = Directory.GetFiles(@"..\..\..\..\..\..\Vadasz2026\maps");
+            var chosenFile = "";
+            var index = 0;
+            var chosenIndex = 0;
+            ConsoleKey key;
+            do
             {
-                Console.Write("Map path (without .csv): ");
-                var path = Console.ReadLine() + ".csv";
-                if (!File.Exists(path))
+                Console.Clear();
+                foreach (var file in files)
                 {
-                    Console.WriteLine("File not found!");
-                    continue;
+                    if (index++ == chosenIndex)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Yellow;
+                    }
+                    Console.Write(file);
+                    Console.BackgroundColor = ConsoleColor.Black;
+                    Console.WriteLine();
                 }
-                EditorMap.Clear();
-                foreach (var line in File.ReadAllLines(path))
-                    EditorMap.Add(line.Split(',').Select(s => s[0]).ToList());
-                break;
+                index = 0;
+                key = GetKeyPress();
+                switch (key)
+                {
+                    case ConsoleKey.UpArrow:
+                        if (0 < chosenIndex) chosenIndex--;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        if (chosenIndex < files.Length - 1) chosenIndex++;
+                        break;
+                    case ConsoleKey.RightArrow:
+                        if (chosenIndex < files.Length - 1) chosenIndex++;
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        if (0 < chosenIndex) chosenIndex--;
+                        break;
+                    case ConsoleKey.Enter:
+                        chosenFile = files[chosenIndex];
+                        break;
+                }
+            } while (key != ConsoleKey.Enter);
+
+            EditorMap.Clear();
+            foreach (var line in File.ReadAllLines(chosenFile))
+            {
+                EditorMap.Add(line.Split(',').Select(s => s[0]).ToList());
             }
         }
         public void LoadMap(string fileName)
@@ -132,9 +142,7 @@ namespace VadaszTest
             {
                 var range = new String('.', width).ToList();
                 for (int i = 0; i < height; i++)
-                {
                     EditorMap.Add(new List<char>(range));
-                }
                 return;
             }
             if (width < EditorMap[0].Count)
@@ -147,23 +155,17 @@ namespace VadaszTest
             {
                 var range = new String('.', width - EditorMap[0].Count).ToList();
                 foreach (var row in EditorMap)
-                {
                     row.AddRange(range);
-                }
             }
 
             if (height < EditorMap.Count)
-            {
                 EditorMap.RemoveRange(height, EditorMap.Count - height);
-            }
             else if (height > EditorMap.Count)
             {
                 var difference = height - EditorMap.Count;
                 var range = new String('.', width).ToList();
                 for (int i = 0; i < difference; i++)
-                {
                     EditorMap.Add(new List<char>(range));
-                }
             }
         }
 
@@ -196,7 +198,6 @@ namespace VadaszTest
                         from = line[0].Trim().Split(',');
                         fromX = (char)from[0][0] - 65;
                         fromY = int.Parse(from[1].Trim());
-
                         toX = fromX;
                         toY = fromY;
                     }
@@ -244,12 +245,8 @@ namespace VadaszTest
                 break;
             }
             for (int i = fromY - 1; i < toY; i++)
-            {
                 for (int j = fromX; j < toX + 1; j++)
-                {
                     EditorMap[i][j] = symbol;
-                }
-            }
         }
 
         public void SimulateMap()
@@ -275,14 +272,18 @@ namespace VadaszTest
             int maxTime = 48 * maxDays;
 
             var result = Planner.FindBestPlan(SimulatedMap, maxTime);
-            Console.WriteLine($"Minerals collected: {result.MineralCount} / {SimulatedMap.MineralClusters.Count}");
+            Console.WriteLine($"Minerals collected: {result.MineralCount} / {SimulatedMap.MineralClusters.Sum(c => c.Tiles.Count)}");
             Console.WriteLine($"Time used:          {result.Time} half-hours ({result.Time / 2.0:F1} hours)");
             Console.WriteLine($"Final battery:      {result.Battery}");
             Console.WriteLine($"Returned to start:  {(result.PositionIndex == 0 ? "YES" : "NO")}");
             if (result.MineralCount == 0)
                 Console.WriteLine("  (no valid route found that mines and returns home within the time limit)");
 
-            Planner.ReconstructFullPath(result, SimulatedMap);
+            var nodes = Planner.ReconstructFullPath(result, SimulatedMap);
+            //foreach (var node in nodes)
+            //{
+            //    node.SetColor(ConsoleColor.Magenta);
+            //}
             SimulatedMap.PrintMap();
             Console.Write("Press anything to continue");
             Console.ReadKey();
@@ -297,15 +298,8 @@ namespace VadaszTest
             "[F6] Simulate Map\n" +
             "[ESC] Exit";
 
-        public void PrintMenu()
-        {
-            Console.WriteLine(MainMenu);
-        }
-
-        public ConsoleKey GetKeyPress()
-        {
-            return Console.ReadKey().Key;
-        }
+        public void PrintMenu() => Console.WriteLine(MainMenu);
+        public ConsoleKey GetKeyPress() => Console.ReadKey().Key;
 
         public void Loop()
         {
@@ -324,24 +318,12 @@ namespace VadaszTest
         {
             switch (key)
             {
-                case ConsoleKey.F1:
-                    SetMapSize();
-                    break;
-                case ConsoleKey.F2:
-                    AddObjects();
-                    break;
-                case ConsoleKey.F3:
-                    EditorMap.Clear();
-                    break;
-                case ConsoleKey.F4:
-                    SaveMap();
-                    break;
-                case ConsoleKey.F5:
-                    LoadMap();
-                    break;
-                case ConsoleKey.F6:
-                    SimulateMap();
-                    break;
+                case ConsoleKey.F1: SetMapSize(); break;
+                case ConsoleKey.F2: AddObjects(); break;
+                case ConsoleKey.F3: EditorMap.Clear(); break;
+                case ConsoleKey.F4: SaveMap(); break;
+                case ConsoleKey.F5: LoadMap(); break;
+                case ConsoleKey.F6: SimulateMap(); break;
             }
         }
     }
@@ -363,27 +345,112 @@ namespace VadaszTest
                 Math.Abs(t.Coords.X - cx) + Math.Abs(t.Coords.Y - cy)).First();
         }
     }
+
     public static class Planner
     {
         private const int BeamWidth = 3000;
+        private const int BatteryBucket = 5;
+
+        private static Dictionary<int, List<NodeBase>> _clusterTraversals = new();
+
+        public static void PrecomputeClusterTraversals(Map map)
+        {
+            _clusterTraversals.Clear();
+            foreach (var cluster in map.MineralClusters)
+                _clusterTraversals[cluster.ClusterIndex] = DFSTraversal(cluster);
+        }
+
+        static List<NodeBase> DFSTraversal(MineralCluster cluster)
+        {
+            var tileSet = new HashSet<NodeBase>(cluster.Tiles);
+            var visited = new HashSet<NodeBase>();
+            var order = new List<NodeBase>();
+            var stack = new Stack<NodeBase>();
+            stack.Push(cluster.Representative);
+
+            while (stack.Count > 0)
+            {
+                var node = stack.Pop();
+                if (visited.Contains(node)) continue;
+                visited.Add(node);
+                order.Add(node);
+
+                foreach (var nb in node.AllNeighbors)
+                    if (!visited.Contains(nb) && tileSet.Contains(nb))
+                        stack.Push(nb);
+            }
+
+            foreach (var tile in cluster.Tiles)
+                if (!visited.Contains(tile))
+                    order.Add(tile);
+
+            return order;
+        }
+
+        static int SimulateMineCluster(
+            int clusterIndex,
+            ref int battery, ref int time,
+            int maxTime)
+        {
+            var tiles = _clusterTraversals[clusterIndex];
+            if (tiles.Count == 0) return 0;
+
+            if (time + 1 > maxTime) return 0;
+            int firstBattery = RoverSimulator.ApplyBattery(battery, 2, time);
+            if (firstBattery < 0) return 0;
+            battery = Math.Min(firstBattery, 100);
+            time++;
+            int mined = 1;
+
+            for (int i = 1; i < tiles.Count; i++)
+            {
+                if (time + 2 > maxTime) break;
+
+                int peekBatAfterMove = RoverSimulator.ApplyBattery(battery, 2, time);
+                if (peekBatAfterMove < 0) break;
+                int peekBatAfterMine = RoverSimulator.ApplyBattery(
+                    Math.Min(peekBatAfterMove, 100), 2, time + 1);
+                if (peekBatAfterMine < 0) break;
+
+                battery = Math.Min(peekBatAfterMove, 100);
+                time++;
+
+                battery = Math.Min(peekBatAfterMine, 100);
+                time++;
+                mined++;
+            }
+
+            return mined;
+        }
+
+        static int ClusterSlotCost(MineralCluster cluster) =>
+            2 * cluster.Tiles.Count - 1;
 
         public static RoverState FindBestPlan(Map map, int maxTime)
         {
-            var start = new RoverState
+            if (_clusterTraversals.Count != map.MineralClusters.Count)
+                PrecomputeClusterTraversals(map);
+
+            int nodeCount = map.ImportantNodes.Count;
+
+            RoverState greedyBest = RunGreedy(map, maxTime);
+
+            var blankStart = new RoverState
             {
                 PositionIndex = 0,
                 Battery = 100,
                 Time = 0,
                 MineralCount = 0,
                 CollectedMask = 0UL,
+                Speed = 0,
                 Parent = null
             };
 
-            var beam = new List<RoverState> { start };
+            var beam = new List<RoverState> { blankStart };
+            beam.AddRange(GreedySeeds(map, maxTime));
+
             var visited = new HashSet<(int, int, int, ulong)>();
-            RoverState best = start;
-            int[] speeds = { 1, 2, 3 };
-            int nodeCount = map.ImportantNodes.Count;
+            RoverState best = greedyBest;
 
             while (beam.Count > 0)
             {
@@ -391,11 +458,9 @@ namespace VadaszTest
 
                 foreach (var current in beam)
                 {
-                    // only a completed route (back at home) counts as best
-                    if (current.PositionIndex == 0)
+                    if (current.PositionIndex == 0 && current.MineralCount > 0)
                     {
-                        if (current.MineralCount > best.MineralCount ||
-                           (current.MineralCount == best.MineralCount && current.Time < best.Time))
+                        if (IsBetter(current, best))
                             best = current;
                     }
 
@@ -405,6 +470,8 @@ namespace VadaszTest
 
                         int travelSteps = map.Distances[current.PositionIndex, nextIndex];
                         if (travelSteps <= 0 || travelSteps == int.MaxValue) continue;
+
+                        int[] speeds = SpeedOrder(current.Time, current.Battery);
 
                         foreach (int speed in speeds)
                         {
@@ -429,17 +496,21 @@ namespace VadaszTest
                             ulong newMask = current.CollectedMask;
 
                             var targetNode = map.ImportantNodes[nextIndex];
-                            if (targetNode.ClusterIndex >= 0) // mineral node
+                            if (targetNode.ClusterIndex >= 0)
                             {
                                 ulong bit = 1UL << targetNode.ClusterIndex;
                                 if ((newMask & bit) == 0)
                                 {
+                                    var cluster = map.MineralClusters[targetNode.ClusterIndex];
+
                                     if (time + 1 > maxTime) continue;
-                                    battery = RoverSimulator.ApplyBattery(battery, 2, time);
-                                    time++;
-                                    if (battery < 0) continue;
-                                    battery = Math.Min(battery, 100);
-                                    newMinerals++;
+
+                                    int tilesMined = SimulateMineCluster(
+                                        targetNode.ClusterIndex, ref battery, ref time, maxTime);
+
+                                    if (tilesMined == 0) continue;
+
+                                    newMinerals += tilesMined;
                                     newMask |= bit;
                                 }
                             }
@@ -447,7 +518,10 @@ namespace VadaszTest
                             if (nextIndex != 0 && !CanReturnHome(battery, time, nextIndex, map, maxTime))
                                 continue;
 
-                            var key = (nextIndex, time, battery, newMask);
+                            if (!CouldBeat(best, newMinerals, newMask, battery, time, nextIndex, map, maxTime))
+                                continue;
+
+                            var key = (nextIndex, time, battery / BatteryBucket, newMask);
                             if (visited.Contains(key)) continue;
                             visited.Add(key);
 
@@ -467,10 +541,7 @@ namespace VadaszTest
 
                 if (nextBeam.Count > BeamWidth)
                 {
-                    nextBeam.Sort((a, b) =>
-                        b.MineralCount != a.MineralCount
-                            ? b.MineralCount.CompareTo(a.MineralCount)
-                            : a.Time.CompareTo(b.Time));
+                    nextBeam.Sort((a, b) => Score(b, map, maxTime).CompareTo(Score(a, map, maxTime)));
                     nextBeam = nextBeam.Take(BeamWidth).ToList();
                 }
 
@@ -480,6 +551,70 @@ namespace VadaszTest
             return best;
         }
 
+        static bool IsBetter(RoverState a, RoverState b) =>
+            a.MineralCount > b.MineralCount ||
+           (a.MineralCount == b.MineralCount && a.Time < b.Time);
+
+        static float Score(RoverState s, Map map, int maxTime)
+        {
+            int reachableMinerals = 0;
+            foreach (var cluster in map.MineralClusters)
+            {
+                ulong bit = 1UL << cluster.ClusterIndex;
+                if ((s.CollectedMask & bit) != 0) continue;
+
+                int dist = map.Distances[s.PositionIndex, cluster.ClusterIndex + 1];
+                if (dist == int.MaxValue) continue;
+
+                int slotsNeeded = (int)Math.Ceiling(dist / 3.0) + ClusterSlotCost(cluster);
+                if (s.Time + slotsNeeded <= maxTime)
+                    reachableMinerals += cluster.Tiles.Count;
+            }
+
+            int uncollectedMinerals = map.MineralClusters
+                .Where(c => (s.CollectedMask & (1UL << c.ClusterIndex)) == 0)
+                .Sum(c => c.Tiles.Count);
+
+            return s.MineralCount * 1000f
+                 + Math.Min(uncollectedMinerals, reachableMinerals) * 100f
+                 + s.Battery * 0.1f
+                 - s.Time * 0.01f;
+        }
+
+        static bool CouldBeat(
+            RoverState best,
+            int currentMinerals, ulong currentMask,
+            int battery, int time, int posIndex,
+            Map map, int maxTime)
+        {
+            if (best.MineralCount == 0) return true;
+
+            int optimisticMax = currentMinerals;
+            foreach (var cluster in map.MineralClusters)
+            {
+                ulong bit = 1UL << cluster.ClusterIndex;
+                if ((currentMask & bit) != 0) continue;
+
+                int dist = map.Distances[posIndex, cluster.ClusterIndex + 1];
+                if (dist == int.MaxValue) continue;
+
+                int slots = (int)Math.Ceiling(dist / 3.0) + ClusterSlotCost(cluster);
+                if (time + slots <= maxTime)
+                    optimisticMax += cluster.Tiles.Count;
+            }
+
+            return optimisticMax > best.MineralCount;
+        }
+
+        static int[] SpeedOrder(int time, int battery)
+        {
+            bool isDay = RoverSimulator.IsDay(time);
+            if (battery < 20) return new[] { 1 };
+            if (!isDay && battery < 50) return new[] { 1, 2 };
+            if (isDay) return new[] { 2, 3, 1 };
+            return new[] { 1, 2, 3 };
+        }
+
         static bool CanReturnHome(int battery, int time, int posIndex, Map map, int maxTime)
         {
             int dist = map.Distances[posIndex, 0];
@@ -487,8 +622,7 @@ namespace VadaszTest
 
             foreach (int speed in new[] { 3, 2, 1 })
             {
-                int bat = battery;
-                int t = time;
+                int bat = battery, t = time;
                 int consumption = 2 * speed * speed;
                 int slots = (int)Math.Ceiling((double)dist / speed);
                 if (t + slots > maxTime) continue;
@@ -506,10 +640,163 @@ namespace VadaszTest
             return false;
         }
 
+        public static RoverState RunGreedy(Map map, int maxTime)
+        {
+            if (_clusterTraversals.Count != map.MineralClusters.Count)
+                PrecomputeClusterTraversals(map);
+
+            var state = new RoverState
+            {
+                PositionIndex = 0,
+                Battery = 100,
+                Time = 0,
+                MineralCount = 0,
+                CollectedMask = 0UL,
+                Speed = 0,
+                Parent = null
+            };
+
+            while (true)
+            {
+                int bestNext = -1, bestDist = int.MaxValue;
+
+                for (int i = 1; i < map.ImportantNodes.Count; i++)
+                {
+                    ulong bit = 1UL << map.ImportantNodes[i].ClusterIndex;
+                    if ((state.CollectedMask & bit) != 0) continue;
+
+                    int dist = map.Distances[state.PositionIndex, i];
+                    if (dist == int.MaxValue) continue;
+                    if (!SimulateMoveTo(state, i, map, maxTime, out var after) || after == null) continue;
+                    if (!CanReturnHome(after.Battery, after.Time, i, map, maxTime)) continue;
+
+                    if (dist < bestDist) { bestDist = dist; bestNext = i; }
+                }
+
+                if (bestNext == -1) break;
+                if (!SimulateMoveTo(state, bestNext, map, maxTime, out var next) || next == null) break;
+                state = next;
+            }
+
+            SimulateMoveTo(state, 0, map, maxTime, out var homeState);
+            return homeState ?? state;
+        }
+
+        static List<RoverState> GreedySeeds(Map map, int maxTime)
+        {
+            var seeds = new List<RoverState>();
+            var state = new RoverState
+            {
+                PositionIndex = 0,
+                Battery = 100,
+                Time = 0,
+                MineralCount = 0,
+                CollectedMask = 0UL,
+                Speed = 0,
+                Parent = null
+            };
+
+            while (true)
+            {
+                int bestNext = -1, bestDist = int.MaxValue;
+
+                for (int i = 1; i < map.ImportantNodes.Count; i++)
+                {
+                    ulong bit = 1UL << map.ImportantNodes[i].ClusterIndex;
+                    if ((state.CollectedMask & bit) != 0) continue;
+
+                    int dist = map.Distances[state.PositionIndex, i];
+                    if (dist == int.MaxValue) continue;
+                    if (!SimulateMoveTo(state, i, map, maxTime, out var after) || after == null) continue;
+                    if (!CanReturnHome(after.Battery, after.Time, i, map, maxTime)) continue;
+
+                    if (dist < bestDist) { bestDist = dist; bestNext = i; }
+                }
+
+                if (bestNext == -1) break;
+                if (!SimulateMoveTo(state, bestNext, map, maxTime, out var next) || next == null) break;
+                state = next;
+                seeds.Add(state);
+            }
+
+            return seeds;
+        }
+
+        static bool SimulateMoveTo(
+            RoverState current, int targetIndex,
+            Map map, int maxTime,
+            out RoverState result)
+        {
+            result = null;
+            int dist = map.Distances[current.PositionIndex, targetIndex];
+            if (dist <= 0 || dist == int.MaxValue) return false;
+
+            RoverState best = null;
+
+            foreach (int speed in SpeedOrder(current.Time, current.Battery))
+            {
+                int battery = current.Battery;
+                int time = current.Time;
+                int consumption = 2 * speed * speed;
+                int slots = (int)Math.Ceiling((double)dist / speed);
+                if (time + slots > maxTime) continue;
+
+                bool travelOk = true;
+                for (int t = 0; t < slots; t++)
+                {
+                    battery = RoverSimulator.ApplyBattery(battery, consumption, time);
+                    time++;
+                    if (battery < 0) { travelOk = false; break; }
+                    battery = Math.Min(battery, 100);
+                }
+                if (!travelOk) continue;
+
+                int newMinerals = current.MineralCount;
+                ulong newMask = current.CollectedMask;
+
+                var targetNode = map.ImportantNodes[targetIndex];
+                if (targetNode.ClusterIndex >= 0)
+                {
+                    ulong bit = 1UL << targetNode.ClusterIndex;
+                    if ((newMask & bit) == 0)
+                    {
+                        var cluster = map.MineralClusters[targetNode.ClusterIndex];
+
+                        if (time + 1 > maxTime) continue;
+
+                        int tilesMined = SimulateMineCluster(
+                            targetNode.ClusterIndex, ref battery, ref time, maxTime);
+
+                        if (tilesMined == 0) continue;
+
+                        newMinerals += tilesMined;
+                        newMask |= bit;
+                    }
+                }
+
+                var candidate = new RoverState
+                {
+                    PositionIndex = targetIndex,
+                    Battery = battery,
+                    Time = time,
+                    MineralCount = newMinerals,
+                    CollectedMask = newMask,
+                    Speed = speed,
+                    Parent = current
+                };
+
+                if (best == null || battery > best.Battery)
+                    best = candidate;
+            }
+
+            result = best;
+            return best != null;
+        }
+
         public static List<NodeBase> ReconstructFullPath(RoverState endState, Map map)
         {
             var nodePath = new List<int>();
-            var speedPath = new List<int>(); // speed used to reach each node
+            var speedPath = new List<int>();
             var cur = endState;
             while (cur != null)
             {
@@ -525,7 +812,7 @@ namespace VadaszTest
             {
                 var from = map.ImportantNodes[nodePath[i]];
                 var to = map.ImportantNodes[nodePath[i + 1]];
-                int speed = speedPath[i + 1]; // speed used when travelling to 'to'
+                int speed = speedPath[i + 1];
 
                 var seg = Pathfinder.FindPath(from, to);
                 if (seg == null || seg.Count == 0) continue;
@@ -539,23 +826,7 @@ namespace VadaszTest
                     _ => ConsoleColor.Gray
                 };
 
-                foreach (var tile in seg)
-                {
-                    if (!tile.HasMineral && tile != map.StartNode)
-                        tile.SetColor(segColor);
-                }
-
                 fullPath.AddRange(seg);
-            }
-
-            for (int i = 0; i < map.MineralClusters.Count; i++)
-            {
-                ulong bit = 1UL << i;
-                if ((endState.CollectedMask & bit) != 0)
-                {
-                    foreach (var tile in map.MineralClusters[i].Tiles)
-                        tile.SetColor(ConsoleColor.Magenta);
-                }
             }
 
             return fullPath;
@@ -715,8 +986,6 @@ namespace VadaszTest
 
         public static List<List<char>> ReadCSVToCharList(string fileName)
         {
-            var map = new List<List<char>>();
-            int y = 0;
             var lines = File.ReadAllLines(fileName);
             return lines.Select(row => row.Split(',').Select(str => (char)str[0]).ToList()).ToList();
         }

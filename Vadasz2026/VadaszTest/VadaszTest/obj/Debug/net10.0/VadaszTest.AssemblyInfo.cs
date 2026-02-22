@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VadaszTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+906af12a87edb276336353d9f6813b26469638df")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab9f33333e53fd180f03321e508b5b1ac55ab587")]
 [assembly: System.Reflection.AssemblyProductAttribute("VadaszTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VadaszTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
