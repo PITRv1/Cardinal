@@ -7,7 +7,7 @@ namespace VadaszTest
 {
     internal class MateMagic
     {
-        static void Run(string[] args)
+        public static void Run()
         {
             var testMap = @"..\\..\\..\\..\\..\\..\\Vadasz2026\\mars_map_50x50.csv";
             MapEditor mapEditor = new MapEditor();
