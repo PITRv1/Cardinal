@@ -10,11 +10,18 @@
         Title="Cardinal">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <Grid ColumnDefinitions="Auto, *" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent[Window].Bounds.Width}">
+        <Grid RowDefinitions="Auto, *">
+            <Grid></Grid>
+            <Grid Grid.Row="1">
+                <Grid></Grid>
+                <Grid></Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+        </Grid>
+    </Grid>
 </Window>
