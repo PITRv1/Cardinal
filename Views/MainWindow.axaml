@@ -15,10 +15,26 @@
 
     <Grid ColumnDefinitions="1.75*, 1.25*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent[Window].Bounds.Width}">
         <Grid RowDefinitions="1*, 1*" Background="Red">
-            <Grid Background="DarkRed"></Grid>
+            <Grid Background="DarkRed">
+                <Label Foreground="White" FontSize="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">3D here</Label>
+            </Grid>
             <Grid Grid.Row="1" ColumnDefinitions="1*, 1*">
-                <Grid Background="Green"></Grid>
-                <Grid Grid.Column="1" Background="Black"></Grid>
+                <Grid Background="Black" ShowGridLines="True" RowDefinitions="1*,1*,1*,1*,1*,1*,1*,1*" ColumnDefinitions="1*,1*,1*,1*,1*,1*,1*,1*">
+                    <Label Foreground="Red" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">X</Label>
+                    <Label Grid.Column="4" Grid.Row="3" Foreground="Cyan" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">B</Label>
+                    <Label Grid.Column="2" Grid.Row="3" Foreground="Cyan" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">B</Label>
+                    <Label Grid.Column="2" Grid.Row="6" Foreground="Cyan" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">B</Label>
+                    <Label Grid.Column="3" Grid.Row="6" Foreground="Yellow" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">Y</Label>
+                    <Label Grid.Column="7" Grid.Row="1" Foreground="Yellow" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">Y</Label>
+                    <Label Grid.Column="7" Grid.Row="7" Foreground="Yellow" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">Y</Label>
+                    <Label Grid.Column="1" Grid.Row="7" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
+                    <Label Grid.Column="1" Grid.Row="1" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
+                    <Label Grid.Column="2" Grid.Row="1" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
+                    <Label Grid.Column="7" Grid.Row="4" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
+                </Grid>
+                <Grid Grid.Column="1" Background="Black">
+                    <Border Background="Red" CornerRadius="9999" Width="200" Height="200"></Border>
+                </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Column="1" Background="Gray">
