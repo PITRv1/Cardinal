@@ -13,15 +13,15 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="Auto, *" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent[Window].Bounds.Width}">
-        <Grid RowDefinitions="Auto, *">
-            <Grid></Grid>
-            <Grid Grid.Row="1">
-                <Grid></Grid>
-                <Grid></Grid>
+    <Grid ColumnDefinitions="1.75*, 1.25*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent[Window].Bounds.Width}">
+        <Grid RowDefinitions="1*, 1*" Background="Red">
+            <Grid Background="DarkRed"></Grid>
+            <Grid Grid.Row="1" ColumnDefinitions="1*, 1*">
+                <Grid Background="Green"></Grid>
+                <Grid Grid.Column="1" Background="Black"></Grid>
             </Grid>
         </Grid>
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Background="Gray">
         </Grid>
     </Grid>
 </Window>
