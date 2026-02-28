@@ -11,6 +11,6 @@
   
     <Application.Styles>
         <FluentTheme />
-        <StyleInclude Source="avares://Styles/Style.axaml"></StyleInclude>
+        <StyleInclude Source="avares://Cardinal/Styles/Style.axaml"></StyleInclude>
     </Application.Styles>
 </Application>
