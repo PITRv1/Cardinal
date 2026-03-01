@@ -11,6 +11,9 @@
   <ItemGroup>
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <Compile Remove="3DRenderer\**" />
+    <Content Remove="3DRenderer\**" />
+    <None Remove="3DRenderer\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -120,20 +120,17 @@ public class MyGl3DControl : OpenGlControlBase
         _gl.ShaderSource(vs, vert);
         _gl.CompileShader(vs);
         _gl.GetShader(vs, ShaderParameterName.CompileStatus, out int vsStatus);
-        Console.WriteLine("Vert: " + vsStatus + " | " + _gl.GetShaderInfoLog(vs));
 
         var fs = _gl.CreateShader(ShaderType.FragmentShader);
         _gl.ShaderSource(fs, frag);
         _gl.CompileShader(fs);
         _gl.GetShader(fs, ShaderParameterName.CompileStatus, out int fsStatus);
-        Console.WriteLine("Frag: " + fsStatus + " | " + _gl.GetShaderInfoLog(fs));
 
         _shaderProgram = _gl.CreateProgram();
         _gl.AttachShader(_shaderProgram, vs);
         _gl.AttachShader(_shaderProgram, fs);
         _gl.LinkProgram(_shaderProgram);
         _gl.GetProgram(_shaderProgram, ProgramPropertyARB.LinkStatus, out int linkStatus);
-        Console.WriteLine("Link: " + linkStatus + " | " + _gl.GetProgramInfoLog(_shaderProgram));
 
         _gl.DeleteShader(vs);
         _gl.DeleteShader(fs);

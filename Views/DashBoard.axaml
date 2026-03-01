@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:Cardinal"
+             xmlns:vm="using:Cardinal.ViewModels"
+             x:Class="Cardinal.Views.DashBoard"
+             x:DataType="vm:DashBoardViewModel">
+  
+  <Grid ColumnDefinitions="1.75*, 1.25*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
+    <Grid RowDefinitions="1*, 1*">
+      <local:MyGl3DControl HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
+      <Grid Grid.Row="1" ColumnDefinitions="1*, 1*">
+        <ContentControl Content="{Binding MatrixMapInstance}"></ContentControl>
+        <ContentControl Grid.Column="1" Content="{Binding DayCycleVisualInstace}"></ContentControl>
+      </Grid>
+    </Grid>
+    <Grid Grid.Column="1" Background="Gray">
+    </Grid>
+  </Grid>
+</UserControl>

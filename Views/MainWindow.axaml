@@ -1,42 +1,20 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:Cardinal.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Cardinal"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="Cardinal.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Cardinal">
+        Title="Cardinal"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:local="clr-namespace:Cardinal"
+        xmlns:vm="using:Cardinal.ViewModels"
+        x:Class="Cardinal.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel">
 
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid ColumnDefinitions="1.75*, 1.25*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent[Window].Bounds.Width}">
-        <Grid RowDefinitions="1*, 1*">
-            <local:MyGl3DControl HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
-            <Grid Grid.Row="1" ColumnDefinitions="1*, 1*">
-                <Grid Background="Black" ShowGridLines="True" RowDefinitions="1*,1*,1*,1*,1*,1*,1*,1*" ColumnDefinitions="1*,1*,1*,1*,1*,1*,1*,1*">
-                    <Label Foreground="Red" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">X</Label>
-                    <Label Grid.Column="4" Grid.Row="3" Foreground="Cyan" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">B</Label>
-                    <Label Grid.Column="2" Grid.Row="3" Foreground="Cyan" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">B</Label>
-                    <Label Grid.Column="2" Grid.Row="6" Foreground="Cyan" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">B</Label>
-                    <Label Grid.Column="3" Grid.Row="6" Foreground="Yellow" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">Y</Label>
-                    <Label Grid.Column="7" Grid.Row="1" Foreground="Yellow" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">Y</Label>
-                    <Label Grid.Column="7" Grid.Row="7" Foreground="Yellow" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">Y</Label>
-                    <Label Grid.Column="1" Grid.Row="7" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
-                    <Label Grid.Column="1" Grid.Row="1" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
-                    <Label Grid.Column="2" Grid.Row="1" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
-                    <Label Grid.Column="7" Grid.Row="4" Foreground="Green" FontSize="20" HorizontalContentAlignment="Center" VerticalAlignment="Center">G</Label>
-                </Grid>
-                <Grid Grid.Column="1" Background="Black">
-                    <Border Background="Red" CornerRadius="9999" Width="200" Height="200"></Border>
-                </Grid>
-            </Grid>
-        </Grid>
-        <Grid Grid.Column="1" Background="Gray">
-        </Grid>
+    <Grid ColumnDefinitions="*" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent[Window].Bounds.Width}" Height="{Binding $parent[Window].Bounds.Height}">
+        <ContentControl Content="{Binding DashBoardInstance}"></ContentControl>
     </Grid>
 </Window>

@@ -1,4 +1,6 @@
-public static class Global
+using VadaszTest;
+
+static class Global
 {
 
 }
