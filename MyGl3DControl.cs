@@ -1,4 +1,5 @@
 using System;
+using Avalonia.Controls;
 using Avalonia.OpenGL;
 using Avalonia.OpenGL.Controls;
 using Silk.NET.OpenGL;
@@ -8,7 +9,7 @@ namespace Cardinal;
 public class MyGl3DControl : OpenGlControlBase
 {
     private GL? _gl;
-    private uint _vao, _vbo, _shaderProgram;
+    private uint _vao, _vbo, _ebo, _shaderProgram;
     private float _rotation = 0f;
 
     protected override void OnOpenGlInit(GlInterface glInterface)
@@ -22,7 +23,7 @@ public class MyGl3DControl : OpenGlControlBase
     {
         _gl!.BindFramebuffer(FramebufferTarget.Framebuffer, (uint)fb);
         _gl.Viewport(0, 0, (uint)Bounds.Width, (uint)Bounds.Height);
-        _gl.ClearColor(0.1f, 0.1f, 0.15f, 1f);
+        _gl.ClearColor(0.1f, 1.0f, 0.15f, 1f);
         _gl.Clear(ClearBufferMask.ColorBufferBit);
 
         _rotation += 0.02f;
@@ -30,8 +31,9 @@ public class MyGl3DControl : OpenGlControlBase
         _gl.UseProgram(_shaderProgram);
         _gl.Uniform1(_gl.GetUniformLocation(_shaderProgram, "uRotation"), _rotation);
         _gl.BindVertexArray(_vao);
-        _gl.DrawArrays(PrimitiveType.Triangles, 0, 3);
-
+        unsafe {
+            _gl.DrawElements(PrimitiveType.Triangles, 6, DrawElementsType.UnsignedInt, (void*)0);
+        }
         RequestNextFrameRendering();
     }
 
@@ -46,24 +48,37 @@ public class MyGl3DControl : OpenGlControlBase
     {
         // X, Y, R, G, B
         float[] vertices = {
-             0.0f,  0.5f,   1.0f, 0.2f, 0.2f,
-            -0.5f, -0.5f,   0.2f, 1.0f, 0.4f,
-             0.5f, -0.5f,   0.2f, 0.5f, 1.0f,
+            -0.5f,  0.5f,   1.0f, 0.2f, 0.2f,  // top-left
+             0.5f,  0.5f,   0.2f, 1.0f, 0.4f,  // top-right
+            -0.5f, -0.5f,   0.2f, 0.5f, 1.0f,  // bottom-left
+             0.5f, -0.5f,   1.0f, 1.0f, 0.2f,  // bottom-right
         };
+
+        uint[] indices = { 0, 1, 2, 1, 2, 3 };
 
         _vao = _gl!.GenVertexArray();
         _vbo = _gl.GenBuffer();
+        _ebo = _gl.GenBuffer();
 
         _gl.BindVertexArray(_vao);
         _gl.BindBuffer(BufferTargetARB.ArrayBuffer, _vbo);
-
-        unsafe
-        {
+        unsafe {
             fixed (float* ptr = vertices)
                 _gl.BufferData(BufferTargetARB.ArrayBuffer,
                     (nuint)(vertices.Length * sizeof(float)), ptr,
                     BufferUsageARB.StaticDraw);
+        }
 
+        _gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, _ebo);
+        unsafe {
+            fixed (uint* ptr = indices)
+                _gl.BufferData(BufferTargetARB.ElementArrayBuffer,
+                    (nuint)(indices.Length * sizeof(float)), ptr,
+                    BufferUsageARB.StaticDraw);
+        }
+
+
+        unsafe { 
             uint stride = 5 * sizeof(float);
             _gl.VertexAttribPointer(0, 2, VertexAttribPointerType.Float, false, stride, (void*)0);
             _gl.EnableVertexAttribArray(0);
