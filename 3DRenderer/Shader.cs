@@ -3,7 +3,7 @@ using System.IO;
 using System.Numerics;
 using Silk.NET.OpenGL;
 
-namespace Take4_at_rendering
+namespace PETRenderer
 {
     public class Shader : IDisposable
     {
@@ -56,6 +56,22 @@ namespace Take4_at_rendering
                 throw new Exception($"{name} uniform not found on shader.");
             }
             _gl.Uniform1(location, value);
+        }
+
+        public void SetUniform(string name, Vector3 value) {
+            int location = _gl.GetUniformLocation(_handle, name);
+            if (location == -1) {
+                throw new Exception($"{name} uniform not found on shader.");
+            }
+            _gl.Uniform3(location, value.X, value.Y, value.Z);
+        }
+
+        public void SetUniform(string name, Vector2 value) {
+            int location = _gl.GetUniformLocation(_handle, name);
+            if (location == -1) {
+                throw new Exception($"{name} uniform not found on shader.");
+            }
+            _gl.Uniform2(location, value.X, value.Y);
         }
 
         public void Dispose() {

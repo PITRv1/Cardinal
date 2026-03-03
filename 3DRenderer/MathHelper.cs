@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Take4_at_rendering
+namespace PETRenderer
 {
     public static class MathHelper
     {

@@ -3,7 +3,7 @@
 
 using System.Numerics;
 
-namespace Take4_at_rendering
+namespace PETRenderer
 {
     public struct Vertex
     {

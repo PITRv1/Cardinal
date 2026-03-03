@@ -9,11 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="3DRenderer\skybox\newSkybox\" />
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
-    <Compile Remove="3DRenderer\**" />
-    <Content Remove="3DRenderer\**" />
-    <None Remove="3DRenderer\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +25,11 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="Silk.NET.Assimp" Version="2.23.0" />
+    <PackageReference Include="Silk.NET.Input" Version="2.23.0" />
+    <PackageReference Include="Silk.NET.Maths" Version="2.23.0" />
     <PackageReference Include="Silk.NET.OpenGL" Version="2.23.0" />
+    <PackageReference Include="Silk.NET.Windowing" Version="2.23.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
   </ItemGroup>
 </Project>

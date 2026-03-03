@@ -1,7 +1,7 @@
 ﻿using Silk.NET.OpenGL;
 using System;
 
-namespace Take4_at_rendering
+namespace PETRenderer
 {
     public class BufferObject<TDataType> : IDisposable
         where TDataType : unmanaged
