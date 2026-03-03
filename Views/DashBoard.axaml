@@ -8,15 +8,26 @@
              x:Class="Cardinal.Views.DashBoard"
              x:DataType="vm:DashBoardViewModel">
   
-  <Grid ColumnDefinitions="1.75*, 1.25*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
-    <Grid RowDefinitions="1*, 1*">
-      <local:MyGl3DControl HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
-      <Grid Grid.Row="1" ColumnDefinitions="1*, 1*">
+  <Grid ColumnDefinitions="1.75*, 1.25*" ColumnSpacing="10"  Classes="StaticWidgetMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
+    <Grid RowDefinitions="1*, 1*" RowSpacing="10" Margin="10,10">
+      <Border Classes="StaticWidgetOuterBorder">
+        <Border Classes="StaticWidgetInnerBorder">
+          <Grid>
+            <local:MyGl3DControl HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
+          </Grid>
+        </Border>
+      </Border>
+      <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" ColumnSpacing="10">
         <ContentControl Content="{Binding MatrixMapInstance}"></ContentControl>
         <ContentControl Grid.Column="1" Content="{Binding DayCycleVisualInstace}"></ContentControl>
       </Grid>
     </Grid>
-    <Grid Grid.Column="1" Background="Gray">
+    <Grid Grid.Column="1" Margin="10">
+      <TabControl>
+        <TabItem Header="Rover"></TabItem>
+        <TabItem Header="Logic"></TabItem>
+        <TabItem Header="Logs"></TabItem>
+      </TabControl>
     </Grid>
   </Grid>
 </UserControl>

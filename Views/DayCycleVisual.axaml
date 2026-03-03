@@ -8,8 +8,12 @@
              x:Class="Cardinal.Views.DayCycleVisual"
              x:DataType="vm:DayCycleVisualViewModel">
 
-  <Grid Background="Black">
-    <Border Background="Red" CornerRadius="9999" Width="200" Height="200"></Border>
-  </Grid>
 
+  <Border Classes="StaticWidgetOuterBorder" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
+    <Border Classes="StaticWidgetInnerBorder">
+      <Grid Background="{DynamicResource ResourceKey=DayNigthGradient}">
+        <Border Background="Red" CornerRadius="9999" Width="200" Height="200"></Border>
+      </Grid>
+    </Border>
+  </Border>
 </UserControl>

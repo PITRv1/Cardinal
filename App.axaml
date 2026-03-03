@@ -13,4 +13,28 @@
         <FluentTheme />
         <StyleInclude Source="avares://Cardinal/Styles/Style.axaml"></StyleInclude>
     </Application.Styles>
+
+    <Application.Resources>
+        <!-- <FontFamily x:Key="Pixel">Assets/UI/Fonts/nokiafc22.ttf#Nokia Cellphone FC</FontFamily> -->
+        <FontFamily x:Key="Pixel">Assets/UI/Fonts/runescape_uf.ttf#RuneScape UF</FontFamily>
+        <!-- <FontFamily x:Key="Pixel">Assets/UI/Fonts/pixel.ttf#Pixel</FontFamily> -->
+        <LinearGradientBrush x:Key="DayNigthGradient" StartPoint="50%, 100%" EndPoint="50%, 00%">
+            <GradientStop Offset="0.5" Color="#000000"></GradientStop>
+            <GradientStop Offset="1" Color="#f8f890"></GradientStop>
+        </LinearGradientBrush>
+        <SolidColorBrush x:Key="LightGreen">#32bc6c</SolidColorBrush>
+        <SolidColorBrush x:Key="VomitGreen">#749c65</SolidColorBrush>
+        <SolidColorBrush x:Key="Green">#224a2a</SolidColorBrush>
+        <SolidColorBrush x:Key="DarkGreen">#172017</SolidColorBrush>
+        <SolidColorBrush x:Key="DarkerYellow">#967e33</SolidColorBrush>
+        <SolidColorBrush x:Key="DarkYellow">#bea864</SolidColorBrush>
+        <SolidColorBrush x:Key="Yellow">#bca532</SolidColorBrush>
+        <SolidColorBrush x:Key="Blue">#3280bc</SolidColorBrush>
+        <SolidColorBrush x:Key="Red">#bc3237</SolidColorBrush>
+        <SolidColorBrush x:Key="DarkerGray">#12181a</SolidColorBrush>
+        <SolidColorBrush x:Key="DarkGray">#1c2224</SolidColorBrush>
+        <SolidColorBrush x:Key="Gray">#293134</SolidColorBrush>
+        <SolidColorBrush x:Key="LightGray">#3f4e54</SolidColorBrush>
+        <SolidColorBrush x:Key="LighterGray">#afb3b6</SolidColorBrush>
+    </Application.Resources>
 </Application>

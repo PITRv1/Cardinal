@@ -12,6 +12,7 @@ public class MyGl3DControl : OpenGlControlBase
     private uint _vao, _vbo, _ebo, _shaderProgram;
     private float _rotation = 0f;
 
+
     protected override void OnOpenGlInit(GlInterface glInterface)
     {
         _gl = GL.GetApi(proc => glInterface.GetProcAddress(proc));

@@ -1,4 +1,42 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+        <Style Selector="Window">
+                <Setter Property="FontFamily" Value="{DynamicResource ResourceKey=Pixel}"/>
+        </Style>
+
+        <Style Selector="Border.StaticWidgetOuterBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=LightGray}"></Setter>
+                <Setter Property="BorderThickness" Value="8"></Setter>
+        </Style>
+
+        <Style Selector="Border.StaticWidgetInnerBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=LighterGray}"></Setter>
+                <Setter Property="BorderThickness" Value="15"></Setter>
+        </Style>
+
+        <Style Selector="Grid.StaticWidget">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=DarkGreen}"></Setter>
+        </Style>
+
+        <Style Selector="Grid.StaticWidgetMenu">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=Gray}"></Setter>
+        </Style>
+
+        <Style Selector="TabItem">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=DarkerGray}"></Setter>
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=DarkGray}"></Setter>
+                <Setter Property="BorderThickness" Value="5"></Setter>
+                <Setter Property="Margin" Value="0,0,5,5"></Setter>
+        </Style>
+
+        <Style Selector="TabItem:selected">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=DarkerGray}"></Setter>
+                <Setter Property="BorderThickness" Value="5,5,5,0"></Setter>
+                <Setter Property="Margin" Value="0,0,5,0"></Setter>
+        </Style>
+
+        <Style Selector="TabItem:selected /template/ Border#PART_SelectedPipe">
+                <Setter Property="IsVisible" Value="False"/>
+        </Style>
 </Styles>
