@@ -1,4 +1,5 @@
-#version 330 core
+#version 300 es
+precision mediump float;
 layout (location = 0) in vec2 vPos;
 layout (location = 1) in vec2 vUv;
 

@@ -15,18 +15,21 @@ namespace PETRenderer
         private Shader _shader;
         private PostProcessor _postProcessor;
 
-        public void Initialize(GL gl, Vector2D<int> framebufferSize) {
+        public void Initialize(GL gl, uint width, uint height) {
+
             Gl = gl;
 
-            var size = framebufferSize;
-            _postProcessor = new PostProcessor(Gl, (uint)size.X, (uint)size.Y);
+            Vector2D<int> size = new((int)width, (int)height);
+            
+            _postProcessor = new PostProcessor(Gl, width, height);
+            
 
             OnLoadEffects?.Invoke(this, _postProcessor, size);
 
             _shader = new Shader(Gl, "3DRenderer/shaders/shader.vert", "3DRenderer/shaders/shader.frag");
         }
 
-        public void Render(Scene scene, Camera camera, Vector2D<int> framebufferSize) {
+        public void Render(Scene scene, Camera camera, Vector2D<int> framebufferSize, int targetFramebuffer = 0) {
             Gl.Enable(EnableCap.DepthTest);
             Gl.Enable(EnableCap.CullFace);
             Gl.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
@@ -38,7 +41,7 @@ namespace PETRenderer
 
             scene.Render(_shader, view, projection, framebufferSize);
 
-            _postProcessor.EndCaptureAndRender();
+            _postProcessor.EndCaptureAndRender(targetFramebuffer);
         }
 
         public void Resize(Vector2D<int> newSize) {

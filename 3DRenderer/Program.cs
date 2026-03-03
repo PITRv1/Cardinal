@@ -47,7 +47,7 @@ namespace PETRenderer
 
 
 
-            _renderer.Initialize(GL.GetApi(_window), _window.FramebufferSize);
+            //_renderer.Initialize(GL.GetApi(_window), _window.FramebufferSize);
             _scene.Load(_renderer.Gl);
 
             for (int i = 0; i < input.Mice.Count; i++) {

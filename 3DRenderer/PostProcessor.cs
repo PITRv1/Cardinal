@@ -33,7 +33,8 @@ namespace PETRenderer
             _gl = gl;
             SetupQuad();
             SetupFramebuffers(width, height);
-            _passthroughShader = new Shader(gl, "shaders/post.vert", "shaders/passthrough.frag");
+
+            _passthroughShader = new Shader(gl, "3DRenderer/shaders/post.vert", "3DRenderer/shaders/passthrough.frag");
         }
 
         public void AddEffect(Shader shader) {
@@ -45,11 +46,11 @@ namespace PETRenderer
             _gl.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
         }
 
-        public void EndCaptureAndRender() {
-            _gl.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+        public void EndCaptureAndRender(int targetFramebuffer = 0) {
+            _gl.BindFramebuffer(FramebufferTarget.Framebuffer, (uint)targetFramebuffer);
 
             if (_effectShaders.Count == 0) {
-                BlitToScreen(_colorTexture);
+                BlitToScreen(_colorTexture, targetFramebuffer);
                 return;
             }
 
@@ -59,9 +60,9 @@ namespace PETRenderer
                 bool isLast = i == _effectShaders.Count - 1;
 
                 if (isLast) {
-                    _gl.BindFramebuffer(FramebufferTarget.Framebuffer, 0);
+                    _gl.BindFramebuffer(FramebufferTarget.Framebuffer, (uint)targetFramebuffer); ;
                 } else {
-                    uint targetFbo = (i % 2 == 0) ? _pingFbo : _pingFbo;
+                    uint targetFbo = (i % 2 == 0) ? _pingFbo : _pongFbo;
                     _gl.BindFramebuffer(FramebufferTarget.Framebuffer, targetFbo);
                     _gl.Clear(ClearBufferMask.ColorBufferBit);
 
@@ -125,14 +126,14 @@ namespace PETRenderer
             _vao.VertexAttributePointer(1, 2, VertexAttribPointerType.Float, 4, 2);
         }
 
-        private void BlitToScreen(uint texture) {
+        private void BlitToScreen(uint texture, int targetFramebuffer) {
+            _gl.BindFramebuffer(FramebufferTarget.Framebuffer, (uint)targetFramebuffer);
             _gl.Disable(EnableCap.DepthTest);
             _vao.Bind();
             _gl.BindTexture(TextureTarget.Texture2D, texture);
             _passthroughShader.Use();
             _passthroughShader.SetUniform("uScreenTexture", 0);
             _gl.DrawArrays(PrimitiveType.Triangles, 0, 6);
-
 
             _gl.Enable(EnableCap.DepthTest);
         }

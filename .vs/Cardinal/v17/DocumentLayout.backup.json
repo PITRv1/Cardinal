@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\views\\dashboard.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\dashboard.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\skybox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\skybox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,37 +54,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Scene.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Scene.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Scene.cs",
+              "RelativeToolTip": "3DRenderer\\Scene.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T20:54:29.869Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Skybox.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Skybox.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Skybox.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Skybox.cs",
+              "RelativeToolTip": "3DRenderer\\Skybox.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T20:54:03.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DashBoard.axaml",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Views\\DashBoard.axaml",
+              "RelativeDocumentMoniker": "Views\\DashBoard.axaml",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Views\\DashBoard.axaml",
+              "RelativeToolTip": "Views\\DashBoard.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-03T20:51:05.753Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DashBoardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\DashBoardViewModel.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
+              "RelativeToolTip": "ViewModels\\DashBoardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T20:50:56.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Renderer.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Renderer.cs",
               "RelativeDocumentMoniker": "3DRenderer\\Renderer.cs",
               "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Renderer.cs",
               "RelativeToolTip": "3DRenderer\\Renderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:28:11.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:28:11.751Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "PETRendererController.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
               "RelativeDocumentMoniker": "PETRendererController.cs",
               "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
               "RelativeToolTip": "PETRendererController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAswDsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwBwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T20:21:03.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "MeshNode.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\MeshNode.cs",
               "RelativeDocumentMoniker": "3DRenderer\\MeshNode.cs",
@@ -76,12 +139,11 @@
               "RelativeToolTip": "3DRenderer\\MeshNode.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:20:24.355Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:20:24.355Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "CubemapTexture.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\CubemapTexture.cs",
               "RelativeDocumentMoniker": "3DRenderer\\CubemapTexture.cs",
@@ -89,12 +151,11 @@
               "RelativeToolTip": "3DRenderer\\CubemapTexture.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:20:08.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:20:08.948Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "MathHelper.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\MathHelper.cs",
               "RelativeDocumentMoniker": "3DRenderer\\MathHelper.cs",
@@ -102,12 +163,11 @@
               "RelativeToolTip": "3DRenderer\\MathHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:20:08.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:20:08.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Model.cs",
               "RelativeDocumentMoniker": "3DRenderer\\Model.cs",
@@ -115,12 +175,11 @@
               "RelativeToolTip": "3DRenderer\\Model.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:19:58.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:19:58.469Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Program.cs",
               "RelativeDocumentMoniker": "3DRenderer\\Program.cs",
@@ -128,8 +187,7 @@
               "RelativeToolTip": "3DRenderer\\Program.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAmwBEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:45:52.57Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:45:52.57Z"
             }
           ]
         }

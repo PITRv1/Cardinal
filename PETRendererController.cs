@@ -7,6 +7,7 @@ using System.Numerics;
 using Shader = PETRenderer.Shader;
 using Texture = PETRenderer.Texture;
 using PETRenderer;
+using System;
 
 namespace Cardinal;
 
@@ -22,6 +23,10 @@ public class PETRendererController : OpenGlControlBase
     private double _lastTime = 0;
 
     protected override void OnOpenGlInit(GlInterface glInterface) {
+        double scaling = VisualRoot?.RenderScaling ?? 1.0;
+        uint width = (uint)(Bounds.Width * scaling);
+        uint height = (uint)(Bounds.Height * scaling);
+
         _gl = GL.GetApi(proc => glInterface.GetProcAddress(proc));
 
         _camera = new Camera();
@@ -31,26 +36,34 @@ public class PETRendererController : OpenGlControlBase
         _renderer.OnLoadEffects += OnLoadEffects;
         _scene.OnPopulate += OnPopulateScene;
 
+        //_camera.Position = new Vector3(0, 0, 0);
+        //_camera.Pitch = -30f;
 
-        Vector2D<int> frameBufferSize = new((int)Bounds.Width, (int)Bounds.Height);
+        _renderer.Initialize(_gl, width, height);
 
-        _renderer.Initialize(_gl, frameBufferSize);
+        
         _scene.Load(_renderer.Gl);
+
     }
 
     protected override void OnOpenGlRender(GlInterface glInterface, int fb) {
-        _renderer.Gl.BindFramebuffer(FramebufferTarget.Framebuffer, (uint)fb);
-        _renderer.Gl.Viewport(0, 0, (uint)Bounds.Width, (uint)Bounds.Height);
+        double scaling = VisualRoot?.RenderScaling ?? 1.0;
+        uint width = (uint)(Bounds.Width * scaling);
+        uint height = (uint)(Bounds.Height * scaling);
 
-        var now = _stopwatch.Elapsed.TotalSeconds;
-        var deltaTime = now - _lastTime;
+        _renderer.Gl.BindFramebuffer(FramebufferTarget.Framebuffer, (uint)fb);
+        _renderer.Gl.Viewport(0, 0, width,height);
+
+        double now = _stopwatch.Elapsed.TotalSeconds;
+        double deltaTime = now - _lastTime;
         _lastTime = now;
 
-        _camera.ProcessKeyboard(null, (float)deltaTime);
+        //_camera.ProcessKeyboard(null, (float)deltaTime);
         _scene.Update(now, deltaTime);
 
-        var size = new Vector2D<int>((int)Bounds.Width, (int)Bounds.Height);
-        _renderer.Render(_scene, _camera, size);
+        var size = new Vector2D<int>((int)width, (int)height);
+        _renderer.Render(_scene, _camera, size, fb);
+
 
         RequestNextFrameRendering();
     }

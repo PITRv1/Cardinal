@@ -15,6 +15,9 @@ namespace PETRenderer
 
             uint vertex = LoadShader(ShaderType.VertexShader, vertexPath);
             uint fragment = LoadShader(ShaderType.FragmentShader, fragmentPath);
+            
+
+
             _handle = _gl.CreateProgram();
             _gl.AttachShader(_handle, vertex);
             _gl.AttachShader(_handle, fragment);
@@ -81,10 +84,13 @@ namespace PETRenderer
         private uint LoadShader(ShaderType type, string path) {
             string src = File.ReadAllText(path);
             uint handle = _gl.CreateShader(type);
+
             _gl.ShaderSource(handle, src);
             _gl.CompileShader(handle);
             string infoLog = _gl.GetShaderInfoLog(handle);
             if (!string.IsNullOrWhiteSpace(infoLog)) {
+                Console.WriteLine($"Shader source:\n{src}");
+                Console.WriteLine($"Shader error ({path}):\n{infoLog}");
                 throw new Exception($"Error compiling shader of type {type}, failed with error {infoLog}");
             }
 
