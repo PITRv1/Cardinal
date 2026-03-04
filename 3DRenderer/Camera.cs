@@ -12,15 +12,15 @@ namespace PETRenderer
         public Vector3 Up = Vector3.UnitY;
         public Vector3 Direction = Vector3.Zero;
 
-        public float Yaw = -90f;
-        public float Pitch = 0f;
+        public float Yaw = -137f;
+        public float Pitch = -28f;
         public float Zoom = 45f;
         public float MoveSpeed = 5.0f;
         public float LookSensitivity = 0.1f;
 
-        public bool IsPerspective = true;
+        public bool IsPerspective = false;
         public bool IsDebug = false;
-        public float OrthoScaler = 0.05f;
+        public float OrthoScaler = 0.1f;
 
         private Vector2 _lastMousePosition;
 

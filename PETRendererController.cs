@@ -1,13 +1,17 @@
+using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.OpenGL;
 using Avalonia.OpenGL.Controls;
+using Cardinal.Views;
+using PETRenderer;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
+using System;
 using System.Diagnostics;
 using System.Numerics;
 using Shader = PETRenderer.Shader;
 using Texture = PETRenderer.Texture;
-using PETRenderer;
-using System;
+using Vector2 = System.Numerics.Vector2;
 
 namespace Cardinal;
 
@@ -18,6 +22,7 @@ public class PETRendererController : OpenGlControlBase
     private Camera _camera;
     private Scene _scene;
     private Renderer _renderer;
+    private Window _mainWindow;
 
     private Stopwatch _stopwatch = Stopwatch.StartNew();
     private double _lastTime = 0;
@@ -32,12 +37,38 @@ public class PETRendererController : OpenGlControlBase
         _camera = new Camera();
         _scene = new Scene();
         _renderer = new Renderer();
+        _mainWindow = TopLevel.GetTopLevel(this) as Window;
 
         _renderer.OnLoadEffects += OnLoadEffects;
         _scene.OnPopulate += OnPopulateScene;
 
-        //_camera.Position = new Vector3(0, 0, 0);
-        //_camera.Pitch = -30f;
+        IPointer _pointer = null;
+        
+        _mainWindow.PointerPressed += (sender, e) => { 
+            _mainWindow.Focus();
+            _pointer = e.Pointer;
+            e.Pointer.Capture(_mainWindow); 
+            };
+
+        _mainWindow.KeyDown += (sender, e) => {
+            if (_pointer.Captured == _mainWindow)
+            {
+                _pointer.Capture(null);
+                _pointer = null;
+            }
+        };
+
+        _mainWindow.PointerMoved += (mouse, e) => {
+            if (e.Pointer.Captured == _mainWindow)
+            {
+                var mousePos = e.GetPosition(_mainWindow);
+                _camera.ProcessMouseMove(new Vector2((float)mousePos.X, (float)mousePos.Y));
+                Console.WriteLine( $"Yaw : {_camera.Yaw} ,, Pitch : {_camera.Pitch}");
+            }
+            };
+
+        
+
 
         _renderer.Initialize(_gl, width, height);
 
@@ -74,11 +105,11 @@ public class PETRendererController : OpenGlControlBase
     }
 
     private void OnLoadEffects(Renderer renderer, PostProcessor postProcessor, Vector2D<int> framebufferSize) {
-        var pixelateShader = new Shader(_gl, "3DRenderer/shaders/post.vert", "3DRenderer/shaders/pixelate.frag");
-        pixelateShader.Use();
-        pixelateShader.SetUniform("uResolution", new Vector2(framebufferSize.X, framebufferSize.Y));
-        pixelateShader.SetUniform("uPixelSize", 4f);
-        postProcessor.AddEffect(pixelateShader);
+        //var pixelateShader = new Shader(_gl, "3DRenderer/shaders/post.vert", "3DRenderer/shaders/pixelate.frag");
+        //pixelateShader.Use();
+        //pixelateShader.SetUniform("uResolution", new Vector2(framebufferSize.X, framebufferSize.Y));
+        //pixelateShader.SetUniform("uPixelSize", 4f);
+        //postProcessor.AddEffect(pixelateShader);
     }
 
     private void OnPopulateScene(Scene scene) {
