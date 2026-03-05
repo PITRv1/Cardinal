@@ -5,6 +5,19 @@
                 <Setter Property="FontFamily" Value="{DynamicResource ResourceKey=Pixel}"/>
         </Style>
 
+        <Style Selector="ContentControl.TabContent">
+                <Setter Property="Margin" Value="-12,-2,0,0"></Setter>
+        </Style>
+
+        <Style Selector="Border.TabBorder">
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=DarkGray}"></Setter>
+                <Setter Property="BorderThickness" Value="8"></Setter>
+        </Style>
+
+        <Style Selector="Grid.Tab">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=DarkerGray}"></Setter>
+        </Style>
+
         <Style Selector="Border.StaticWidgetOuterBorder">
                 <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=LightGray}"></Setter>
                 <Setter Property="BorderThickness" Value="8"></Setter>

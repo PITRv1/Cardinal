@@ -8,7 +8,7 @@
              x:Class="Cardinal.Views.DashBoard"
              x:DataType="vm:DashBoardViewModel">
   
-  <Grid ColumnDefinitions="1.75*, 1.25*" ColumnSpacing="10"  Classes="StaticWidgetMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
+  <Grid ColumnDefinitions="1.75*, 1.25*" Classes="StaticWidgetMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
     <Grid RowDefinitions="1*, 1*" RowSpacing="10" Margin="10,10">
       <Border Classes="StaticWidgetOuterBorder">
         <Border Classes="StaticWidgetInnerBorder">
@@ -22,11 +22,17 @@
         <ContentControl Grid.Column="1" Content="{Binding DayCycleVisualInstace}"></ContentControl>
       </Grid>
     </Grid>
-    <Grid Grid.Column="1" Margin="10">
-      <TabControl>
-        <TabItem Header="Rover"></TabItem>
-        <TabItem Header="Logic"></TabItem>
-        <TabItem Header="Logs"></TabItem>
+    <Grid Grid.Column="1" Margin="0,10,10,10">
+      <TabControl Name="Tabs">
+        <TabItem Header="Rover" ZIndex="1">
+          <ContentControl Content="{Binding RoverTabInstance}" Classes="TabContent"></ContentControl>
+        </TabItem>
+        <TabItem Header="Logic">
+          <ContentControl Content="{Binding LogicTabInstance}" Classes="TabContent"></ContentControl>
+        </TabItem>
+        <TabItem Header="Logs">
+          <ContentControl Content="{Binding LoggingTabInstance}" Classes="TabContent"></ContentControl>
+        </TabItem>
       </TabControl>
     </Grid>
   </Grid>

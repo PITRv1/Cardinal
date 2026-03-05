@@ -14,6 +14,7 @@ namespace Cardinal.Views;
 public partial class MatrixMap : UserControl
 {
     private Map map = new();
+    const double LeastSize = 30.0;
     private double minSizeValue;
     public MatrixMap()
     {
@@ -33,15 +34,11 @@ public partial class MatrixMap : UserControl
 
     private void SetupGrid()
     {
-        // minSizeValue = 30;
-
         map.WorldMap[0].ForEach((idk) => MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse($"1*")}));
         map.WorldMap.ForEach((idk) => MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse($"1*")}));
 
         minSizeValue = MatrixMapGrid.RowDefinitions.Count < MatrixMapGrid.ColumnDefinitions.Count ? MatrixMapGrid.Bounds.Height / MatrixMapGrid.ColumnDefinitions.Count : MatrixMapGrid.Bounds.Width / MatrixMapGrid.RowDefinitions.Count;
-        minSizeValue = minSizeValue < 30.0 ? 30 : minSizeValue;
-
-        Console.WriteLine(minSizeValue);
+        minSizeValue = minSizeValue < LeastSize ? LeastSize : minSizeValue;
 
         // MatrixMapGrid.ColumnDefinitions.Clear();
         // MatrixMapGrid.RowDefinitions.Clear();
@@ -64,8 +61,8 @@ public partial class MatrixMap : UserControl
 
                 Label nodeUIElement = new Label
                 {
-                    Content = node.Character == '.' ? "" : node.Character.ToString().ToUpper(),
-                    Foreground = new SolidColorBrush { Color = Colors.White },
+                    Content = node.Character == '.' ? "#" : node.Character.ToString().ToUpper(),
+                    Foreground = new SolidColorBrush { Color = node.Character == '.' ? Colors.Transparent : Colors.White },
                     VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
                     HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                     FontSize = minSizeValue * .9f

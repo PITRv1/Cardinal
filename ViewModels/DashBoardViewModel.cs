@@ -7,6 +7,9 @@ namespace Cardinal.ViewModels;
 
 public partial class DashBoardViewModel : ViewModelBase
 {
-    [ObservableProperty] UserControl matrixMapInstance = new MatrixMap();
-    [ObservableProperty] UserControl dayCycleVisualInstace = new DayCycleVisual();
+    [ObservableProperty] MatrixMap matrixMapInstance = new();
+    [ObservableProperty] DayCycleVisual dayCycleVisualInstace = new();
+    [ObservableProperty] RoverTab roverTabInstance = new();
+    [ObservableProperty] LogicTab logicTabInstance = new();
+    [ObservableProperty] LoggingTab loggingTabInstance = new();
 }
