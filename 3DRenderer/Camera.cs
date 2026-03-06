@@ -24,6 +24,10 @@ namespace PETRenderer
 
         private Vector2 _lastMousePosition;
 
+        public Camera() {
+            UpdateCameraDirection(Yaw, Pitch);
+        }
+
         public void ProcessKeyboard(IKeyboard keyboard, float deltaTime) {
             if (IsDebug) return;
 
@@ -54,10 +58,7 @@ namespace PETRenderer
             Yaw += xOffset;
             Pitch = Math.Clamp(Pitch - yOffset, -89.0f, 89.0f);
 
-            Direction.X = MathF.Cos(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));
-            Direction.Y = MathF.Sin(MathHelper.DegreesToRadians(Pitch));
-            Direction.Z = MathF.Sin(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));
-            Front = Vector3.Normalize(Direction);
+            UpdateCameraDirection(Yaw, Pitch);
         }
 
         public Matrix4x4 GetViewMatrix() {
@@ -75,6 +76,13 @@ namespace PETRenderer
                     size.X * OrthoScaler,
                     size.Y * OrthoScaler,
                     0.1f, 100.0f);
+        }
+
+        private void UpdateCameraDirection(float Yaw, float Pitch) {
+            Direction.X = MathF.Cos(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));
+            Direction.Y = MathF.Sin(MathHelper.DegreesToRadians(Pitch));
+            Direction.Z = MathF.Sin(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));
+            Front = Vector3.Normalize(Direction);
         }
     }
 }
