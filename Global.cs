@@ -1,7 +1,9 @@
 using Avalonia.Controls;
-using VadaszTest;
 
-static class Global
+namespace Cardinal
 {
-    static public Border IntegratedPETrenderer = new();
+    public static class Global
+    {
+        public static Border PETrendererMovementHandler = new();
+    }
 }
