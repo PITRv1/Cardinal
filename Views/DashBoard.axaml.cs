@@ -4,6 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Cardinal.ViewModels;
+using SixLabors.ImageSharp.Processing;
 
 namespace Cardinal.Views;
 
@@ -13,6 +14,8 @@ public partial class DashBoard : UserControl
     {
         InitializeComponent();
         DataContext = new DashBoardViewModel();
-        Global.PETrendererMovementHandler = PETrendererMovementHandler;
+        // Global.PETrendererMovementHandler = PETrendererMovementHandler;
+
+    //     PETrendererMovementHandler.PointerMoved += Shit;
     }
 }
