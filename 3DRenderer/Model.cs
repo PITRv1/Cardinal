@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-using PETRenderer;
 using AssimpMesh = Silk.NET.Assimp.Mesh;
 using AssimpScene = Silk.NET.Assimp.Scene;
 using AssimpNode = Silk.NET.Assimp.Node;
@@ -32,7 +31,7 @@ namespace PETRenderer
         public List<Mesh> Meshes { get; protected set; } = new List<Mesh>();
 
         private unsafe void LoadModel(string path) {
-            var scene = _assimp.ImportFile(path, (uint)PostProcessSteps.Triangulate);
+            var scene = _assimp.ImportFile(path, (uint)(PostProcessSteps.Triangulate | PostProcessSteps.CalculateTangentSpace));
 
             if (scene == null || scene->MFlags == Silk.NET.Assimp.Assimp.SceneFlagsIncomplete || scene->MRootNode == null) {
                 var error = _assimp.GetErrorStringS();
@@ -165,6 +164,12 @@ namespace PETRenderer
                 vertices.Add(vertex.Normal.X);
                 vertices.Add(vertex.Normal.Y);
                 vertices.Add(vertex.Normal.Z);
+                vertices.Add(vertex.Tangent.X);   
+                vertices.Add(vertex.Tangent.Y);    
+                vertices.Add(vertex.Tangent.Z);    
+                vertices.Add(vertex.Bitangent.X);
+                vertices.Add(vertex.Bitangent.Y);
+                vertices.Add(vertex.Bitangent.Z);
                 vertices.Add(vertex.TexCoords.X);
                 vertices.Add(vertex.TexCoords.Y);
             }

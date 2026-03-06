@@ -29,9 +29,11 @@ namespace PETRenderer
             EBO = new BufferObject<uint>(GL, Indices, BufferTargetARB.ElementArrayBuffer);
             VBO = new BufferObject<float>(GL, Vertices, BufferTargetARB.ArrayBuffer);
             VAO = new VertexArrayObject<float, uint>(GL, VBO, EBO);
-            VAO.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 8, 0);
-            VAO.VertexAttributePointer(1, 2, VertexAttribPointerType.Float, 8, 3);
-            VAO.VertexAttributePointer(2, 2, VertexAttribPointerType.Float, 8, 6);
+            VAO.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 14, 0);  // position
+            VAO.VertexAttributePointer(1, 3, VertexAttribPointerType.Float, 14, 3);  // normal
+            VAO.VertexAttributePointer(2, 3, VertexAttribPointerType.Float, 14, 6);  // tangent
+            VAO.VertexAttributePointer(3, 3, VertexAttribPointerType.Float, 14, 9);  // bitangent
+            VAO.VertexAttributePointer(4, 2, VertexAttribPointerType.Float, 14, 12); // uv
 
         }
 

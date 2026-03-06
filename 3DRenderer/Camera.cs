@@ -13,7 +13,7 @@ namespace PETRenderer
         public Vector3 Direction = Vector3.Zero;
 
         public float Yaw = -137f;
-        public float Pitch = -28f;
+        public float Pitch = -45f;
         public float Zoom = 45f;
         public float MoveSpeed = 5.0f;
         public float LookSensitivity = 0.1f;
@@ -39,18 +39,13 @@ namespace PETRenderer
                 return;
             }
 
-            var xOffset = (position.X - _lastMousePosition.X) * LookSensitivity;
-            var yOffset = (position.Y - _lastMousePosition.Y) * LookSensitivity;
+            var xOffset = (position.X - _lastMousePosition.X) * OrthoScaler;
+            var yOffset = (position.Y - _lastMousePosition.Y) * OrthoScaler;
             _lastMousePosition = position;
 
-            // Right vector from the camera's current facing direction
             var right = -Vector3.Normalize(Vector3.Cross(Front, Up));
-
-            // Forward projected onto the ground plane (flatten Y so we don't fly up)
             var forward = Vector3.Normalize(new Vector3(Front.X, 0, Front.Z));
 
-            // Dragging left/right moves along right axis
-            // Dragging up/down moves along forward axis
             Position += right * xOffset;
             Position += forward * yOffset;
         }

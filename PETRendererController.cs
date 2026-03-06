@@ -117,7 +117,9 @@ public class PETRendererController : OpenGlControlBase
         var ground = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/trueTexturedGround.obj"),
             new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
+            new Texture(_gl, "3DRenderer/textures/testNormal.png"),
             "Ground");
+        ground.NormalStrength = 0.2f;
         scene.AddToRoot(ground);
 
         var parentBall = new MeshNode(_gl,
