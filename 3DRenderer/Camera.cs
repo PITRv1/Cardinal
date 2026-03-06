@@ -7,7 +7,7 @@ namespace PETRenderer
 {
     public class Camera
     {
-        public Vector3 Position = new Vector3(0.0f, 0.0f, 3.0f);
+        public Vector3 Position = new Vector3(0.0f, 0.0f, 0.0f);
         public Vector3 Front = new Vector3(0.0f, 0.0f, -1.0f);
         public Vector3 Up = Vector3.UnitY;
         public Vector3 Direction = Vector3.Zero;
@@ -19,7 +19,7 @@ namespace PETRenderer
         public float LookSensitivity = 0.1f;
 
         public bool IsPerspective = false;
-        public bool IsDebug = false;
+        private bool _isDragging = false;
         public float OrthoScaler = 0.1f;
 
         private Vector2 _lastMousePosition;
@@ -28,26 +28,14 @@ namespace PETRenderer
             UpdateCameraDirection(Yaw, Pitch);
         }
 
-        public void ProcessKeyboard(IKeyboard keyboard, float deltaTime) {
-            if (IsDebug) return;
 
-            var moveSpeed = MoveSpeed * deltaTime;
-
-            if (keyboard.IsKeyPressed(Key.W))
-                Position += moveSpeed * Front;
-            if (keyboard.IsKeyPressed(Key.S))
-                Position -= moveSpeed * Front;
-            if (keyboard.IsKeyPressed(Key.A))
-                Position -= Vector3.Normalize(Vector3.Cross(Front, Up)) * moveSpeed;
-            if (keyboard.IsKeyPressed(Key.D))
-                Position += Vector3.Normalize(Vector3.Cross(Front, Up)) * moveSpeed;
-        }
+        public void BeginDrag() => _isDragging = false;
+        public void EndDrag() => _isDragging = false;
 
         public void ProcessMouseMove(Vector2 position) {
-            if (IsDebug) return;
-
-            if (_lastMousePosition == default) {
+            if (!_isDragging) {
                 _lastMousePosition = position;
+                _isDragging = true;
                 return;
             }
 
@@ -55,10 +43,16 @@ namespace PETRenderer
             var yOffset = (position.Y - _lastMousePosition.Y) * LookSensitivity;
             _lastMousePosition = position;
 
-            Yaw += xOffset;
-            Pitch = Math.Clamp(Pitch - yOffset, -89.0f, 89.0f);
+            // Right vector from the camera's current facing direction
+            var right = -Vector3.Normalize(Vector3.Cross(Front, Up));
 
-            UpdateCameraDirection(Yaw, Pitch);
+            // Forward projected onto the ground plane (flatten Y so we don't fly up)
+            var forward = Vector3.Normalize(new Vector3(Front.X, 0, Front.Z));
+
+            // Dragging left/right moves along right axis
+            // Dragging up/down moves along forward axis
+            Position += right * xOffset;
+            Position += forward * yOffset;
         }
 
         public Matrix4x4 GetViewMatrix() {

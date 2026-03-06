@@ -43,36 +43,38 @@ public class PETRendererController : OpenGlControlBase
         _scene.OnPopulate += OnPopulateScene;
 
         IPointer _pointer = null;
-        
-        _mainWindow.PointerPressed += (sender, e) => { 
-            _mainWindow.Focus();
+
+
+        Global.PETrendererMovementHandler.PointerPressed += (sender, e) => {
+            Global.PETrendererMovementHandler.Focus();
             _pointer = e.Pointer;
-            e.Pointer.Capture(_mainWindow); 
+            e.Pointer.Capture(Global.PETrendererMovementHandler); 
             };
 
-        _mainWindow.KeyDown += (sender, e) => {
-            if (_pointer.Captured == _mainWindow)
-            {
-                _pointer.Capture(null);
-                _pointer = null;
-            }
+
+        Global.PETrendererMovementHandler.PointerReleased += (sender, e) => {
+            e.Pointer.Capture(null);
+            _camera.EndDrag();
         };
 
-        _mainWindow.PointerMoved += (mouse, e) => {
-            if (e.Pointer.Captured == _mainWindow)
+        Global.PETrendererMovementHandler.PointerMoved += (mouse, e) => {
+            if (e.Pointer.Captured == Global.PETrendererMovementHandler)
             {
-                var mousePos = e.GetPosition(_mainWindow);
+                var mousePos = e.GetPosition(Global.PETrendererMovementHandler);
                 _camera.ProcessMouseMove(new Vector2((float)mousePos.X, (float)mousePos.Y));
-                Console.WriteLine( $"Yaw : {_camera.Yaw} ,, Pitch : {_camera.Pitch}");
             }
             };
 
-        
+        Global.PETrendererMovementHandler.PointerWheelChanged += (sender, e) => {
+            _camera.OrthoScaler = Math.Clamp(
+                _camera.OrthoScaler - (float)e.Delta.Y * 0.001f,
+                0.001f,
+                0.1f
+            );
+        };
 
 
         _renderer.Initialize(_gl, width, height);
-
-        
         _scene.Load(_renderer.Gl);
 
     }
@@ -89,7 +91,6 @@ public class PETRendererController : OpenGlControlBase
         double deltaTime = now - _lastTime;
         _lastTime = now;
 
-        //_camera.ProcessKeyboard(null, (float)deltaTime);
         _scene.Update(now, deltaTime);
 
         var size = new Vector2D<int>((int)width, (int)height);
@@ -114,8 +115,8 @@ public class PETRendererController : OpenGlControlBase
 
     private void OnPopulateScene(Scene scene) {
         var ground = new MeshNode(_gl,
-            new Model(_gl, "3DRenderer/models/groundPlane.obj"),
-            new Texture(_gl, "3DRenderer/textures/testTex.png"),
+            new Model(_gl, "3DRenderer/models/trueTexturedGround.obj"),
+            new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
             "Ground");
         scene.AddToRoot(ground);
 
