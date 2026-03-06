@@ -16,11 +16,6 @@ public partial class DashBoard : UserControl
         DataContext = new DashBoardViewModel();
         // Global.PETrendererMovementHandler = PETrendererMovementHandler;
 
-        PETrendererMovementHandler.PointerMoved += Shit;
-    }
-
-    private void Shit(object? sender, PointerEventArgs e)
-    {
-        Console.WriteLine("sjsj");
+    //     PETrendererMovementHandler.PointerMoved += Shit;
     }
 }
