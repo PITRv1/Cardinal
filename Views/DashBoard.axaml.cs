@@ -1,5 +1,7 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Cardinal.ViewModels;
 
@@ -11,5 +13,6 @@ public partial class DashBoard : UserControl
     {
         InitializeComponent();
         DataContext = new DashBoardViewModel();
+        Global.PETrendererMovementHandler = PETrendererMovementHandler;
     }
 }

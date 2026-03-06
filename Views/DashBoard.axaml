@@ -9,11 +9,11 @@
              x:DataType="vm:DashBoardViewModel">
   
   <Grid ColumnDefinitions="1.75*, 1.25*" Classes="StaticWidgetMenu" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
-    <Grid RowDefinitions="1*, 1*" RowSpacing="10" Margin="10,10">
+    <Grid RowDefinitions="1*, 1*" RowSpacing="10" Margin="10,10" >
       <Border Classes="StaticWidgetOuterBorder">
-        <Border Classes="StaticWidgetInnerBorder">
+        <Border Classes="StaticWidgetInnerBorder" Name="PETrendererMovementHandler">
           <Grid>
-			    <local:PETRendererController HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
+			      <local:PETRendererController HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
           </Grid>
         </Border>
       </Border>
