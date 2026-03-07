@@ -115,18 +115,11 @@ public class PETRendererController : OpenGlControlBase
 
     private void OnPopulateScene(Scene scene) {
         var insideGround = new MeshNode(_gl,
-            new Model(_gl, "3DRenderer/models/trueTexturedGround.obj"),
+            new Model(_gl, "3DRenderer/models/insideGround.obj"),
             new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
             "Ground");
-        //insideGround.LocalTransform = new Transform { Position = new Vector3(0,0.01f,0) };
         scene.AddToRoot(insideGround);
 
-        //var groundGrid = new MeshNode(_gl,
-        //    new Model(_gl, "3DRenderer/models/groundGrid.obj"),
-        //    new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
-        //    "Grid");
-        //insideGround.LocalTransform = new Transform { Position = new Vector3(0, 0.01f, 0) };
-        //scene.AddToRoot(groundGrid);
 
 
         var outsideGround = new MeshNode(_gl,
@@ -136,5 +129,13 @@ public class PETRendererController : OpenGlControlBase
             "ParentBall");
         outsideGround.NormalStrength = 0.5f;
         scene.AddToRoot(outsideGround);
+
+        var roverModel = new MeshNode(_gl,
+            new Model(_gl, "3DRenderer/models/Trichael.obj"),
+            new Texture(_gl, "3DRenderer/textures/TrichaelColor.png"),
+            "ParentBall");
+        //roverModel.LocalTransform.Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0,1,0), -90);
+        roverModel.LocalTransform = new Transform {Position = new Vector3(0.5f, 0, 0.5f) , Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), -180) };
+        scene.AddToRoot(roverModel);
     }
 }
