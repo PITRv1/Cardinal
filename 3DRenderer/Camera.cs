@@ -22,6 +22,8 @@ namespace PETRenderer
         private bool _isDragging = false;
         public float OrthoScaler = 0.1f;
 
+        private float _maxPosition = 50.0f;
+
         private Vector2 _lastMousePosition;
 
         public Camera() {
@@ -48,6 +50,12 @@ namespace PETRenderer
 
             Position += right * xOffset;
             Position += forward * yOffset;
+
+            Position = new Vector3(
+                Math.Clamp(Position.X, -_maxPosition, _maxPosition),
+                Position.Y,
+                Math.Clamp(Position.Z, -_maxPosition, _maxPosition)
+            );
         }
 
         public Matrix4x4 GetViewMatrix() {

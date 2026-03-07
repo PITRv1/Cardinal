@@ -1,34 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\",
+  "WorkspaceRootPath": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\meshnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\meshnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\shaders\\skybox.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\shaders\\skybox.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\cubemaptexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\shaders\\skybox.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\shaders\\skybox.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\cubemaptexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\cubemaptexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\meshnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\meshnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\transform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\_mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:_mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,93 +50,127 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Camera.cs",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\Camera.cs",
-              "RelativeDocumentMoniker": "3DRenderer\\Camera.cs",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\Camera.cs",
-              "RelativeToolTip": "3DRenderer\\Camera.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "shader.frag",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\shaders\\shader.frag",
+              "RelativeDocumentMoniker": "3DRenderer\\shaders\\shader.frag",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\shaders\\shader.frag",
+              "RelativeToolTip": "3DRenderer\\shaders\\shader.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-06T20:49:49.497Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "skybox.frag",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\shaders\\skybox.frag",
+              "RelativeDocumentMoniker": "3DRenderer\\shaders\\skybox.frag",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\shaders\\skybox.frag",
+              "RelativeToolTip": "3DRenderer\\shaders\\skybox.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-06T20:49:48.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Model.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Model.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Model.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Model.cs",
+              "RelativeToolTip": "3DRenderer\\Model.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAApwCEAAACAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T09:53:14.379Z",
+              "WhenOpened": "2026-03-06T20:45:12.38Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Transform.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Transform.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Transform.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Transform.cs",
+              "RelativeToolTip": "3DRenderer\\Transform.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAACXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T20:44:21.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_mainWindow.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\_mainWindow.cs",
+              "RelativeDocumentMoniker": "_mainWindow.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\_mainWindow.cs",
+              "RelativeToolTip": "_mainWindow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T20:10:30.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Camera.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Camera.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Camera.cs",
+              "RelativeToolTip": "3DRenderer\\Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-04T09:53:14.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PETRendererController.cs",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
               "RelativeDocumentMoniker": "PETRendererController.cs",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
               "RelativeToolTip": "PETRendererController.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAqwF8AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAUwH8AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T20:21:03.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "skybox.vert",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\skybox.vert",
-              "RelativeDocumentMoniker": "3DRenderer\\shaders\\skybox.vert",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\skybox.vert",
-              "RelativeToolTip": "3DRenderer\\shaders\\skybox.vert",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-03T22:00:46.457Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashBoardViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\DashBoardViewModel.cs",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
-              "RelativeToolTip": "ViewModels\\DashBoardViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Renderer.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Renderer.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\Renderer.cs",
+              "RelativeToolTip": "3DRenderer\\Renderer.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwCQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:50:56.704Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T20:28:11.751Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Renderer.cs",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
-              "RelativeDocumentMoniker": "3DRenderer\\Renderer.cs",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
-              "RelativeToolTip": "3DRenderer\\Renderer.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAqwCQAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T20:28:11.751Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "MeshNode.cs",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\MeshNode.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\MeshNode.cs",
               "RelativeDocumentMoniker": "3DRenderer\\MeshNode.cs",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\MeshNode.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\MeshNode.cs",
               "RelativeToolTip": "3DRenderer\\MeshNode.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswCsAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T20:20:24.355Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "CubemapTexture.cs",
-              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\CubemapTexture.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\CubemapTexture.cs",
               "RelativeDocumentMoniker": "3DRenderer\\CubemapTexture.cs",
-              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\CubemapTexture.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\3DRenderer\\CubemapTexture.cs",
               "RelativeToolTip": "3DRenderer\\CubemapTexture.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T20:20:08.948Z"
             }

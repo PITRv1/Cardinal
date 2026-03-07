@@ -2,7 +2,7 @@ using Avalonia.Controls;
 
 namespace Cardinal
 {
-    public static class Global
+    public static class _mainWindow
     {
         public static Border PETrendererMovementHandler = new();
     }

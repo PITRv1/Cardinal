@@ -45,29 +45,29 @@ public class PETRendererController : OpenGlControlBase
         IPointer _pointer = null;
 
 
-        Global.PETrendererMovementHandler.PointerPressed += (sender, e) => {
-            Global.PETrendererMovementHandler.Focus();
+        _mainWindow.PointerPressed += (sender, e) => {
+            _mainWindow.Focus();
             _pointer = e.Pointer;
-            e.Pointer.Capture(Global.PETrendererMovementHandler); 
+            e.Pointer.Capture(_mainWindow); 
             };
 
 
-        Global.PETrendererMovementHandler.PointerReleased += (sender, e) => {
+        _mainWindow.PointerReleased += (sender, e) => {
             e.Pointer.Capture(null);
             _camera.EndDrag();
         };
 
-        Global.PETrendererMovementHandler.PointerMoved += (mouse, e) => {
-            if (e.Pointer.Captured == Global.PETrendererMovementHandler)
+        _mainWindow.PointerMoved += (mouse, e) => {
+            if (e.Pointer.Captured == _mainWindow)
             {
-                var mousePos = e.GetPosition(Global.PETrendererMovementHandler);
+                var mousePos = e.GetPosition(_mainWindow);
                 _camera.ProcessMouseMove(new Vector2((float)mousePos.X, (float)mousePos.Y));
             }
             };
 
-        Global.PETrendererMovementHandler.PointerWheelChanged += (sender, e) => {
+        _mainWindow.PointerWheelChanged += (sender, e) => {
             _camera.OrthoScaler = Math.Clamp(
-                _camera.OrthoScaler - (float)e.Delta.Y * 0.001f,
+                _camera.OrthoScaler - (float)e.Delta.Y * 0.01f,
                 0.001f,
                 0.1f
             );
@@ -114,25 +114,27 @@ public class PETRendererController : OpenGlControlBase
     }
 
     private void OnPopulateScene(Scene scene) {
-        var ground = new MeshNode(_gl,
+        var insideGround = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/trueTexturedGround.obj"),
             new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
-            new Texture(_gl, "3DRenderer/textures/testNormal.png"),
             "Ground");
-        ground.NormalStrength = 0.2f;
-        scene.AddToRoot(ground);
+        //insideGround.LocalTransform = new Transform { Position = new Vector3(0,0.01f,0) };
+        scene.AddToRoot(insideGround);
 
-        var parentBall = new MeshNode(_gl,
-            new Model(_gl, "3DRenderer/models/cineball.obj"),
-            new Texture(_gl, "3DRenderer/textures/absolute.png"),
+        //var groundGrid = new MeshNode(_gl,
+        //    new Model(_gl, "3DRenderer/models/groundGrid.obj"),
+        //    new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
+        //    "Grid");
+        //insideGround.LocalTransform = new Transform { Position = new Vector3(0, 0.01f, 0) };
+        //scene.AddToRoot(groundGrid);
+
+
+        var outsideGround = new MeshNode(_gl,
+            new Model(_gl, "3DRenderer/models/outsideGround.obj"),
+            new Texture(_gl, "3DRenderer/textures/marsSurface.png"),
+            new Texture(_gl, "3DRenderer/textures/marsSurface_normal.png"),
             "ParentBall");
-        scene.AddToRoot(parentBall);
-
-        var childBall = new MeshNode(_gl,
-            new Model(_gl, "3DRenderer/models/cineball.obj"),
-            new Texture(_gl, "3DRenderer/textures/testTex.png"),
-            "ChildBall");
-        childBall.LocalTransform = new Transform { Position = new Vector3(2, 0, 0) };
-        parentBall.AddChild(childBall);
+        outsideGround.NormalStrength = 0.5f;
+        scene.AddToRoot(outsideGround);
     }
 }
