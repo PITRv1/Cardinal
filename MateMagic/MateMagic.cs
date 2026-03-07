@@ -3,11 +3,11 @@ using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace MarsRoverCompetition
+namespace Cardinal
 {
-    class Program
+    static class RoverSolver
     {
-        static void Main(string[] args)
+        public static void Run(string[] args)
         {
             string mapFile = args.Length > 0 ? args[0] : "mars_map_50x50.csv";
             int hours = args.Length > 1 ? int.Parse(args[1]) : 48;
@@ -311,6 +311,7 @@ namespace MarsRoverCompetition
     {
         public int W, H;
         public char[,] Grid;
+        public List<List<NodeBase>> WorldMap = new();
 
         public Point Start;
         public List<Point> Minerals = new();
@@ -330,12 +331,17 @@ namespace MarsRoverCompetition
             for (int y = 0; y < h; y++)
             {
                 var row = lines[y].Split(',');
+                map.WorldMap.Add(new List<NodeBase>());
 
                 for (int x = 0; x < w; x++)
                 {
                     char c = row[x].Trim()[0];
 
                     map.Grid[x, y] = c;
+
+                    var node = new NodeBase();
+                    node.SetCharacter(c);
+                    map.WorldMap[y].Add(node);
 
                     if (c == 'S') map.Start = new Point(x, y);
 
@@ -353,6 +359,45 @@ namespace MarsRoverCompetition
 
             return Grid[x, y] != '#';
         }
+    }
+
+    public class NodeBase
+    {
+        public Vector2 Coords { get; private set; }
+        public char Character { get; private set; }
+        public List<NodeBase> Neighbors { get; private set; } = new();
+        public List<NodeBase> AllNeighbors { get; private set; } = new();
+        public ConsoleColor Color { get; private set; } = ConsoleColor.Black;
+        public bool Walkable => Character != '#';
+        public bool HasMineral => Character is 'G' or 'Y' or 'B';
+        public int ClusterIndex = -1;
+
+        public void SetColor(ConsoleColor c) => Color = c;
+        public void SetCoords(int x, int y) => Coords = new Vector2(x, y);
+        public void SetCharacter(char c) => Character = c;
+        public float GetDistance(NodeBase other) => Coords.GetDistance(other.Coords);
+
+        private static readonly Vector2[] Dirs = {
+            new(0,1), new(-1,0), new(0,-1), new(1,0),
+            new(1,1), new(1,-1), new(-1,-1), new(-1,1)
+        };
+    }
+
+    public struct Vector2(float x, float y)
+    {
+        public float X = x;
+        public float Y = y;
+
+        public float GetDistance(Vector2 other)
+        {
+            float dx = Math.Abs(X - other.X);
+            float dy = Math.Abs(Y - other.Y);
+            float low = Math.Min(dx, dy), high = Math.Max(dx, dy);
+            return low * 14 + (high - low) * 10;
+        }
+
+        public static Vector2 operator +(Vector2 a, Vector2 b) => new(a.X + b.X, a.Y + b.Y);
+        public override string ToString() => $"({X},{Y})";
     }
 
     class Path

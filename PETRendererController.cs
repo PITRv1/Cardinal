@@ -61,7 +61,7 @@ public class PETRendererController : OpenGlControlBase
             if (e.Pointer.Captured == _mainWindow)
             {
                 var mousePos = e.GetPosition(_mainWindow);
-                _camera.ProcessMouseMove(new Vector2((float)mousePos.X, (float)mousePos.Y));
+                _camera.ProcessMouseMove(new System.Numerics.Vector2((float)mousePos.X, (float)mousePos.Y));
             }
             };
 

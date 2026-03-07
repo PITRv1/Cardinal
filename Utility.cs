@@ -1,7 +1,6 @@
 using System;
 using Avalonia;
 using Avalonia.Media;
-using VadaszTest;
 
 static class Utility
 {

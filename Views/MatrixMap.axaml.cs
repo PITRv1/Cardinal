@@ -7,7 +7,6 @@ using Avalonia.Media.Immutable;
 using Avalonia.Metadata;
 using Cardinal.ViewModels;
 using Tmds.DBus.Protocol;
-using VadaszTest;
 
 namespace Cardinal.Views;
 
@@ -20,7 +19,7 @@ public partial class MatrixMap : UserControl
     {
         InitializeComponent();
         DataContext = new MatrixMapViewModel();
-        map.SetMap("./MateMagic/maps/mars_map_50x50.csv");
+        map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
 
         LayoutUpdated += OnLayoutUpdated;
     }

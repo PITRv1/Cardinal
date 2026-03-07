@@ -1,0 +1,185 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:viewmodels\\dashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\3drenderer\\shaders\\skybox.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\shaders\\skybox.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\3drenderer\\cubemaptexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\cubemaptexture.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\3drenderer\\meshnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\meshnode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MatrixMap.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\MatrixMap.axaml.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
+              "RelativeToolTip": "Views\\MatrixMap.axaml.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T17:09:11.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:46.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MateMagic.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
+              "RelativeDocumentMoniker": "MateMagic\\MateMagic.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
+              "RelativeToolTip": "MateMagic\\MateMagic.cs",
+              "ViewState": "AgIAAEIBAAAAAAAAAAAAwFcBAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:40.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Camera.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\Camera.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Camera.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\Camera.cs",
+              "RelativeToolTip": "3DRenderer\\Camera.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:30.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PETRendererController.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
+              "RelativeDocumentMoniker": "PETRendererController.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
+              "RelativeToolTip": "PETRendererController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:30.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "skybox.vert",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\skybox.vert",
+              "RelativeDocumentMoniker": "3DRenderer\\shaders\\skybox.vert",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\skybox.vert",
+              "RelativeToolTip": "3DRenderer\\shaders\\skybox.vert",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-07T15:18:30.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DashBoardViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\DashBoardViewModel.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
+              "RelativeToolTip": "ViewModels\\DashBoardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:30.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Renderer.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
+              "RelativeToolTip": "3DRenderer\\Renderer.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAqwCQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:30.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MeshNode.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\MeshNode.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\MeshNode.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\MeshNode.cs",
+              "RelativeToolTip": "3DRenderer\\MeshNode.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:30.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CubemapTexture.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\CubemapTexture.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\CubemapTexture.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\CubemapTexture.cs",
+              "RelativeToolTip": "3DRenderer\\CubemapTexture.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T15:18:30.403Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
