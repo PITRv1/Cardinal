@@ -341,6 +341,7 @@ namespace Cardinal
 
                     var node = new NodeBase();
                     node.SetCharacter(c);
+                    node.SetCoords(y, x);
                     map.WorldMap[y].Add(node);
 
                     if (c == 'S') map.Start = new Point(x, y);
