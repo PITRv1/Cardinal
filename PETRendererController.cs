@@ -10,11 +10,12 @@ using Silk.NET.OpenGL;
 using System;
 using System.Diagnostics;
 using System.Numerics;
-using Shader = PETRenderer.Shader;
-using Vector2 = System.Numerics.Vector2;
-using Texture = PETRenderer.Texture;
+using System.Text.RegularExpressions;
 using Camera = PETRenderer.Camera;
 using Scene = PETRenderer.Scene;
+using Shader = PETRenderer.Shader;
+using Texture = PETRenderer.Texture;
+using Vector2 = System.Numerics.Vector2;
 
 
 namespace Cardinal;
@@ -30,6 +31,8 @@ public class PETRendererController : OpenGlControlBase
 
     private Stopwatch _stopwatch = Stopwatch.StartNew();
     private double _lastTime = 0;
+
+    private Map map = new();
 
     protected override void OnOpenGlInit(GlInterface glInterface) {
         double scaling = VisualRoot?.RenderScaling ?? 1.0;
@@ -78,9 +81,11 @@ public class PETRendererController : OpenGlControlBase
         };
 
 
+        map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
+
+
         _renderer.Initialize(_gl, width, height);
         _scene.Load(_renderer.Gl);
-
     }
 
     protected override void OnOpenGlRender(GlInterface glInterface, int fb) {
@@ -121,9 +126,8 @@ public class PETRendererController : OpenGlControlBase
         //Map
         var insideGround = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/insideGround.obj"),
-            new Texture(_gl, "3DRenderer/textures/uvGrid.png", TextureType.None, GLEnum.Linear),
+            new Texture(_gl, "3DRenderer/textures/insideGroundColor.png", TextureType.None, GLEnum.Nearest),
             "insideGround");
-        insideGround.LocalTransform = new Transform { Position = new Vector3(0, 0, 0) };
         scene.AddToRoot(insideGround);
 
         var outsideGround = new MeshNode(_gl,
@@ -131,8 +135,7 @@ public class PETRendererController : OpenGlControlBase
             new Texture(_gl, "3DRenderer/textures/marsSurface.png"),
             new Texture(_gl, "3DRenderer/textures/marsSurface_normal.png", TextureType.Normals, GLEnum.Linear),
             "outsideGround");
-        outsideGround.NormalStrength = 0.5f;
-        outsideGround.LocalTransform = new Transform { Position = new Vector3(0, -0.01f, 0) }; // tiny Y offset so it doesn't z-fight
+        outsideGround.NormalStrength = 0.2f;
         scene.AddToRoot(outsideGround);
         //---
 
@@ -140,26 +143,74 @@ public class PETRendererController : OpenGlControlBase
         var roverModel = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/Trichael.obj"),
             new Texture(_gl, "3DRenderer/textures/TrichaelColor.png"),
-            "trichael");
+            "rover");
 
         roverModel.LocalTransform = new Transform {
-            Position = new Vector3(0.5f, 0, 0.5f),
+            Position = new Vector3(24.5f, 0, 24.5f),
             Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), MathHelper.DegreesToRadians(180f))
         };
         scene.AddToRoot(roverModel);
         //---
 
+        var mapHolderNode = new SceneNode("MyNode");
+        mapHolderNode.LocalTransform = new Transform { Position = new Vector3(-24.5f, 0, -24.5f) };
+        scene.AddToRoot(mapHolderNode);
+
         //Crystal
-        var crystalTest = new MeshNode(_gl,
-            new Model(_gl, "3DRenderer/models/Crystal.obj"),
-            new Texture(_gl, "3DRenderer/textures/BlueCrystalColor.png"),
-            "crystalTest");
+        foreach (var currentWorldRow in map.WorldMap) {
 
-        crystalTest.LocalTransform = new Transform {
-            Position = new Vector3(-0.5f, 0, -0.5f),
-            Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), MathHelper.DegreesToRadians(180f))
-        };
-        scene.AddToRoot(crystalTest);
+            foreach (var node in currentWorldRow) {
 
+                switch (node.Character) {
+                    case '#':
+                        var rockModel = new MeshNode(_gl,
+                        new Model(_gl, "3DRenderer/models/Rock.obj"),
+                        new Texture(_gl, "3DRenderer/textures/absolute.png"),
+                        $"rock{node.ToString()}");
+
+                        rockModel.LocalTransform = new Transform {
+                            Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
+                        };
+                        mapHolderNode.AddChild(rockModel);
+                        break;
+                    case 'B':
+                        var blueCrystalModel = new MeshNode(_gl,
+                        new Model(_gl, "3DRenderer/models/Crystal.obj"),
+                        new Texture(_gl, "3DRenderer/textures/BlueCrystalColor.png"),
+                        $"crystal{node.ToString()}");
+
+                        blueCrystalModel.LocalTransform = new Transform {
+                            Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
+                        };
+                        mapHolderNode.AddChild(blueCrystalModel);
+                        break;
+                    case 'Y':
+                        var yellowCrystalModel = new MeshNode(_gl,
+                        new Model(_gl, "3DRenderer/models/Crystal.obj"),
+                        new Texture(_gl, "3DRenderer/textures/YellowCrystalColor.png"),
+                        $"crystal{node.ToString()}");
+
+                        yellowCrystalModel.LocalTransform = new Transform {
+                            Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
+                        };
+                        mapHolderNode.AddChild(yellowCrystalModel);
+                        break;
+                    case 'G':
+                        var greenCrystalModel = new MeshNode(_gl,
+                        new Model(_gl, "3DRenderer/models/Crystal.obj"),
+                        new Texture(_gl, "3DRenderer/textures/GreenCrystalColor.png"),
+                        $"crystal{node.ToString()}");
+
+                        greenCrystalModel.LocalTransform = new Transform {
+                            Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
+                        };
+                        mapHolderNode.AddChild(greenCrystalModel);
+
+                        break;
+                    case 'S':
+                        break;
+                }
+            }
+        }
     }
 }

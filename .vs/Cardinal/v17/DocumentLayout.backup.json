@@ -39,8 +39,8 @@
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\_mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:_mainwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -103,14 +103,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Global.cs",
-              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Global.cs",
-              "RelativeDocumentMoniker": "Global.cs",
-              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Global.cs",
-              "RelativeToolTip": "Global.cs",
+              "Title": "_mainWindow.cs",
+              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\_mainWindow.cs",
+              "RelativeDocumentMoniker": "_mainWindow.cs",
+              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\_mainWindow.cs",
+              "RelativeToolTip": "_mainWindow.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T20:10:30.518Z"
+              "WhenOpened": "2026-03-06T20:10:30.518Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -132,7 +133,7 @@
               "RelativeDocumentMoniker": "PETRendererController.cs",
               "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
               "RelativeToolTip": "PETRendererController.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAuwHkAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAUwH8AAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T20:21:03.532Z",
               "EditorCaption": ""
