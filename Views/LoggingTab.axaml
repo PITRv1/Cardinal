@@ -8,9 +8,12 @@
              x:Class="Cardinal.Views.LoggingTab"
              x:DataType="vm:LoggingTabViewModel">
   
-  <Border Classes="TabBorder">
-    <Grid Classes="Tab">
-      <Label>LoggingTab</Label>
-    </Grid>
+  <Border Classes="Vertical">
+    <Border Classes="Horizontal">
+      <Grid Classes="Tab">
+        <Label>LoggingTab</Label>
+      </Grid>
+    </Border>
   </Border>
+
 </UserControl>

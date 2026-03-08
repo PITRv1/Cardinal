@@ -13,15 +13,19 @@ namespace Cardinal.Views;
 public partial class MatrixMap : UserControl
 {
     private Map map = new();
-    const double LeastSize = 30.0;
+    const double LeastSize = 10.0;
     private double minSizeValue;
     public MatrixMap()
     {
         InitializeComponent();
         DataContext = new MatrixMapViewModel();
-        map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
 
-        LayoutUpdated += OnLayoutUpdated;
+        
+        // map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
+
+        // Console.WriteLine(map.WorldMap[2][4].Coords);
+
+        // LayoutUpdated += OnLayoutUpdated;
     }
 
     private void OnLayoutUpdated(object? sender, EventArgs e)
@@ -87,6 +91,7 @@ public partial class MatrixMap : UserControl
                 }
 
                 itemBorder.Child = nodeUIElement;
+
 
                 Grid.SetColumn(itemBorder, (int)node.Coords.X);
                 Grid.SetRow(itemBorder, (int)node.Coords.Y);

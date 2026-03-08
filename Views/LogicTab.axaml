@@ -8,9 +8,11 @@
              x:Class="Cardinal.Views.LogicTab"
              x:DataType="vm:LogicTabViewModel">
   
-  <Border Classes="TabBorder">
-    <Grid Classes="Tab">
-      <Label>LogicTab</Label>
-    </Grid>
+  <Border Classes="Vertical">
+    <Border Classes="Horizontal">
+      <Grid Classes="Tab">
+        <Label>LogicTab</Label>
+      </Grid>
+    </Border>
   </Border>
 </UserControl>

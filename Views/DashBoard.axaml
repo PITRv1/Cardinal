@@ -8,31 +8,50 @@
              x:Class="Cardinal.Views.DashBoard"
              x:DataType="vm:DashBoardViewModel">
   
-  <Grid ColumnDefinitions="1*, 1*" Classes="StaticWidgetMenu" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
-    <Grid RowDefinitions="1*" RowSpacing="10" Margin="10,10,30,10">
-      <Border Classes="StaticWidgetOuterBorder">
-        <Border Classes="StaticWidgetInnerBorder" >
-          <Grid>
-			      <local:PETRendererController HorizontalAlignment="Center" VerticalAlignment="Center" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
-          </Grid>
+  <Grid RowDefinitions="*, Auto" Classes="StaticWidgetMenu" Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}">
+    <Grid ColumnDefinitions="1*, 1*" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+      <Grid Margin="10,10,30,10">
+        <Border Classes="Border Vertical">
+          <Border Classes="Border Horizontal">
+              <Grid>
+                <Grid>
+                  <local:PETRendererController Height="{Binding $parent.Bounds.Height}" Width="{Binding $parent.Bounds.Width}"/>
+                </Grid>
+                <Grid ColumnDefinitions="1*, 1*, 1*" RowDefinitions="1*, 1*,1*" Margin="5">
+                  <ContentControl Content="{Binding MatrixMapInstance}"></ContentControl>
+                </Grid>
+              </Grid>
+          </Border>
         </Border>
-      </Border>
-      <!-- <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" ColumnSpacing="10">
-        <ContentControl Content="{Binding MatrixMapInstance}"></ContentControl>
-      </Grid> -->
+      </Grid>
+      <Grid Grid.Column="1" Margin="0,10,0,10">
+        <TabControl Name="Tabs">
+          <TabItem Header="Rover" ZIndex="1">
+            <ContentControl Content="{Binding RoverTabInstance}" Classes="TabContent"></ContentControl>
+          </TabItem>
+          <TabItem Header="Logic">
+            <ContentControl Content="{Binding LogicTabInstance}" Classes="TabContent"></ContentControl>
+          </TabItem>
+          <TabItem Header="Logs">
+            <ContentControl Content="{Binding LoggingTabInstance}" Classes="TabContent"></ContentControl>
+          </TabItem>
+        </TabControl>
+      </Grid>
     </Grid>
-    <Grid Grid.Column="1" Margin="0,10,0,10">
-      <TabControl Name="Tabs">
-        <TabItem Header="Rover" ZIndex="1">
-          <ContentControl Content="{Binding RoverTabInstance}" Classes="TabContent"></ContentControl>
-        </TabItem>
-        <TabItem Header="Logic">
-          <ContentControl Content="{Binding LogicTabInstance}" Classes="TabContent"></ContentControl>
-        </TabItem>
-        <TabItem Header="Logs">
-          <ContentControl Content="{Binding LoggingTabInstance}" Classes="TabContent"></ContentControl>
-        </TabItem>
-      </TabControl>
+    <Grid Grid.Row="1" RowDefinitions="1*, 1*, 2*">
+      <Grid Height="20" Background="{DynamicResource ResourceKey=DarkGray}"></Grid>
+      <Slider Grid.Row="1"></Slider>
+      <Grid Grid.Row="2" ColumnDefinitions="1*,1*,1*" Width="{Binding $parent.Bounds.Width}">
+        <Label HorizontalAlignment="Left">00:00-00:00</Label>
+        <Grid Grid.Column="1" ColumnDefinitions="1*,1*,1*,1*" HorizontalAlignment="Center" MinWidth="100">
+          <Button Content="X"></Button>
+          <Button Grid.Column="1" Content="P"></Button>
+          <Button Grid.Column="2" Content="2x"></Button>
+          <Button Grid.Column="3" Content="X"></Button>
+        </Grid>
+        <Button Grid.Column="2" Content="S" HorizontalAlignment="Right"></Button>
+      </Grid>
     </Grid>
   </Grid>
+
 </UserControl>

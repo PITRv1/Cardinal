@@ -8,12 +8,14 @@
              x:Class="Cardinal.Views.MatrixMap"
              x:DataType="vm:MatrixMapViewModel">
 
-    <Border Classes="StaticWidgetOuterBorder" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
-      <Border Classes="StaticWidgetInnerBorder">
-        <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center">
-          <Grid Name="MatrixMapGrid" Classes="StaticWidget">
-          </Grid>
-        </ScrollViewer>
+    <Border Classes="Vertical MatrixMapBorder">
+      <Border Classes="Horizontal MatrixMapBorder">
+        <Border>
+          <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
+            <Grid Name="MatrixMapGrid" Classes="StaticWidget">
+            </Grid>
+          </ScrollViewer>
+        </Border>
       </Border>
     </Border>
 </UserControl>
