@@ -34,6 +34,9 @@ namespace PETRenderer
             VAO.VertexAttributePointer(2, 3, VertexAttribPointerType.Float, 14, 6);  // tangent
             VAO.VertexAttributePointer(3, 3, VertexAttribPointerType.Float, 14, 9);  // bitangent
             VAO.VertexAttributePointer(4, 2, VertexAttribPointerType.Float, 14, 12); // uv
+            GL.BindVertexArray(0);
+            GL.BindBuffer(BufferTargetARB.ArrayBuffer, 0);
+            GL.BindBuffer(BufferTargetARB.ElementArrayBuffer, 0);
 
         }
 

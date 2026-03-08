@@ -42,6 +42,8 @@ namespace PETRenderer
         }
 
         public virtual void Render(Shader shader, Matrix4x4 view, Matrix4x4 projection) {
+
+
             foreach (var child in _children)
                 child.Render(shader, view, projection);
         }

@@ -4,14 +4,18 @@ using Avalonia.OpenGL;
 using Avalonia.OpenGL.Controls;
 using Cardinal.Views;
 using PETRenderer;
+using Silk.NET.Assimp;
 using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using System;
 using System.Diagnostics;
 using System.Numerics;
 using Shader = PETRenderer.Shader;
-using Texture = PETRenderer.Texture;
 using Vector2 = System.Numerics.Vector2;
+using Texture = PETRenderer.Texture;
+using Camera = PETRenderer.Camera;
+using Scene = PETRenderer.Scene;
+
 
 namespace Cardinal;
 
@@ -67,7 +71,7 @@ public class PETRendererController : OpenGlControlBase
 
         _mainWindow.PointerWheelChanged += (sender, e) => {
             _camera.OrthoScaler = Math.Clamp(
-                _camera.OrthoScaler - (float)e.Delta.Y * 0.01f,
+                _camera.OrthoScaler - (float)e.Delta.Y * 0.005f,
                 0.001f,
                 0.1f
             );
@@ -114,28 +118,48 @@ public class PETRendererController : OpenGlControlBase
     }
 
     private void OnPopulateScene(Scene scene) {
+        //Map
         var insideGround = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/insideGround.obj"),
-            new Texture(_gl, "3DRenderer/textures/uvGrid.png"),
-            "Ground");
+            new Texture(_gl, "3DRenderer/textures/uvGrid.png", TextureType.None, GLEnum.Linear),
+            "insideGround");
+        insideGround.LocalTransform = new Transform { Position = new Vector3(0, 0, 0) };
         scene.AddToRoot(insideGround);
-
-
 
         var outsideGround = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/outsideGround.obj"),
             new Texture(_gl, "3DRenderer/textures/marsSurface.png"),
-            new Texture(_gl, "3DRenderer/textures/marsSurface_normal.png"),
-            "ParentBall");
+            new Texture(_gl, "3DRenderer/textures/marsSurface_normal.png", TextureType.Normals, GLEnum.Linear),
+            "outsideGround");
         outsideGround.NormalStrength = 0.5f;
+        outsideGround.LocalTransform = new Transform { Position = new Vector3(0, -0.01f, 0) }; // tiny Y offset so it doesn't z-fight
         scene.AddToRoot(outsideGround);
+        //---
 
+        //Tri.c.h.a.e.l.
         var roverModel = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/Trichael.obj"),
             new Texture(_gl, "3DRenderer/textures/TrichaelColor.png"),
-            "ParentBall");
-        //roverModel.LocalTransform.Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0,1,0), -90);
-        roverModel.LocalTransform = new Transform {Position = new Vector3(0.5f, 0, 0.5f) , Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), -180) };
+            "trichael");
+
+        roverModel.LocalTransform = new Transform {
+            Position = new Vector3(0.5f, 0, 0.5f),
+            Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), MathHelper.DegreesToRadians(180f))
+        };
         scene.AddToRoot(roverModel);
+        //---
+
+        //Crystal
+        var crystalTest = new MeshNode(_gl,
+            new Model(_gl, "3DRenderer/models/Crystal.obj"),
+            new Texture(_gl, "3DRenderer/textures/BlueCrystalColor.png"),
+            "crystalTest");
+
+        crystalTest.LocalTransform = new Transform {
+            Position = new Vector3(-0.5f, 0, -0.5f),
+            Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), MathHelper.DegreesToRadians(180f))
+        };
+        scene.AddToRoot(crystalTest);
+
     }
 }

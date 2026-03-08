@@ -20,7 +20,7 @@ namespace PETRenderer
             Name = name;
         }
 
-        public MeshNode(GL gl, Model model, Texture texture, Texture? normalMap = null, string name = "MeshNode") {
+        public MeshNode(GL gl, Model model, Texture texture, Texture normalMap, string name = "MeshNode") {
             _gl = gl;
             Model = model;
             Texture = texture;
@@ -30,6 +30,8 @@ namespace PETRenderer
 
         public override unsafe void Render(Shader shader, Matrix4x4 view, Matrix4x4 projection) 
         {
+
+
             foreach (var mesh in Model.Meshes)
             {
                 mesh.Bind();
