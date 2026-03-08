@@ -10,8 +10,8 @@ sealed class Program
     // yet and stuff might break.
     [STAThread]
     public static void Main(string[] args) {
-        if (args.Length == 0) RoverSolver.Run(new string[] { "mars_map_50x50.csv", "490" });
-        else if (args[0] == "-ui") BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+        if (args[0] == "-ui") BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+        else if (args.Length == 1) RoverSolver.Run(new string[] { "mars_map_50x50.csv", args[0] });
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
