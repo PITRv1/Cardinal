@@ -1,12 +1,8 @@
 using System;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using Avalonia.Media.Immutable;
-using Avalonia.Metadata;
 using Cardinal.ViewModels;
-using Tmds.DBus.Protocol;
 
 namespace Cardinal.Views;
 
@@ -20,12 +16,9 @@ public partial class MatrixMap : UserControl
         InitializeComponent();
         DataContext = new MatrixMapViewModel();
 
-        
-        // map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
+        map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
 
-        // Console.WriteLine(map.WorldMap[2][4].Coords);
-
-        // LayoutUpdated += OnLayoutUpdated;
+        LayoutUpdated += OnLayoutUpdated;
     }
 
     private void OnLayoutUpdated(object? sender, EventArgs e)
@@ -37,17 +30,15 @@ public partial class MatrixMap : UserControl
 
     private void SetupGrid()
     {
+        MatrixMapGrid.ColumnDefinitions.Clear();
+        MatrixMapGrid.RowDefinitions.Clear();
+        MatrixMapGrid.Children.Clear();
+
         map.WorldMap[0].ForEach((idk) => MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse($"1*")}));
         map.WorldMap.ForEach((idk) => MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse($"1*")}));
 
         minSizeValue = MatrixMapGrid.RowDefinitions.Count < MatrixMapGrid.ColumnDefinitions.Count ? MatrixMapGrid.Bounds.Height / MatrixMapGrid.ColumnDefinitions.Count : MatrixMapGrid.Bounds.Width / MatrixMapGrid.RowDefinitions.Count;
         minSizeValue = minSizeValue < LeastSize ? LeastSize : minSizeValue;
-
-        // MatrixMapGrid.ColumnDefinitions.Clear();
-        // MatrixMapGrid.RowDefinitions.Clear();
-
-        // map.WorldMap[0].ForEach((idk) => MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse($"{minSizeValue}")}));
-        // map.WorldMap.ForEach((idk) => MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse($"{minSizeValue}")}));
     }
 
     private void LoadData()
@@ -59,7 +50,7 @@ public partial class MatrixMap : UserControl
                 Border itemBorder = new Border
                 {
                     BorderBrush = new SolidColorBrush{Color=Colors.Green},
-                    BorderThickness = Thickness.Parse("1.5")
+                    BorderThickness = Thickness.Parse("1")
                 };
 
                 Label nodeUIElement = new Label
@@ -68,7 +59,7 @@ public partial class MatrixMap : UserControl
                     Foreground = new SolidColorBrush { Color = node.Character == '.' ? Colors.Transparent : Colors.White },
                     VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
                     HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-                    FontSize = minSizeValue * .9f
+                    FontSize = minSizeValue * 1.1f
                 };
 
                 switch (node.Character)

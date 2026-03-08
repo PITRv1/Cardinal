@@ -13,6 +13,7 @@
         <Border>
           <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent.Bounds.Width}" Height="{Binding $parent.Bounds.Height}">
             <Grid Name="MatrixMapGrid" Classes="StaticWidget">
+              <Label FontSize="20" Foreground="{DynamicResource ResourceKey=LightGreen}">MatrixMap Unavailable</Label>
             </Grid>
           </ScrollViewer>
         </Border>

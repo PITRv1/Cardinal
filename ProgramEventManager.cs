@@ -36,13 +36,13 @@ namespace Cardinal
 
     public class ProgramEventManager
     {
-        public event Action<StepData> StepDataSent;
+        public event Action<StepData>? StepDataSent;
 
         private int numberOfMinerals = 0;
         private List<StepData> stepDataList = [];
 
         public void LoadDataFromFile (string dataFile, bool skipFirstLine = true) {
-            List<string> data = File.ReadAllLines(dataFile).ToList<string>();
+            List<string> data = File.ReadAllLines(dataFile).ToList();
             if (skipFirstLine) data.RemoveAt(0);
 
             numberOfMinerals = int.Parse(data[0].Split(',')[9]);
@@ -69,7 +69,11 @@ namespace Cardinal
                     },
                     collectedMineralAmount = int.Parse(elements[8])
                 };
-            }
+
+                stepDataList.Add(currentStepData);
+            };
+
+
         }
 
         private StepData GetStepDataAtTick(int tick) {

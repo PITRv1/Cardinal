@@ -14,8 +14,6 @@ public partial class DashBoard : UserControl
     {
         InitializeComponent();
         DataContext = new DashBoardViewModel();
-        // Global.PETrendererMovementHandler = PETrendererMovementHandler;
-
-    //     PETrendererMovementHandler.PointerMoved += Shit;
+        Global.DragDetector = PointerCathcer;
     }
 }
