@@ -29,6 +29,10 @@ namespace Cardinal
             File.WriteAllLines("route.txt", result.Path.Select(p => $"{p.X},{p.Y}"));
 
             Console.WriteLine("Route saved to route.txt");
+
+            File.WriteAllLines("mission_log.csv",
+            solver.MissionLog.Select(l =>
+                $"{l.Tick},{l.Hour},{l.X},{l.Y},{l.Speed},{l.Energy},{l.Minerals},{l.Day}"));
         }
 
         static List<List<Point>> ClusterMinerals(List<Point> minerals, int radius)
@@ -65,11 +69,24 @@ namespace Cardinal
         }
     }
 
+    class LogEntry
+    {
+        public int Tick;
+        public double Hour;
+        public int X;
+        public int Y;
+        public int Speed;
+        public int Energy;
+        public int Minerals;
+        public string Day;
+    }
+
     class Solver
     {
         Map map;
         List<List<Point>> clusters;
         int timeLimit;
+        public List<LogEntry> MissionLog = new();
 
         const int DAY = 32;
         const int NIGHT = 16;
@@ -200,6 +217,18 @@ namespace Cardinal
                     return null;
 
                 collected++;
+
+                MissionLog.Add(new LogEntry
+                {
+                    Tick = time,
+                    Hour = time * 0.5,
+                    X = m.X,
+                    Y = m.Y,
+                    Speed = 0,
+                    Energy = energy,
+                    Minerals = collected,
+                    Day = isDay ? "day" : "night"
+                });
             }
 
             var visited = new HashSet<int>(stateAfterMove.Visited);
@@ -249,6 +278,18 @@ namespace Cardinal
                     return null;
 
                 newPath.Add(step);
+
+                MissionLog.Add(new LogEntry
+                {
+                    Tick = time,
+                    Hour = time * 0.5,
+                    X = step.X,
+                    Y = step.Y,
+                    Speed = speed,
+                    Energy = energy,
+                    Minerals = state.Minerals,
+                    Day = isDay ? "day" : "night"
+                });
             }
 
             if (target != 0)
