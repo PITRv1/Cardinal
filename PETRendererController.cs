@@ -23,6 +23,7 @@ namespace Cardinal;
 
 public class PETRendererController : OpenGlControlBase
 {
+    public static event EventHandler<EventArgs>? MineralsLoaded;
     private GL _gl;
     private Camera _camera;
     private Scene _scene;
@@ -212,5 +213,7 @@ public class PETRendererController : OpenGlControlBase
                 }
             }
         }
+
+        MineralsLoaded?.Invoke(null, EventArgs.Empty);
     }
 }

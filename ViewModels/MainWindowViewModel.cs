@@ -6,5 +6,11 @@ namespace Cardinal.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    [ObservableProperty] UserControl dashBoardInstance = new DashBoard();
+    [ObservableProperty] LoadingScreen loadingScreenInstance = new();
+    [ObservableProperty] DashBoard dashboardInstance = new();
+
+    public MainWindowViewModel()
+    {
+        loadingScreenInstance.dashBoardInstance = dashboardInstance;
+    }
 }

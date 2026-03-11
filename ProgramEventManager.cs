@@ -36,6 +36,8 @@ namespace Cardinal
 
     public class ProgramEventManager
     {
+        public static event EventHandler<EventArgs>? FileLoaded;
+
         public event Action<StepData>? StepDataSent;
 
         private int numberOfMinerals = 0;
@@ -73,7 +75,7 @@ namespace Cardinal
                 stepDataList.Add(currentStepData);
             };
 
-
+            FileLoaded?.Invoke(null, EventArgs.Empty);
         }
 
         private StepData GetStepDataAtTick(int tick) {

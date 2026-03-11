@@ -27,15 +27,14 @@ public partial class MatrixMap : UserControl
         SetupGrid();
         LoadData();
     }
-
     private void SetupGrid()
     {
         MatrixMapGrid.ColumnDefinitions.Clear();
         MatrixMapGrid.RowDefinitions.Clear();
         MatrixMapGrid.Children.Clear();
 
-        map.WorldMap[0].ForEach((idk) => MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse($"1*")}));
-        map.WorldMap.ForEach((idk) => MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse($"1*")}));
+        map.WorldMap[0].ForEach((idk) => MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse("1*")}));
+        map.WorldMap.ForEach((idk) => MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse("1*")}));
 
         minSizeValue = MatrixMapGrid.RowDefinitions.Count < MatrixMapGrid.ColumnDefinitions.Count ? MatrixMapGrid.Bounds.Height / MatrixMapGrid.ColumnDefinitions.Count : MatrixMapGrid.Bounds.Width / MatrixMapGrid.RowDefinitions.Count;
         minSizeValue = minSizeValue < LeastSize ? LeastSize : minSizeValue;
@@ -43,6 +42,8 @@ public partial class MatrixMap : UserControl
 
     private void LoadData()
     {
+        Console.WriteLine($"Working with these: {minSizeValue}, {MatrixMapGrid.Bounds.Width}:{MatrixMapGrid.Bounds.Height}");
+
         foreach (var currentWorldRow in map.WorldMap)
         {
             foreach (var node in currentWorldRow)
@@ -78,6 +79,7 @@ public partial class MatrixMap : UserControl
                         break;
                     case 'S':
                         nodeUIElement.Foreground = Utility.GetResourceByName<IBrush>("Red");
+                        MatrixScrollViewer.Offset = new Vector(node.Coords.X * minSizeValue * 1.25, node.Coords.Y * minSizeValue * 1.25);
                         break;
                 }
 
