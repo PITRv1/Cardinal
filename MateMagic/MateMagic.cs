@@ -29,10 +29,10 @@ namespace Cardinal
             File.WriteAllLines("route.txt", result.Path.Select(p => $"{p.X},{p.Y}"));
 
             Console.WriteLine("Route saved to route.txt");
-
-            File.WriteAllLines("mission_log.csv",
-            solver.MissionLog.Select(l =>
-                $"{l.Tick},{l.Hour},{l.X},{l.Y},{l.Speed},{l.Energy},{l.Minerals},{l.Day}"));
+            var mission_log = new List<string> { "Tick,Hour,X,Y,Speed,Energy,Minerals,Action,DayTime" };
+            mission_log.AddRange(solver.MissionLog.Select(l =>
+                $"{l.Tick};{l.Hour};{l.X};{l.Y};{l.Speed};{l.Energy};{l.Minerals};{l.Action};{l.Day}"));
+            File.WriteAllLines("mission_log.csv", mission_log);
         }
 
         static List<List<Point>> ClusterMinerals(List<Point> minerals, int radius)
@@ -78,6 +78,7 @@ namespace Cardinal
         public int Speed;
         public int Energy;
         public int Minerals;
+        public string Action;
         public string Day;
     }
 
@@ -227,6 +228,7 @@ namespace Cardinal
                     Speed = 0,
                     Energy = energy,
                     Minerals = collected,
+                    Action = "Mining",
                     Day = isDay ? "day" : "night"
                 });
             }
@@ -288,6 +290,7 @@ namespace Cardinal
                     Speed = speed,
                     Energy = energy,
                     Minerals = state.Minerals,
+                    Action = "Navigating",
                     Day = isDay ? "day" : "night"
                 });
             }

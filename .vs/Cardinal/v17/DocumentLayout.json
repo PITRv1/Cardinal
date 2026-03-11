@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\",
+  "WorkspaceRootPath": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\peter\\documents\\github\\cardinal\\views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,15 +30,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "MateMagic.cs",
+              "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
+              "RelativeDocumentMoniker": "MateMagic\\MateMagic.cs",
+              "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
+              "RelativeToolTip": "MateMagic\\MateMagic.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T07:52:25.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MatrixMap.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Views\\MatrixMap.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
               "RelativeDocumentMoniker": "Views\\MatrixMap.axaml.cs",
-              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Views\\MatrixMap.axaml.cs",
+              "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
               "RelativeToolTip": "Views\\MatrixMap.axaml.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAcwCgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -43,37 +60,37 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "ProgramEventManager.cs",
-              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\ProgramEventManager.cs",
+              "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\ProgramEventManager.cs",
               "RelativeDocumentMoniker": "ProgramEventManager.cs",
-              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\ProgramEventManager.cs",
+              "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\ProgramEventManager.cs",
               "RelativeToolTip": "ProgramEventManager.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwFYAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwEUAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T19:55:49.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\Program.cs",
+              "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T19:55:48.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "PETRendererController.cs",
-              "DocumentMoniker": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
+              "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
               "RelativeDocumentMoniker": "PETRendererController.cs",
-              "ToolTip": "C:\\Users\\peter\\Documents\\Github\\Cardinal\\PETRendererController.cs",
+              "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
               "RelativeToolTip": "PETRendererController.cs",
               "ViewState": "AgIAAJkAAAAAAAAAAAAAwJ8AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

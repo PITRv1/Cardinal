@@ -18,8 +18,9 @@ sealed class Program
             //THE PATHFINDING LOGIC NEEDS TO RUN HERE
             //The resulting file path should be passed into the load function below
 
-            Global.ProgramEventManager.LoadDataFromFile("mission_log.csv");
+            RoverSolver.Run(new string[] { "mars_map_50x50.csv", args[1] });
 
+            Global.ProgramEventManager.LoadDataFromFile("mission_log.csv");
 
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }

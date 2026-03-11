@@ -45,29 +45,29 @@ namespace Cardinal
             List<string> data = File.ReadAllLines(dataFile).ToList();
             if (skipFirstLine) data.RemoveAt(0);
 
-            numberOfMinerals = int.Parse(data[0].Split(',')[9]);
+            numberOfMinerals = int.Parse(data[0].Split(';')[6]);
 
             foreach (string line in data) {
-                string[] elements = line.Split(',');
+                string[] elements = line.Split(';');
 
                 StepData currentStepData = new StepData {
                     tick = int.Parse(elements[0]),
                     time = float.Parse(elements[1]),
-                    phase = elements[2] switch {
-                        "Day" => DayPhase.DAY,
-                        "Night" => DayPhase.NIGHT,
-                        _ => throw new Exception($"Unknown day phase: {elements[2]}")
+                    phase = elements[8] switch {
+                        "day" => DayPhase.DAY,
+                        "night" => DayPhase.NIGHT,
+                        _ => throw new Exception($"Unknown day phase: {elements[8]}")
                     },
-                    position = new Vector2(float.Parse(elements[3]), float.Parse(elements[4])),
+                    position = new Vector2(float.Parse(elements[2]), float.Parse(elements[3])),
                     batteryCharge = float.Parse(elements[5]),
-                    speed = int.Parse(elements[6]),
+                    speed = int.Parse(elements[4]),
                     state = elements[7] switch {
                         "Mining" => RoverState.MINING,
                         "Navigating" => RoverState.NAVIGATING,
                         "Returning" => RoverState.RETURNING,
                         _ => throw new Exception($"Unknown rover state: {elements[7]}")
                     },
-                    collectedMineralAmount = int.Parse(elements[8])
+                    collectedMineralAmount = int.Parse(elements[6])
                 };
 
                 stepDataList.Add(currentStepData);
