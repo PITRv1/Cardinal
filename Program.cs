@@ -24,7 +24,7 @@ sealed class Program
 
             BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
         }
-        else if (args.Length == 1) RoverSolver.Run(new string[] { "mars_map_50x50.csv", args[0] });
+        else if (args.Length >= 1) RoverSolver.Run(new string[] { "mars_map_50x50.csv", args[0] });
     }
 
     // Avalonia configuration, don't remove; also used by visual designer.
