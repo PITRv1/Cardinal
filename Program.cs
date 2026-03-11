@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Cardinal.Views;
 using System;
 
 namespace Cardinal;
@@ -13,16 +14,9 @@ sealed class Program
     [STAThread]
     public static void Main(string[] args) {
         if  (args[0] == "-ui") {
-            Global.ProgramEventManager = new ProgramEventManager();
+            LoadingScreen.RoverTime = args[1];
 
-            //THE PATHFINDING LOGIC NEEDS TO RUN HERE
-            //The resulting file path should be passed into the load function below
-
-            RoverSolver.Run(new string[] { "mars_map_50x50.csv", args[1] });
-
-            Global.ProgramEventManager.LoadDataFromFile("mission_log.csv");
-
-            BuildAvaloniaApp().StartWithClassicDesktopLifetime(args);
+            BuildAvaloniaApp().StartWithClassicDesktopLifetime([]);
         }
         else if (args.Length >= 1) RoverSolver.Run(new string[] { "mars_map_50x50.csv", args[0] });
     }

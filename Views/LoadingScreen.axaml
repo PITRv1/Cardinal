@@ -1,0 +1,17 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+            xmlns:local="clr-namespace:Cardinal"
+             xmlns:vm="using:Cardinal.ViewModels"
+             x:Class="Cardinal.Views.LoadingScreen"
+             x:DataType="vm:LoadingScreenViewModel">
+
+    <Grid Width="{Binding $parent[Window].Bounds.Width}" Height="{Binding $parent[Window].Bounds.Height}" Background="{DynamicResource ResourceKey=Gray}" RowDefinitions="1*" ColumnDefinitions="1*">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" RowDefinitions="1*, 1*">
+            <Label FontSize="80" HorizontalAlignment="Center">Initializing</Label>
+            <ProgressBar Name="LoadProgress" Minimum="0" Maximum="3" Grid.Row="1" Height="10" Width="450" CornerRadius="0"  Foreground="{DynamicResource ResourceKey=Yellow}" Background="{DynamicResource ResourceKey=DarkerYellow}"/>
+        </Grid>
+    </Grid>
+</UserControl>

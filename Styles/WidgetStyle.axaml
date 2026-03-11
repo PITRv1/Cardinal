@@ -1,0 +1,69 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style Selector="Grid.WidgetContainer">
+    <Style Selector="^.Yellow">
+      <Style Selector="^ > Border > Border > Grid > Label">
+        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Yellow}"/>
+      </Style>
+
+      <Style Selector=" ^ Border > Border > Grid > Grid > Label:nth-child(even)">
+        <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Yellow}"/>
+      </Style>
+    </Style>
+
+    <Style Selector="^ Border">
+      <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=DarkGray}"/>
+    </Style>
+
+    <Style Selector="^ > Border">
+      <Setter Property="VerticalAlignment" Value="Top"/>
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="BorderThickness" Value="0,8"/>
+      <Setter Property="Margin" Value="8,0"/>
+      <Setter Property="MinWidth" Value="400"/>
+      <Setter Property="MinHeight" Value="150"/>
+
+      <Style Selector="^ Label">
+        <Setter Property="(TextPresenter.TextWrapping)" Value="Wrap"/>
+      </Style>
+    </Style>
+
+    <Style Selector="^ > Border > Border">
+      <Setter Property="BorderThickness" Value="8,0"/>
+      <Setter Property="Margin" Value="-8,0"/>
+    </Style>
+
+    <Style Selector="^ > Border > Border > Grid">
+      <Setter Property="Background" Value="{DynamicResource ResourceKey=DarkGray}"/>
+    </Style>
+
+    <Style Selector="^ > Border > Border > Grid > Label">
+      <Setter Property="FontSize" Value="60"/>
+    </Style>
+
+    <Style Selector="^ > Border > Border > Grid > Grid > Grid">
+      <Setter Property="VerticalAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style Selector="^ > Border > Border > Grid > Grid > Label">
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+
+
+      <Style Selector="^:nth-child(odd)">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+      </Style>
+
+      <Style Selector="^:nth-child(even)">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+        <Setter Property="Grid.Row" Value="1"/>
+      </Style>
+    </Style>
+  </Style>
+
+</Styles>

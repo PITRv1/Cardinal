@@ -10,6 +10,6 @@ public partial class MediaControls : UserControl
     {
         InitializeComponent();
 
-        TickTime.Content = $"{TimeSlider.Value}:{Global.ProgramEventManager.GetTickCount()}";
+        // TickTime.Content = $"{TimeSlider.Value}:{Global.ProgramEventManager.GetTickCount()}";
     }
 }

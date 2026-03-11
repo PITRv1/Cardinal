@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Icon="/Assets/avalonia-logo.ico"
         Title="Cardinal"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" WindowState="Maximized"
         xmlns:local="clr-namespace:Cardinal"
         xmlns:vm="using:Cardinal.ViewModels"
         x:Class="Cardinal.Views.MainWindow"
@@ -15,6 +15,7 @@
     </Design.DataContext>
 
     <Grid ColumnDefinitions="*" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{Binding $parent[Window].Bounds.Width}" Height="{Binding $parent[Window].Bounds.Height}">
-        <ContentControl Content="{Binding DashBoardInstance}"></ContentControl>
+        <ContentControl Content="{Binding DashboardInstance}"></ContentControl>
+        <ContentControl Content="{Binding LoadingScreenInstance}"></ContentControl>
     </Grid>
 </Window>

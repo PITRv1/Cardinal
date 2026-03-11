@@ -8,8 +8,8 @@
              x:Class="Cardinal.Views.LoggingTab"
              x:DataType="vm:LoggingTabViewModel">
   
-  <Border Classes="Vertical">
-    <Border Classes="Horizontal">
+  <Border Classes="Rounded">
+    <Border>
       <Grid Classes="Tab">
         <Label>LoggingTab</Label>
       </Grid>
