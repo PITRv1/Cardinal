@@ -130,8 +130,7 @@
               "RelativeToolTip": "Backend\\GEMINI_API_KEY.env",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-12T15:33:50.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T15:33:50.592Z"
             },
             {
               "$type": "Document",
@@ -143,8 +142,7 @@
               "RelativeToolTip": "Views\\LoadingScreen.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:54:42.638Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:54:42.638Z"
             },
             {
               "$type": "Document",
@@ -156,8 +154,7 @@
               "RelativeToolTip": "Views\\LoadingScreen.axaml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2026-03-12T14:54:28.953Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:54:28.953Z"
             },
             {
               "$type": "Document",
@@ -169,8 +166,7 @@
               "RelativeToolTip": "ProgramEventManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:53:08.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:53:08.745Z"
             },
             {
               "$type": "Document",
@@ -182,8 +178,7 @@
               "RelativeToolTip": "Backend\\Parser.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAiwDMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:50:47.627Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:50:47.627Z"
             },
             {
               "$type": "Document",
@@ -195,8 +190,7 @@
               "RelativeToolTip": "Backend\\MapEditor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:49:50.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:49:50.764Z"
             },
             {
               "$type": "Document",
@@ -206,7 +200,7 @@
               "RelativeDocumentMoniker": "Backend\\AISolver.cs",
               "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\AISolver.cs",
               "RelativeToolTip": "Backend\\AISolver.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAuwF0AAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwE4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-12T14:29:21.409Z",
               "EditorCaption": ""
@@ -221,8 +215,7 @@
               "RelativeToolTip": "Backend\\Algorithms\\PureGreedy.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:15:32.314Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:15:32.314Z"
             },
             {
               "$type": "Document",
@@ -234,8 +227,7 @@
               "RelativeToolTip": "Backend\\Algorithms\\GreedyGA.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:43:03.182Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T13:43:03.182Z"
             },
             {
               "$type": "Document",
@@ -247,8 +239,7 @@
               "RelativeToolTip": "Backend\\Result.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:03:14.347Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:03:14.347Z"
             },
             {
               "$type": "Document",
@@ -260,8 +251,7 @@
               "RelativeToolTip": "Backend\\RoverSolver.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:11:47.662Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:11:47.662Z"
             },
             {
               "$type": "Document",
@@ -273,8 +263,7 @@
               "RelativeToolTip": "Backend\\LogEntry.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:05:05.628Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:05:05.628Z"
             },
             {
               "$type": "Document",
@@ -286,8 +275,7 @@
               "RelativeToolTip": "Backend\\Pathfinder.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:59:48.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T13:59:48.828Z"
             },
             {
               "$type": "Document",
@@ -299,8 +287,7 @@
               "RelativeToolTip": "Backend\\NodeBase.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:58:22.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T13:58:22.635Z"
             },
             {
               "$type": "Document",
@@ -312,8 +299,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwCIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T15:18:46.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T15:18:46.528Z"
             },
             {
               "$type": "Document",
@@ -325,8 +311,7 @@
               "RelativeToolTip": "Backend\\Point.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:58:44.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T13:58:44.333Z"
             },
             {
               "$type": "Document",
@@ -338,8 +323,7 @@
               "RelativeToolTip": "Backend\\Path.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T14:01:43.303Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T14:01:43.303Z"
             },
             {
               "$type": "Document",
@@ -351,8 +335,7 @@
               "RelativeToolTip": "Backend\\Vector2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:56:48.851Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T13:56:48.851Z"
             },
             {
               "$type": "Document",
@@ -364,8 +347,7 @@
               "RelativeToolTip": "Backend\\ISolver.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T13:55:27.233Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T13:55:27.233Z"
             },
             {
               "$type": "Document",
@@ -377,8 +359,7 @@
               "RelativeToolTip": "Views\\MatrixMap.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T17:09:11.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T17:09:11.234Z"
             },
             {
               "$type": "Document",
@@ -402,8 +383,7 @@
               "RelativeToolTip": "PETRendererController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T15:18:30.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T15:18:30.373Z"
             },
             {
               "$type": "Document",

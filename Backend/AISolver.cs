@@ -77,41 +77,5 @@ namespace Cardinal.Backend
             sb.AppendLine("Respond ONLY with: {\"order\": [1, 5, 3, ...]}");
             return sb.ToString();
         }
-
-        async Task<string> CallAPI(string prompt)
-        {
-            var body = new
-            {
-                contents = new[]
-                {
-            new { parts = new[] { new { text = prompt } } }
-        },
-                generationConfig = new { responseMimeType = "application/json" }
-            };
-
-            var json = JsonSerializer.Serialize(body);
-            //var response = await http.PostAsync($"{API_URL}?key={API_KEY}",
-                //new StringContent(json, Encoding.UTF8, "application/json"));
-
-            var responseJson = await response.Content.ReadAsStringAsync();
-            Console.WriteLine(responseJson);
-            var doc = JsonDocument.Parse(responseJson);
-            return doc.RootElement
-                      .GetProperty("candidates")[0]
-                      .GetProperty("content")
-                      .GetProperty("parts")[0]
-                      .GetProperty("text")
-                      .GetString()!;
-        }
-
-        int[] ParseResponse(string response)
-        {
-            var doc = JsonDocument.Parse(response);
-            return doc.RootElement
-                      .GetProperty("order")
-                      .EnumerateArray()
-                      .Select(x => x.GetInt32())
-                      .ToArray();
-        }
     }
 }
