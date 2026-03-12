@@ -22,13 +22,16 @@ public partial class LoadingScreen : UserControl
 
     private void IncrementProgress(object? sender, EventArgs e)
     {
+
         LoadProgress.Value += 1;
         
         if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
         Dispatcher.UIThread.Post(() =>
         {
             if (LoadProgress.Value == LoadProgress.Maximum-1) dashBoardInstance?.Load3D(); 
-            else if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
+            else if (LoadProgress.Value == LoadProgress.Maximum)  {
+                IsVisible = false;
+            }
         }, DispatcherPriority.Render);
     }
 
