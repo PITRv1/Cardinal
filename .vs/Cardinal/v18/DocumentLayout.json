@@ -3,20 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\aisolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\aisolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\isolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\isolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\path.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\nodebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\nodebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\pathfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\pathfinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\gemini_api_key.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\gemini_api_key.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\roversolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\roversolver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\algorithms\\greedyga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\algorithms\\greedyga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\algorithms\\puregreedy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\algorithms\\puregreedy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\mapeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\mapeditor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\views\\loadingscreen.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\loadingscreen.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\views\\loadingscreen.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\loadingscreen.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\parser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\matrixmap.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\result.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\backend\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:backend\\logentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok\\documents\\github\\cardinal\\3drenderer\\camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,50 +118,271 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MatrixMap.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
-              "RelativeDocumentMoniker": "Views\\MatrixMap.axaml.cs",
-              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
-              "RelativeToolTip": "Views\\MatrixMap.axaml.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T17:09:11.234Z",
+              "DocumentIndex": 8,
+              "Title": "GEMINI_API_KEY.env",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\GEMINI_API_KEY.env",
+              "RelativeDocumentMoniker": "Backend\\GEMINI_API_KEY.env",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\GEMINI_API_KEY.env",
+              "RelativeToolTip": "Backend\\GEMINI_API_KEY.env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-12T15:33:50.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
+              "Title": "LoadingScreen.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoadingScreen.axaml.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml.cs",
+              "RelativeToolTip": "Views\\LoadingScreen.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:54:42.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LoadingScreen.axaml",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml",
+              "RelativeDocumentMoniker": "Views\\LoadingScreen.axaml",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml",
+              "RelativeToolTip": "Views\\LoadingScreen.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-12T14:54:28.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ProgramEventManager.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\ProgramEventManager.cs",
+              "RelativeDocumentMoniker": "ProgramEventManager.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\ProgramEventManager.cs",
+              "RelativeToolTip": "ProgramEventManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:53:08.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Parser.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Parser.cs",
+              "RelativeDocumentMoniker": "Backend\\Parser.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Parser.cs",
+              "RelativeToolTip": "Backend\\Parser.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAiwDMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:50:47.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MapEditor.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\MapEditor.cs",
+              "RelativeDocumentMoniker": "Backend\\MapEditor.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\MapEditor.cs",
+              "RelativeToolTip": "Backend\\MapEditor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:49:50.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AISolver.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\AISolver.cs",
+              "RelativeDocumentMoniker": "Backend\\AISolver.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\AISolver.cs",
+              "RelativeToolTip": "Backend\\AISolver.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAuwF0AAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:29:21.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PureGreedy.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Algorithms\\PureGreedy.cs",
+              "RelativeDocumentMoniker": "Backend\\Algorithms\\PureGreedy.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Algorithms\\PureGreedy.cs",
+              "RelativeToolTip": "Backend\\Algorithms\\PureGreedy.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:15:32.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GreedyGA.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Algorithms\\GreedyGA.cs",
+              "RelativeDocumentMoniker": "Backend\\Algorithms\\GreedyGA.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Algorithms\\GreedyGA.cs",
+              "RelativeToolTip": "Backend\\Algorithms\\GreedyGA.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T13:43:03.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Result.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Result.cs",
+              "RelativeDocumentMoniker": "Backend\\Result.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Result.cs",
+              "RelativeToolTip": "Backend\\Result.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:03:14.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoverSolver.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\RoverSolver.cs",
+              "RelativeDocumentMoniker": "Backend\\RoverSolver.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\RoverSolver.cs",
+              "RelativeToolTip": "Backend\\RoverSolver.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:11:47.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "LogEntry.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\LogEntry.cs",
+              "RelativeDocumentMoniker": "Backend\\LogEntry.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\LogEntry.cs",
+              "RelativeToolTip": "Backend\\LogEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:05:05.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Pathfinder.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Pathfinder.cs",
+              "RelativeDocumentMoniker": "Backend\\Pathfinder.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Pathfinder.cs",
+              "RelativeToolTip": "Backend\\Pathfinder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T13:59:48.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NodeBase.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\NodeBase.cs",
+              "RelativeDocumentMoniker": "Backend\\NodeBase.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\NodeBase.cs",
+              "RelativeToolTip": "Backend\\NodeBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T13:58:22.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwCIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T15:18:46.528Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MateMagic.cs",
-              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
-              "RelativeDocumentMoniker": "MateMagic\\MateMagic.cs",
-              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
-              "RelativeToolTip": "MateMagic\\MateMagic.cs",
-              "ViewState": "AgIAAEIBAAAAAAAAAAAAwFcBAAAuAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Point.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Point.cs",
+              "RelativeDocumentMoniker": "Backend\\Point.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Point.cs",
+              "RelativeToolTip": "Backend\\Point.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T15:18:40.621Z",
+              "WhenOpened": "2026-03-12T13:58:44.333Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "Path.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Path.cs",
+              "RelativeDocumentMoniker": "Backend\\Path.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Path.cs",
+              "RelativeToolTip": "Backend\\Path.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T14:01:43.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Vector2.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Vector2.cs",
+              "RelativeDocumentMoniker": "Backend\\Vector2.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\Vector2.cs",
+              "RelativeToolTip": "Backend\\Vector2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T13:56:48.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ISolver.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\ISolver.cs",
+              "RelativeDocumentMoniker": "Backend\\ISolver.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Backend\\ISolver.cs",
+              "RelativeToolTip": "Backend\\ISolver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T13:55:27.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MatrixMap.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\MatrixMap.axaml.cs",
+              "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
+              "RelativeToolTip": "Views\\MatrixMap.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-07T17:09:11.234Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "Camera.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\Camera.cs",
               "RelativeDocumentMoniker": "3DRenderer\\Camera.cs",
@@ -101,25 +390,24 @@
               "RelativeToolTip": "3DRenderer\\Camera.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-07T15:18:30.274Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-07T15:18:30.274Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 15,
               "Title": "PETRendererController.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
               "RelativeDocumentMoniker": "PETRendererController.cs",
               "ToolTip": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
               "RelativeToolTip": "PETRendererController.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEEAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-07T15:18:30.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 24,
               "Title": "skybox.vert",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\skybox.vert",
               "RelativeDocumentMoniker": "3DRenderer\\shaders\\skybox.vert",
@@ -131,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 23,
               "Title": "DashBoardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\ViewModels\\DashBoardViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\DashBoardViewModel.cs",
@@ -143,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 22,
               "Title": "Renderer.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
               "RelativeDocumentMoniker": "3DRenderer\\Renderer.cs",
@@ -155,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 26,
               "Title": "MeshNode.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\MeshNode.cs",
               "RelativeDocumentMoniker": "3DRenderer\\MeshNode.cs",
@@ -167,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 25,
               "Title": "CubemapTexture.cs",
               "DocumentMoniker": "C:\\Users\\borok\\Documents\\GitHub\\Cardinal\\3DRenderer\\CubemapTexture.cs",
               "RelativeDocumentMoniker": "3DRenderer\\CubemapTexture.cs",
