@@ -7,10 +7,14 @@ namespace Cardinal.Backend
 {
     public static class RoverSolver
     {
-        public static event EventHandler<EventArgs>? RunCompleted;
+        public static string MapFileName {private set; get;} = "";
+        public static event Action? RunCompleted;
         public static void Run(string[] args)
         {
             string mapFile = args.Length > 0 ? args[0] : "mars_map_50x50.csv";
+
+            MapFileName = mapFile;
+
             int hours = args.Length > 1 ? int.Parse(args[1]) : 48;
 
             var map = Map.Load(mapFile);
@@ -49,7 +53,7 @@ namespace Cardinal.Backend
             File.WriteAllLines("mission_log.csv", log);
             Console.WriteLine("Log saved to mission_log.csv");
 
-            RunCompleted?.Invoke(null, EventArgs.Empty);
+            RunCompleted?.Invoke();
         }
 
         private static List<List<Point>> ClusterMinerals(List<Point> minerals, int radius)

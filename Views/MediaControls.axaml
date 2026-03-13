@@ -14,10 +14,10 @@
       <Grid Grid.Row="2" ColumnDefinitions="1*,1*,1*" Width="{Binding $parent.Bounds.Width}">
         <Label HorizontalAlignment="Left" Name="TickTime">0:0</Label>
         <Grid Grid.Column="1" ColumnDefinitions="1*,1*,1*,1*" HorizontalAlignment="Center" MinWidth="100">
-          <Button Content="X"></Button>
-          <Button Grid.Column="1" Content="P"></Button>
-          <Button Grid.Column="2" Content="2x"></Button>
-          <Button Grid.Column="3" Content="X"></Button>
+          <Button Name="BackwardButton" Content="&lt;"></Button>
+          <Button Name="PlayButton" Grid.Column="1" Content="Play"></Button>
+          <Button Name="SpeedButton" Grid.Column="2" Content="2x"></Button>
+          <Button Name="ForwardButton" Grid.Column="3" Content="&gt;"></Button>
         </Grid>
         <Button Grid.Column="2" Content="S" HorizontalAlignment="Right"></Button>
       </Grid>

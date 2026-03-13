@@ -10,29 +10,32 @@ namespace Cardinal.Views;
 
 public partial class LoadingScreen : UserControl
 {
+    public static event Action? LoadingCompleted;
     public static string RoverTime = "";
     public DashBoard? dashBoardInstance;
     public LoadingScreen()
     {
         InitializeComponent();
         RoverSolver.RunCompleted += IncrementProgress;
-        ProgramEventManager.FileLoaded  += IncrementProgress;
+        ProgramEventManager.RouteFileLoaded  += IncrementProgress;
+        ProgramEventManager.LogFileLoaded  += IncrementProgress;
         PETRendererController.MineralsLoaded  += IncrementProgress;
 
         Loaded += BeginLoad;
     }
 
-    private void IncrementProgress(object? sender, EventArgs e)
+    private void IncrementProgress()
     {
-
         LoadProgress.Value += 1;
         
         if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
         Dispatcher.UIThread.Post(() =>
         {
+            if (LoadProgress.Value == LoadProgress.Maximum-2) Global.ProgramEventManager.LoadDataFromFile("mission_log.csv"); 
             if (LoadProgress.Value == LoadProgress.Maximum-1) dashBoardInstance?.Load3D(); 
             else if (LoadProgress.Value == LoadProgress.Maximum)  {
                 IsVisible = false;
+                LoadingCompleted?.Invoke();
             }
         }, DispatcherPriority.Render);
     }
@@ -40,7 +43,7 @@ public partial class LoadingScreen : UserControl
     public void BeginLoad(object? sender, EventArgs e)
     {
         Loaded -= BeginLoad;
-        RoverSolver.Run(["mars_map_50x50.csv", RoverTime]);
-        Global.ProgramEventManager.LoadDataFromFile("mission_log.csv");
+        RoverSolver.Run(["mars_map_50x50.csv", RoverTime, "--greedy-ga"]);
+        Global.ProgramEventManager.LoadRouteFromFile("route.txt");
     }
 }

@@ -24,7 +24,7 @@ namespace Cardinal;
 
 public class PETRendererController : OpenGlControlBase
 {
-    public static event EventHandler<EventArgs>? MineralsLoaded;
+    public static event Action? MineralsLoaded;
     private GL _gl;
     private Camera _camera;
     private Scene _scene;
@@ -83,7 +83,7 @@ public class PETRendererController : OpenGlControlBase
         };
 
 
-        map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
+        map = Map.Load("./Backend/maps/mars_map_50x50.csv");
 
 
         _renderer.Initialize(_gl, width, height);
@@ -215,6 +215,6 @@ public class PETRendererController : OpenGlControlBase
             }
         }
 
-        MineralsLoaded?.Invoke(null, EventArgs.Empty);
+        MineralsLoaded?.Invoke();
     }
 }

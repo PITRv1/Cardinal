@@ -4,32 +4,58 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using Cardinal.ViewModels;
 using Cardinal.Backend;
+using System.Linq;
+using Avalonia.Dialogs.Internal;
+using System.Collections.Generic;
 
 namespace Cardinal.Views;
 
 public partial class MatrixMap : UserControl
 {
-    private Map map = new();
     const double LeastSize = 10.0;
-    private double minSizeValue;
+    Map map = new();
+    double minSizeValue;
+    Border? previousPositionMarker;
+
     public MatrixMap()
     {
         InitializeComponent();
         DataContext = new MatrixMapViewModel();
 
-        map = Map.Load("./MateMagic/maps/mars_map_50x50.csv");
+        LoadingScreen.LoadingCompleted += () => {
+            SetupGrid();
+            LoadMapData();
+        };
 
-        LayoutUpdated += OnLayoutUpdated;
+        Global.ProgramEventManager.StepDataSent += UpdateMapData;
     }
 
-    private void OnLayoutUpdated(object? sender, EventArgs e)
+    private void UpdateMapData(StepData stepData)
     {
-        LayoutUpdated -= OnLayoutUpdated;
-        SetupGrid();
-        LoadData();
+        Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            LoadMapData(Global.ProgramEventManager.GetRouteCoveredAtTick(stepData.tick));
+            ShowCurrentPosition(stepData.position);
+        });
     }
+
+    private void ShowCurrentPosition(Vector2 position)
+    {
+        if (previousPositionMarker != null)
+        {
+            MatrixMapGrid.Children.Remove(previousPositionMarker);
+        }
+
+        Label currentPosLabel = CreatePositionMarkerNode("!", position);
+        currentPosLabel.LayoutUpdated += OnCurrentPosLabelLayoutUpdated;
+        
+        previousPositionMarker = (Border?)currentPosLabel.Parent;
+    }
+
     private void SetupGrid()
     {
+        map = Map.Load(RoverSolver.MapFileName);
+
         MatrixMapGrid.ColumnDefinitions.Clear();
         MatrixMapGrid.RowDefinitions.Clear();
         MatrixMapGrid.Children.Clear();
@@ -41,37 +67,95 @@ public partial class MatrixMap : UserControl
         minSizeValue = minSizeValue < LeastSize ? LeastSize : minSizeValue;
     }
 
-    private void LoadData()
+    private void LoadMapData(List<Vector2>? disabledplaces = null)
     {
+        MatrixMapGrid.Children.Clear();
         foreach (var currentWorldRow in map.WorldMap)
         {
             foreach (var node in currentWorldRow)
             {
-                Label nodeUIElement = CreateMatrixNode(node);
+                Label labelElement = CreateMatrixNode(node);
+
+                if (disabledplaces?.Any(pos => pos.X == node.Coords.X && pos.Y == node.Coords.Y) == true)
+                {
+                    labelElement.Foreground = new SolidColorBrush { Color = Colors.Transparent };
+                    continue;
+                }
 
                 switch (node.Character)
                 {
                     case '#':
-                        nodeUIElement.Foreground = Utility.GetResourceByName<IBrush>("VomitGreen");
+                        labelElement.Foreground = Utility.GetResourceByName<IBrush>("VomitGreen");
                         break;
                     case 'B':
-                        nodeUIElement.Foreground = Utility.GetResourceByName<IBrush>("Blue");
+                        labelElement.Foreground = Utility.GetResourceByName<IBrush>("Blue");
                         break;
                     case 'Y':
-                        nodeUIElement.Foreground = Utility.GetResourceByName<IBrush>("Yellow");
+                        labelElement.Foreground = Utility.GetResourceByName<IBrush>("Yellow");
                         break;
                     case 'G':
-                        nodeUIElement.Foreground = Utility.GetResourceByName<IBrush>("LightGreen");
+                        labelElement.Foreground = Utility.GetResourceByName<IBrush>("LightGreen");
                         break;
                     case 'S':
-                        nodeUIElement.Foreground = Utility.GetResourceByName<IBrush>("Red");
+                        labelElement.Foreground = Utility.GetResourceByName<IBrush>("Red");
+                        ShowCurrentPosition(node.Coords);
                         break;
                 }
             }
         }
+    }
 
-        Label currentPosLabel = CreateMatrixNode("!", new Vector2(40, 27));
-        currentPosLabel.LayoutUpdated += OnCurrentPosLabelLayoutUpdated;
+    private Label CreateMatrixNode(NodeBase node)
+    {
+        var borderElement = new Border
+        {
+            BorderBrush = new SolidColorBrush { Color = Colors.Green},
+            BorderThickness = Thickness.Parse("1")
+        };
+
+        var labelElement = new Label
+        {
+            Content = node.Character == '.' ? "#" : node.Character.ToString().ToUpper(),
+            Foreground = new SolidColorBrush { Color = node.Character == '.' ? Colors.Transparent : Colors.White },
+            VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
+            HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+            FontSize = minSizeValue * 1.1f
+        };
+
+        Grid.SetColumn(borderElement, (int)node.Coords.X);
+        Grid.SetRow(borderElement, (int)node.Coords.Y);
+
+        borderElement.Child = labelElement;
+        MatrixMapGrid.Children.Add(borderElement);
+
+        return labelElement;
+    }
+
+    private Label CreatePositionMarkerNode(string text, Vector2 position)
+    {
+        var borderElement = new Border
+        {
+            BorderBrush = new SolidColorBrush { Color = Colors.Green},
+            BorderThickness = Thickness.Parse("1"),
+            Background = Utility.GetResourceByName<IBrush>("Red")
+        };
+
+        var labelElement = new Label
+        {
+            Content = text.ToUpper(),
+            Foreground = new SolidColorBrush { Color = Colors.Black},
+            VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
+            HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
+            FontSize = minSizeValue * 1.1f
+        };
+
+        Grid.SetColumn(borderElement, (int)position.X);
+        Grid.SetRow(borderElement, (int)position.Y);
+
+        borderElement.Child = labelElement;
+        MatrixMapGrid.Children.Add(borderElement);
+
+        return labelElement;
     }
 
     private void OnCurrentPosLabelLayoutUpdated(object? sender, EventArgs e)
@@ -89,58 +173,5 @@ public partial class MatrixMap : UserControl
             Math.Max(0, offsetX),
             Math.Max(0, offsetY)
         );
-    }
-
-    private Label CreateMatrixNode(NodeBase node)
-    {
-        var itemBorder = new Border
-        {
-            BorderBrush = new SolidColorBrush{Color=Colors.Green},
-            BorderThickness = Thickness.Parse("1")
-        };
-
-        var nodeUIElement = new Label
-        {
-            Content = node.Character == '.' ? "#" : node.Character.ToString().ToUpper(),
-            Foreground = new SolidColorBrush { Color = node.Character == '.' ? Colors.Transparent : Colors.White },
-            VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
-            HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-            FontSize = minSizeValue * 1.1f
-        };
-
-        Grid.SetColumn(itemBorder, (int)node.Coords.X);
-        Grid.SetRow(itemBorder, (int)node.Coords.Y);
-
-        itemBorder.Child = nodeUIElement;
-        MatrixMapGrid.Children.Add(itemBorder);
-
-        return nodeUIElement;
-    }
-
-    private Label CreateMatrixNode(string text, Vector2 position)
-    {
-        var itemBorder = new Border
-        {
-            BorderBrush = new SolidColorBrush{Color=Colors.Green},
-            BorderThickness = Thickness.Parse("1"),
-            Background = new SolidColorBrush { Color = Colors.Red},
-        };
-
-        var nodeUIElement = new Label
-        {
-            Content = text.ToUpper(),
-            Foreground = new SolidColorBrush { Color = Colors.Black},
-            VerticalContentAlignment = Avalonia.Layout.VerticalAlignment.Center,
-            HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
-            FontSize = minSizeValue * 1.1f
-        };
-
-        Grid.SetColumn(itemBorder, (int)position.X);
-        Grid.SetRow(itemBorder, (int)position.Y);
-
-        itemBorder.Child = nodeUIElement;
-        MatrixMapGrid.Children.Add(itemBorder);
-
-        return nodeUIElement;
     }
 }

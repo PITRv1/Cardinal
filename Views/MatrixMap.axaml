@@ -11,7 +11,7 @@
     <Border Classes="Rounded MatrixMapBorder">
       <Border Classes="MatrixMapBorder">
         <Border>
-          <ScrollViewer Name="MatrixScrollViewer" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center">
+          <ScrollViewer Name="MatrixScrollViewer" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid Name="MatrixMapGrid" Classes="StaticWidget">
               <Label FontSize="20" Foreground="{DynamicResource ResourceKey=LightGreen}">MatrixMap Unavailable</Label>
             </Grid>

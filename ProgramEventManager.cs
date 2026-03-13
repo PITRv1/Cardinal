@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Cardinal.Backend;
+using System.Timers;
+using Cardinal.Views;
+using System.Data.Common;
 
 namespace Cardinal
 {
@@ -37,12 +40,54 @@ namespace Cardinal
 
     public class ProgramEventManager
     {
-        public static event EventHandler<EventArgs>? FileLoaded;
-
+        public static event Action? LogFileLoaded;
+        public static event Action? RouteFileLoaded;
         public event Action<StepData>? StepDataSent;
+        public List<StepData> stepDataList {private set; get;} = new();
+        public List<Vector2> roverRoute {private set; get;} = new();
+
+        public int _currentTick = 1;
+        public int CurrentTick
+        {
+            set
+            {
+                _currentTick = Math.Clamp(value, 1, GetTickCount());
+            }
+            get
+            {
+                return _currentTick;
+            }
+        }
+        public Timer TickTimer {private set; get;} = new Timer {Interval=500, AutoReset=false};
 
         private int numberOfMinerals = 0;
-        private List<StepData> stepDataList = [];
+
+        public ProgramEventManager()
+        {
+            TickTimer.Elapsed += TimerFinishedHandler;
+        }
+
+        private void TimerFinishedHandler(object? sender, ElapsedEventArgs e)
+        {
+            try
+            {
+                SendUpdateEvent(CurrentTick);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"ERROR: {ex}");
+            }
+
+            if (_currentTick == GetTickCount()) return;
+            _currentTick += 1;
+            TickTimer.Start();
+        }
+
+        public void ToggleTickTimer()
+        {
+            if (TickTimer.Enabled) TickTimer.Stop();
+            else TickTimer.Start();
+        }
 
         public void LoadDataFromFile (string dataFile, bool skipFirstLine = true) {
             List<string> data = File.ReadAllLines(dataFile).ToList();
@@ -76,10 +121,38 @@ namespace Cardinal
                 stepDataList.Add(currentStepData);
             };
 
-            FileLoaded?.Invoke(null, EventArgs.Empty);
+            LogFileLoaded?.Invoke();
         }
 
-        private StepData GetStepDataAtTick(int tick) {
+        public void LoadRouteFromFile (string dataFile, bool skipFirstLine = true, char splitChar = ',') {
+            List<string> data = File.ReadAllLines(dataFile).ToList();
+            if (skipFirstLine) data.RemoveAt(0);
+
+            foreach (string line in data)
+            {
+                string[] rawPositionData = line.Split(splitChar);
+                roverRoute.Add(new Vector2(float.Parse(rawPositionData[0]), float.Parse(rawPositionData[1])));
+            }
+
+            RouteFileLoaded?.Invoke();
+        }
+
+        public List<Vector2> GetRouteCoveredAtTick(int tick)
+        {
+            var stepAtTick = GetStepDataAtTick(tick);
+            List<Vector2> coveredRoute = new();
+
+            foreach (Vector2 position in roverRoute)
+            {
+                if (position.X == stepAtTick.position.X && position.Y == stepAtTick.position.Y) break;
+                coveredRoute.Add(position);
+            }
+
+            return coveredRoute;
+        }
+
+        private StepData GetStepDataAtTick(int tick) 
+        {
             return stepDataList.FirstOrDefault(s => s.tick == tick);
         }
 

@@ -3,26 +3,23 @@
              x:Class="Cardinal.App"
              xmlns:local="using:Cardinal"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
     </Application.DataTemplates>
-  
+
     <Application.Styles>
         <FluentTheme />
-        <StyleInclude Source="avares://Cardinal/Styles/Style.axaml"></StyleInclude>
-        <StyleInclude Source="avares://Cardinal/Styles/WidgetStyle.axaml"></StyleInclude>
+        <StyleInclude Source="avares://Cardinal/Styles/Style.axaml"/>
+        <StyleInclude Source="avares://Cardinal/Styles/WidgetStyle.axaml"/>
+        <StyleInclude Source="avares://Cardinal/Styles/LoggingStyle.axaml"/>
     </Application.Styles>
 
     <Application.Resources>
         <!-- <FontFamily x:Key="Pixel">Assets/UI/Fonts/nokiafc22.ttf#Nokia Cellphone FC</FontFamily> -->
         <FontFamily x:Key="Pixel">Assets/UI/Fonts/runescape_uf.ttf#RuneScape UF</FontFamily>
         <!-- <FontFamily x:Key="Pixel">Assets/UI/Fonts/pixel.ttf#Pixel</FontFamily> -->
-        <LinearGradientBrush x:Key="DayNigthGradient" StartPoint="50%, 100%" EndPoint="50%, 00%">
-            <GradientStop Offset="0.5" Color="#000000"></GradientStop>
-            <GradientStop Offset="1" Color="#f8f890"></GradientStop>
-        </LinearGradientBrush>
         <SolidColorBrush x:Key="LightGreen">#32bc6c</SolidColorBrush>
         <SolidColorBrush x:Key="VomitGreen">#749c65</SolidColorBrush>
         <SolidColorBrush x:Key="Green">#224a2a</SolidColorBrush>
@@ -37,5 +34,7 @@
         <SolidColorBrush x:Key="Gray">#293134</SolidColorBrush>
         <SolidColorBrush x:Key="LightGray">#3f4e54</SolidColorBrush>
         <SolidColorBrush x:Key="LighterGray">#afb3b6</SolidColorBrush>
+        <SolidColorBrush x:Key="White">#ffffff</SolidColorBrush>
+        <SolidColorBrush x:Key="Black">#000000</SolidColorBrush>
     </Application.Resources>
 </Application>

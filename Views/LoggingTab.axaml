@@ -9,10 +9,10 @@
              x:DataType="vm:LoggingTabViewModel">
   
   <Border Classes="Rounded">
-    <Border>
-      <Grid Classes="Tab">
-        <Label>LoggingTab</Label>
-      </Grid>
+    <Border Padding="20" Background="{DynamicResource ResourceKey=Black}">
+      <ScrollViewer Classes="Tab" Background="Transparent">
+        <StackPanel Name="LoggingStackPanel"></StackPanel>
+      </ScrollViewer>
     </Border>
   </Border>
 
