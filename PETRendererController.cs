@@ -36,6 +36,10 @@ public class PETRendererController : OpenGlControlBase
 
     private Map map = new();
 
+
+    private MeshNode roverModel;
+    private Vector2 prevRoverPos;
+
     protected override void OnOpenGlInit(GlInterface glInterface) {
         double scaling = VisualRoot?.RenderScaling ?? 1.0;
         uint width = (uint)(Bounds.Width * scaling);
@@ -82,12 +86,22 @@ public class PETRendererController : OpenGlControlBase
             );
         };
 
+        Global.ProgramEventManager.StepDataSent += _OnStepDataRecieved;
 
         map = Map.Load("./Backend/maps/mars_map_50x50.csv");
 
 
         _renderer.Initialize(_gl, width, height);
         _scene.Load(_renderer.Gl);
+    }
+
+    private void _OnStepDataRecieved(StepData stepData)
+    {
+        Vector2 dir = new Vector2(prevRoverPos.X, prevRoverPos.Y) - new Vector2(stepData.position.X, stepData.position.Y);
+
+        roverModel.LocalTransform.Position = new Vector3(stepData.position.X,0, stepData.position.Y);
+
+        prevRoverPos = new Vector2(stepData.position.X, stepData.position.Y);
     }
 
     protected override void OnOpenGlRender(GlInterface glInterface, int fb) {
@@ -141,36 +155,39 @@ public class PETRendererController : OpenGlControlBase
         scene.AddToRoot(outsideGround);
         //---
 
+        var mapHolderNode = new SceneNode("MyNode");
+        mapHolderNode.LocalTransform = new Transform { Position = new Vector3(-24.5f, 0, -24.5f) };
+        scene.AddToRoot(mapHolderNode);
+
         //Tri.c.h.a.e.l.
-        var roverModel = new MeshNode(_gl,
+        roverModel = new MeshNode(_gl,
             new Model(_gl, "3DRenderer/models/Trichael.obj"),
             new Texture(_gl, "3DRenderer/textures/TrichaelColor.png"),
             "rover");
 
         roverModel.LocalTransform = new Transform {
-            Position = new Vector3(24.5f, 0, 24.5f),
             Rotation = Quaternion.CreateFromAxisAngle(new Vector3(0, 1, 0), MathHelper.DegreesToRadians(180f))
         };
-        scene.AddToRoot(roverModel);
+        mapHolderNode.AddChild(roverModel);
         //---
 
-        var mapHolderNode = new SceneNode("MyNode");
-        mapHolderNode.LocalTransform = new Transform { Position = new Vector3(-24.5f, 0, -24.5f) };
-        scene.AddToRoot(mapHolderNode);
-
         //Crystal
-        foreach (var currentWorldRow in map.WorldMap) {
+        foreach (var currentWorldRow in map.WorldMap)
+        {
 
-            foreach (var node in currentWorldRow) {
+            foreach (var node in currentWorldRow)
+            {
 
-                switch (node.Character) {
+                switch (node.Character)
+                {
                     case '#':
                         var rockModel = new MeshNode(_gl,
                         new Model(_gl, "3DRenderer/models/Rock.obj"),
                         new Texture(_gl, "3DRenderer/textures/absolute.png"),
                         $"rock{node.ToString()}");
 
-                        rockModel.LocalTransform = new Transform {
+                        rockModel.LocalTransform = new Transform
+                        {
                             Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
                         };
                         mapHolderNode.AddChild(rockModel);
@@ -181,7 +198,8 @@ public class PETRendererController : OpenGlControlBase
                         new Texture(_gl, "3DRenderer/textures/BlueCrystalColor.png"),
                         $"crystal{node.ToString()}");
 
-                        blueCrystalModel.LocalTransform = new Transform {
+                        blueCrystalModel.LocalTransform = new Transform
+                        {
                             Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
                         };
                         mapHolderNode.AddChild(blueCrystalModel);
@@ -192,7 +210,8 @@ public class PETRendererController : OpenGlControlBase
                         new Texture(_gl, "3DRenderer/textures/YellowCrystalColor.png"),
                         $"crystal{node.ToString()}");
 
-                        yellowCrystalModel.LocalTransform = new Transform {
+                        yellowCrystalModel.LocalTransform = new Transform
+                        {
                             Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
                         };
                         mapHolderNode.AddChild(yellowCrystalModel);
@@ -203,7 +222,8 @@ public class PETRendererController : OpenGlControlBase
                         new Texture(_gl, "3DRenderer/textures/GreenCrystalColor.png"),
                         $"crystal{node.ToString()}");
 
-                        greenCrystalModel.LocalTransform = new Transform {
+                        greenCrystalModel.LocalTransform = new Transform
+                        {
                             Position = new Vector3(node.Coords.X, 0, node.Coords.Y)
                         };
                         mapHolderNode.AddChild(greenCrystalModel);

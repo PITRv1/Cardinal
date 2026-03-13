@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:matemagic\\matemagic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\borok.mate\\documents\\github\\cardinal\\petrenderercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,17 +30,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MateMagic.cs",
               "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
               "RelativeDocumentMoniker": "MateMagic\\MateMagic.cs",
               "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\MateMagic\\MateMagic.cs",
               "RelativeToolTip": "MateMagic\\MateMagic.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwCMAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T07:52:25.712Z",
               "EditorCaption": ""
@@ -55,17 +55,18 @@
               "RelativeToolTip": "Views\\MatrixMap.axaml.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAcwCgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T20:03:42.142Z"
+              "WhenOpened": "2026-03-08T20:03:42.142Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ProgramEventManager.cs",
               "DocumentMoniker": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\ProgramEventManager.cs",
               "RelativeDocumentMoniker": "ProgramEventManager.cs",
               "ToolTip": "C:\\Users\\Borok.Mate\\Documents\\GitHub\\Cardinal\\ProgramEventManager.cs",
               "RelativeToolTip": "ProgramEventManager.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAuwFYAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAkwEUAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T19:55:49.733Z",
               "EditorCaption": ""
