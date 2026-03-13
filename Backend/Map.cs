@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace Cardinal.Backend
 {
@@ -34,6 +35,23 @@ namespace Cardinal.Backend
                 }
             }
             return map;
+        }
+
+        public static string MapToString(Map map)
+        {
+            StringBuilder sb = new();
+            StringBuilder lineBuilder = new();
+            foreach (var line in map.WorldMap)
+            {
+                foreach (var node in line)
+                {
+                    lineBuilder.Append(node.Character);
+                }
+                sb.Append(lineBuilder.ToString() + '\n');
+                lineBuilder.Clear();
+            }
+            return sb.ToString();
+
         }
 
         public bool Walkable(int x, int y) =>
