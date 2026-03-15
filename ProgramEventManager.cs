@@ -46,11 +46,13 @@ namespace Cardinal
         public List<StepData> stepDataList {private set; get;} = new();
         public List<Vector2> roverRoute {private set; get;} = new();
 
-        public int _currentTick = 1;
+        private int _currentTick = 1;
         public int CurrentTick
         {
             set
             {
+                TickTimer.Stop();
+                SendUpdateEvent(_currentTick);
                 _currentTick = Math.Clamp(value, 1, GetTickCount());
             }
             get
@@ -69,17 +71,8 @@ namespace Cardinal
 
         private void TimerFinishedHandler(object? sender, ElapsedEventArgs e)
         {
-            try
-            {
-                SendUpdateEvent(CurrentTick);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"ERROR: {ex}");
-            }
-
-            if (_currentTick == GetTickCount()) return;
-            _currentTick += 1;
+            if (CurrentTick == GetTickCount()+1) return;
+            CurrentTick += 1;
             TickTimer.Start();
         }
 

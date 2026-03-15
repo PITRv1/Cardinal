@@ -8,6 +8,7 @@ namespace Cardinal.Views;
 
 public partial class MediaControls : UserControl
 {
+    private bool timeSliderAutoUpdate = false;
     public MediaControls()
     {
         InitializeComponent();
@@ -24,7 +25,9 @@ public partial class MediaControls : UserControl
     {
         Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
         {
+            timeSliderAutoUpdate = true;
             TimeSlider.Value = data.tick;
+            timeSliderAutoUpdate = false;
         });
     }
 
@@ -35,28 +38,34 @@ public partial class MediaControls : UserControl
 
     private void SkipInTime(object? sender, PointerPressedEventArgs e)
     {
+        timeSliderAutoUpdate = true;
         if (sender is Button button)
         {
-            if (button.Name == BackwardButton.Name) TimeSlider.Value -= 1;
-            else if (button.Name == ForwardButton.Name) TimeSlider.Value += 1;
+            if (button.Name == BackwardButton.Name) Global.ProgramEventManager.CurrentTick -= 1;
+            else if (button.Name == ForwardButton.Name) Global.ProgramEventManager.CurrentTick += 1;
         }
+        timeSliderAutoUpdate = false;
     }
 
     private void InitializeUI()
     {
+        timeSliderAutoUpdate = true;
+
         UpdateUI();
 
         TimeSlider.Maximum = Global.ProgramEventManager.GetTickCount();
-        TimeSlider.Minimum = 0;
+        TimeSlider.Minimum = 1;
         TimeSlider.Value = TimeSlider.Minimum;
         TimeSlider.SmallChange = 1;
         TimeSlider.LargeChange = 1;
+
+        timeSliderAutoUpdate = false;
     }
 
     private void UpdateUI(object? sender = null, EventArgs? e = null)
     {
         TickTime.Content = $"{Math.Floor(TimeSlider.Value)}:{Global.ProgramEventManager.GetTickCount()}";
 
-        if (Global.ProgramEventManager.CurrentTick != (int)TimeSlider.Value) Global.ProgramEventManager.CurrentTick = (int)TimeSlider.Value;
+        if (!timeSliderAutoUpdate) Global.ProgramEventManager.CurrentTick = (int)TimeSlider.Value;
     }
 }

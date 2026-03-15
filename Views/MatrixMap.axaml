@@ -11,9 +11,12 @@
     <Border Classes="Rounded MatrixMapBorder">
       <Border Classes="MatrixMapBorder">
         <Border>
-          <ScrollViewer Name="MatrixScrollViewer" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <Grid Name="MatrixMapGrid" Classes="StaticWidget">
-              <Label FontSize="20" Foreground="{DynamicResource ResourceKey=LightGreen}">MatrixMap Unavailable</Label>
+          <ScrollViewer Background="{DynamicResource ResourceKey=DarkGreen}"  Name="MatrixScrollViewer" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid>
+              <Grid Name="MatrixMapGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Label FontSize="20" Foreground="{DynamicResource ResourceKey=LightGreen}">MatrixMap Unavailable</Label>
+              </Grid>
+              <Grid Name="OverlayMatrixMapGrid" IsHitTestVisible="False" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             </Grid>
           </ScrollViewer>
         </Border>

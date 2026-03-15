@@ -14,8 +14,9 @@ public partial class MatrixMap : UserControl
 {
     const double LeastSize = 10.0;
     Map map = new();
-    double minSizeValue;
     Border? previousPositionMarker;
+    double minSizeValue;
+    Vector2 borderSize;
 
     public MatrixMap()
     {
@@ -24,7 +25,7 @@ public partial class MatrixMap : UserControl
 
         LoadingScreen.LoadingCompleted += () => {
             SetupGrid();
-            LoadMapData();
+            InitializeMapData();
         };
 
         Global.ProgramEventManager.StepDataSent += UpdateMapData;
@@ -34,9 +35,29 @@ public partial class MatrixMap : UserControl
     {
         Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
         {
-            LoadMapData(Global.ProgramEventManager.GetRouteCoveredAtTick(stepData.tick));
+            ShowCoveredRoute(Global.ProgramEventManager.GetRouteCoveredAtTick(stepData.tick));
             ShowCurrentPosition(stepData.position);
         });
+    }
+
+    private void ShowCoveredRoute(List<Vector2> positions)
+    {
+        OverlayMatrixMapGrid.Children.Clear();
+
+        foreach (var position in positions)
+        {
+            var borderElement = new Border
+            {
+                Background = MatrixMapGrid.Background,
+                BorderBrush = new SolidColorBrush { Color = Colors.Green},
+                BorderThickness = Thickness.Parse("1")
+            };
+
+            Grid.SetRow(borderElement, (int)position.Y);
+            Grid.SetColumn(borderElement, (int)position.X);
+
+            OverlayMatrixMapGrid.Children.Add(borderElement);
+        }
     }
 
     private void ShowCurrentPosition(Vector2 position)
@@ -60,27 +81,31 @@ public partial class MatrixMap : UserControl
         MatrixMapGrid.RowDefinitions.Clear();
         MatrixMapGrid.Children.Clear();
 
-        map.WorldMap[0].ForEach((idk) => MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse("1*")}));
-        map.WorldMap.ForEach((idk) => MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse("1*")}));
+        map.WorldMap[0].ForEach((idk) => 
+        {
+            MatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse("1*")});
+            // OverlayMatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition{Width=GridLength.Parse($"1*")});
+        });
+
+        map.WorldMap.ForEach((idk) =>
+        {
+            MatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse("1*")});
+            // OverlayMatrixMapGrid.RowDefinitions.Add(new RowDefinition{Height=GridLength.Parse($"1*")});
+        });
 
         minSizeValue = MatrixMapGrid.RowDefinitions.Count < MatrixMapGrid.ColumnDefinitions.Count ? MatrixMapGrid.Bounds.Height / MatrixMapGrid.ColumnDefinitions.Count : MatrixMapGrid.Bounds.Width / MatrixMapGrid.RowDefinitions.Count;
         minSizeValue = minSizeValue < LeastSize ? LeastSize : minSizeValue;
     }
 
-    private void LoadMapData(List<Vector2>? disabledplaces = null)
+    private void InitializeMapData()
     {
         MatrixMapGrid.Children.Clear();
+
         foreach (var currentWorldRow in map.WorldMap)
         {
             foreach (var node in currentWorldRow)
             {
                 Label labelElement = CreateMatrixNode(node);
-
-                if (disabledplaces?.Any(pos => pos.X == node.Coords.X && pos.Y == node.Coords.Y) == true)
-                {
-                    labelElement.Foreground = new SolidColorBrush { Color = Colors.Transparent };
-                    continue;
-                }
 
                 switch (node.Character)
                 {
@@ -103,6 +128,30 @@ public partial class MatrixMap : UserControl
                 }
             }
         }
+
+        MatrixMapGrid.LayoutUpdated += SaveBorderSize;
+    }
+
+    private void SaveBorderSize(object? s, EventArgs a)
+    {
+        MatrixMapGrid.LayoutUpdated -= SaveBorderSize;
+
+        Border borderChildSample = (Border)MatrixMapGrid.Children.First();
+        borderSize = new Vector2((float)borderChildSample.Bounds.Width, (float)borderChildSample.Bounds.Height);
+
+        OverlayMatrixMapGrid.ColumnDefinitions.Clear();
+        OverlayMatrixMapGrid.RowDefinitions.Clear();
+
+        map.WorldMap[0].ForEach(_ => 
+            OverlayMatrixMapGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(borderSize.X) }));
+        map.WorldMap.ForEach(_ => 
+            OverlayMatrixMapGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(borderSize.Y) }));
+
+        // Pin the overlay to exactly the base grid's size
+        OverlayMatrixMapGrid.Width = MatrixMapGrid.Bounds.Width;
+        OverlayMatrixMapGrid.Height = MatrixMapGrid.Bounds.Height;
+        OverlayMatrixMapGrid.HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Left;
+        OverlayMatrixMapGrid.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top;
     }
 
     private Label CreateMatrixNode(NodeBase node)
@@ -121,6 +170,7 @@ public partial class MatrixMap : UserControl
             HorizontalContentAlignment = Avalonia.Layout.HorizontalAlignment.Center,
             FontSize = minSizeValue * 1.1f
         };
+
 
         Grid.SetColumn(borderElement, (int)node.Coords.X);
         Grid.SetRow(borderElement, (int)node.Coords.Y);
@@ -153,7 +203,7 @@ public partial class MatrixMap : UserControl
         Grid.SetRow(borderElement, (int)position.Y);
 
         borderElement.Child = labelElement;
-        MatrixMapGrid.Children.Add(borderElement);
+        OverlayMatrixMapGrid.Children.Add(borderElement);
 
         return labelElement;
     }
