@@ -48,7 +48,7 @@ public partial class MatrixMap : UserControl
         {
             var borderElement = new Border
             {
-                Background = MatrixMapGrid.Background,
+                Background = Utility.GetResourceByName<IBrush>("DarkGreen"),
                 BorderBrush = new SolidColorBrush { Color = Colors.Green},
                 BorderThickness = Thickness.Parse("1")
             };
