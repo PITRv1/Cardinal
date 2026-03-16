@@ -13,57 +13,21 @@
       <ScrollViewer Classes="Tab">
         <Grid Classes="WidgetContainer Yellow" ColumnDefinitions="1*, 1*" RowDefinitions="Auto, Auto" HorizontalAlignment="Stretch" RowSpacing="20" Margin="20">
           <Border> <!--BATTERY-->
-            <Border>
-              <Grid RowDefinitions="Auto, 1*">
-                <Label>Battery</Label>
-                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="1*, 1*">
-                  <Label>Charging</Label>
-                  <Label Grid.Row="1">Yes</Label>
-                  <Label Grid.Column="1">Percentage</Label>
-                  <Label Grid.Row="1" Grid.Column="1">98%</Label>
-                  <Label Grid.Column="2">Current usage</Label>
-                  <Label Grid.Row="1" Grid.Column="2">3</Label>
-                  <Label Grid.Column="3">Total used</Label>
-                  <Label Grid.Row="1" Grid.Column="3">100kW</Label>
-                </Grid>
+          <Border>
+            <Grid RowDefinitions="Auto, 1*">
+              <Label>Battery</Label>
+              <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="1*, 1*">
+                <Label>Charging</Label>
+                <Label Name="BatteryCharging" Grid.Row="1">Yes</Label>
+                <Label Grid.Column="1">Percentage</Label>
+                <Label Name="BatteryPercentage"  Grid.Row="1" Grid.Column="1">98%</Label>
+                <Label Grid.Column="2">Current usage</Label>
+                <Label Name="BatteryUsage" Grid.Row="1" Grid.Column="2">3</Label>
+                <Label Grid.Column="3">Total used</Label>
+                <Label Name="BatteryTotalUsed" Grid.Row="1" Grid.Column="3">100k</Label>
               </Grid>
-            </Border>
+            </Grid>
           </Border>
-
-          <Border Grid.Row="1"> <!--BATTERY-->
-            <Border>
-              <Grid RowDefinitions="Auto, 1*">
-                <Label>Battery</Label>
-                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="1*, 1*">
-                  <Label>Charging</Label>
-                  <Label Grid.Row="1">Yes</Label>
-                  <Label Grid.Column="1">Percentage</Label>
-                  <Label Grid.Row="1" Grid.Column="1">98%</Label>
-                  <Label Grid.Column="2">Current usage</Label>
-                  <Label Grid.Row="1" Grid.Column="2">3</Label>
-                  <Label Grid.Column="3">Total used</Label>
-                  <Label Grid.Row="1" Grid.Column="3">100kW</Label>
-                </Grid>
-              </Grid>
-            </Border>
-          </Border>
-
-            <Border Grid.Column="1"> <!--BATTERY-->
-            <Border>
-              <Grid RowDefinitions="Auto, 1*">
-                <Label>Battery</Label>
-                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="1*, 1*">
-                  <Label>Charging</Label>
-                  <Label Grid.Row="1">Yes</Label>
-                  <Label Grid.Column="1">Percentage</Label>
-                  <Label Grid.Row="1" Grid.Column="1">98%</Label>
-                  <Label Grid.Column="2">Current usage</Label>
-                  <Label Grid.Row="1" Grid.Column="2">3</Label>
-                  <Label Grid.Column="3">Total used</Label>
-                  <Label Grid.Row="1" Grid.Column="3">100kW</Label>
-                </Grid>
-              </Grid>
-            </Border>
           </Border>
         </Grid>
       </ScrollViewer>
