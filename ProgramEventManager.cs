@@ -25,7 +25,6 @@ namespace Cardinal
         RETURNING
     }
 
-
     public struct StepData
     {
         public int tick;
@@ -60,9 +59,9 @@ namespace Cardinal
                 return _currentTick;
             }
         }
-        public Timer TickTimer {private set; get;} = new Timer {Interval=500, AutoReset=false};
+        public Timer TickTimer {private set; get;} = new Timer {Interval=1000, AutoReset=false};
 
-        private int numberOfMinerals = 0;
+        public int numberOfMinerals = 0;
 
         public ProgramEventManager()
         {
@@ -86,7 +85,7 @@ namespace Cardinal
             List<string> data = File.ReadAllLines(dataFile).ToList();
             if (skipFirstLine) data.RemoveAt(0);
 
-            numberOfMinerals = int.Parse(data[0].Split(';')[6]);
+            numberOfMinerals = int.Parse(data[data.Count-1].Split(';')[6]);
 
             foreach (string line in data) {
                 string[] elements = line.Split(';');
@@ -142,6 +141,11 @@ namespace Cardinal
             }
 
             return coveredRoute;
+        }
+
+        public List<StepData> GetPreviousAndCurrentMiningSteps(int tick)
+        {
+            return stepDataList.Where(s => s.state == RoverState.MINING && s.tick <= tick).ToList();
         }
 
         private StepData GetStepDataAtTick(int tick) 

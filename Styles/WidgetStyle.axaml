@@ -1,7 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <Style Selector="Grid.WidgetContainer">
+  <Style Selector="StackPanel.WidgetContainer">
     <Style Selector="^.Yellow">
       <Style Selector="^ > Border > Border > Grid > Label">
         <Setter Property="Foreground" Value="{DynamicResource ResourceKey=Yellow}"/>
@@ -26,6 +26,7 @@
 
       <Style Selector="^ Label">
         <Setter Property="(TextPresenter.TextWrapping)" Value="Wrap"/>
+        <Setter Property="FontSize" Value="24"/>
       </Style>
     </Style>
 
@@ -58,7 +59,6 @@
       </Style>
 
       <Style Selector="^:nth-child(even)">
-        <Setter Property="FontSize" Value="24"/>
         <Setter Property="VerticalAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Bottom"/>
         <Setter Property="Grid.Row" Value="1"/>

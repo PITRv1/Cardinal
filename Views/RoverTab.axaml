@@ -11,24 +11,111 @@
   <Border Classes="Rounded">
     <Border>
       <ScrollViewer Classes="Tab">
-        <Grid Classes="WidgetContainer Yellow" ColumnDefinitions="1*, 1*" RowDefinitions="Auto, Auto" HorizontalAlignment="Stretch" RowSpacing="20" Margin="20">
-          <Border> <!--BATTERY-->
-          <Border>
-            <Grid RowDefinitions="Auto, 1*">
-              <Label>Battery</Label>
-              <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="1*, 1*">
-                <Label>Charging</Label>
-                <Label Name="BatteryCharging" Grid.Row="1">Yes</Label>
-                <Label Grid.Column="1">Percentage</Label>
-                <Label Name="BatteryPercentage"  Grid.Row="1" Grid.Column="1">98%</Label>
-                <Label Grid.Column="2">Current usage</Label>
-                <Label Name="BatteryUsage" Grid.Row="1" Grid.Column="2">3</Label>
-                <Label Grid.Column="3">Total used</Label>
-                <Label Name="BatteryTotalUsed" Grid.Row="1" Grid.Column="3">100k</Label>
+        <Grid ColumnDefinitions="1*, 1*" HorizontalAlignment="Stretch" ColumnSpacing="20" Margin="20">
+          <StackPanel Classes="WidgetContainer Yellow" Orientation="Vertical" Spacing="20">
+            <Border> <!--STATE -->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Rover</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*" RowDefinitions="1*, 1*">
+                  <Label>Current state</Label>
+                  <Label Name="CurrentState" Grid.Row="1">-</Label>
+                </Grid>
               </Grid>
-            </Grid>
-          </Border>
-          </Border>
+            </Border>
+            </Border> <!--STATE-->
+
+            <Border> <!--BATTERY-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Battery</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>Charging</Label>
+                  <Label Name="BatteryCharging" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Percentage</Label>
+                  <Label Name="BatteryPercentage"  Grid.Row="1" Grid.Column="1">-</Label>
+                  <Label Grid.Column="2">Current usage</Label>
+                  <Label Name="BatteryUsage" Grid.Row="1" Grid.Column="2">-</Label>
+                  <Label Grid.Column="3">Total used</Label>
+                  <Label Name="BatteryTotalUsed" Grid.Row="1" Grid.Column="3">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--BATTERY-->
+
+
+            <Border> <!--POSITION-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Position</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>X Position</Label>
+                  <Label Name="XPosition" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Y Position</Label>
+                  <Label Name="YPosition"  Grid.Row="1" Grid.Column="1">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--POSITION-->
+
+
+            <Border> <!--SPEED-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Speed</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>Mode</Label>
+                  <Label Name="SpeedMode" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Blocks/30min</Label>
+                  <Label Name="BlockSpeed" Grid.Row="1" Grid.Column="1">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--SPEED-->
+
+            
+            <Border> <!--DISTANCE-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Distance</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>Covered</Label>
+                  <Label Name="CoveredDistance" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Max by energy</Label>
+                  <Label Name="CurrentMaxDistance" Grid.Row="1" Grid.Column="1">-</Label>
+                  <Label Grid.Column="2">Planned</Label>
+                  <Label Name="PlannedDistance" Grid.Row="1" Grid.Column="2">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--DISTANCE-->
+
+          </StackPanel>
+          <StackPanel Grid.Column="1" Classes="WidgetContainer Yellow" Orientation="Vertical" Spacing="20">
+            <Border> <!--MINERALS-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Minerals</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>Planned amount</Label>
+                  <Grid Grid.Row="1" RowDefinitions="1*,1*, 1*, 1*" HorizontalAlignment="Center">
+                    <Label Name="PlannedTotalMineralsCount" >-</Label>
+                    <Label Name="PlannedGreenMineralsCount" Foreground="{DynamicResource ResourceKey=LightGreen}" Grid.Row="1">-</Label>
+                    <Label Name="PlannedBlueMineralsCount" Foreground="{DynamicResource ResourceKey=Blue}" Grid.Row="2">-</Label>
+                    <Label Name="PlannedYellowMineralsCount" Foreground="{DynamicResource ResourceKey=LightYellow}" Grid.Row="3">-</Label>
+                  </Grid>
+                  <Label Grid.Column="1">Current amount</Label>
+                  <Grid Grid.Column="1" Grid.Row="1" RowDefinitions="1*, 1*, 1*, 1*" HorizontalAlignment="Center">
+                    <Label Name="CurrentTotalMineralsCount">-</Label>
+                    <Label Name="CurrentGreenMineralsCount" Foreground="{DynamicResource ResourceKey=LightGreen}" Grid.Row="1">-</Label>
+                    <Label Name="CurrentBlueMineralsCount" Foreground="{DynamicResource ResourceKey=Blue}" Grid.Row="2">-</Label>
+                    <Label Name="CurrentYellowMineralsCount" Foreground="{DynamicResource ResourceKey=LightYellow}" Grid.Row="3">-</Label>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--MINERALS-->
+          </StackPanel>
         </Grid>
       </ScrollViewer>
     </Border>

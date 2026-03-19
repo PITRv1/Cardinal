@@ -25,7 +25,7 @@
         <SolidColorBrush x:Key="Green">#224a2a</SolidColorBrush>
         <SolidColorBrush x:Key="DarkGreen">#172017</SolidColorBrush>
         <SolidColorBrush x:Key="DarkerYellow">#967e33</SolidColorBrush>
-        <SolidColorBrush x:Key="DarkYellow">#bea864</SolidColorBrush>
+        <SolidColorBrush x:Key="LightYellow">#bea864</SolidColorBrush>
         <SolidColorBrush x:Key="Yellow">#bca532</SolidColorBrush>
         <SolidColorBrush x:Key="Blue">#3280bc</SolidColorBrush>
         <SolidColorBrush x:Key="Red">#bc3237</SolidColorBrush>
