@@ -3,7 +3,6 @@
              x:Class="Cardinal.App"
              xmlns:local="using:Cardinal"
              RequestedThemeVariant="Default">
-    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
@@ -18,9 +17,7 @@
     </Application.Styles>
 
     <Application.Resources>
-        <!-- <FontFamily x:Key="Pixel">Assets/UI/Fonts/nokiafc22.ttf#Nokia Cellphone FC</FontFamily> -->
         <FontFamily x:Key="Pixel">Assets/UI/Fonts/runescape_uf.ttf#RuneScape UF</FontFamily>
-        <!-- <FontFamily x:Key="Pixel">Assets/UI/Fonts/pixel.ttf#Pixel</FontFamily> -->
         <SolidColorBrush x:Key="LightGreen">#32bc6c</SolidColorBrush>
         <SolidColorBrush x:Key="VomitGreen">#749c65</SolidColorBrush>
         <SolidColorBrush x:Key="Green">#224a2a</SolidColorBrush>

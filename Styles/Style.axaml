@@ -87,13 +87,26 @@
 
         <Style Selector="Slider">
                 <Setter Property="Background" Value="{DynamicResource ResourceKey=Yellow}"/>
-
-                <Style Selector="^:pointerover /template/ ContentPresenter">
-                        <Setter Property="Background" Value="{DynamicResource ResourceKey=LightYellow}"/>
-                </Style>
-
-                <Style Selector="^:pressed /template/ ContentPresenter">
-                        <Setter Property="Background" Value="{DynamicResource ResourceKey=LightYellow}"/>
-                </Style>
         </Style>
+
+        <Style Selector="Slider /template/ Thumb">
+                <Setter Property="Template">
+                        <ControlTemplate>
+                        <Ellipse
+                                Name="ThumbEllipse"
+                                Width="16"
+                                Height="16"
+                                Fill="{DynamicResource ResourceKey=Yellow}"/>
+                        </ControlTemplate>
+                </Setter>
+        </Style>
+
+        <Style Selector="Slider /template/ Border#PART_SelectionIndicatorBorder">
+                <Setter Property="Background" Value="{DynamicResource ResourceKey=Yellow}"/>
+        </Style>
+
+        <Style Selector="TextBox:focus /template/ Border#PART_BorderElement">
+                <Setter Property="BorderBrush" Value="{DynamicResource ResourceKey=Yellow}"/>
+        </Style>
+
 </Styles>

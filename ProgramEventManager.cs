@@ -45,7 +45,7 @@ namespace Cardinal
         public List<StepData> stepDataList {private set; get;} = new();
         public List<Vector2> roverRoute {private set; get;} = new();
 
-        private int _currentTick = 1;
+        private int _currentTick = 0;
         public int CurrentTick
         {
             set

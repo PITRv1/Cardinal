@@ -43,36 +43,6 @@
             </Border>
             </Border> <!--BATTERY-->
 
-
-            <Border> <!--POSITION-->
-            <Border>
-              <Grid RowDefinitions="Auto, 1*">
-                <Label>Position</Label>
-                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
-                  <Label>X Position</Label>
-                  <Label Name="XPosition" Grid.Row="1">-</Label>
-                  <Label Grid.Column="1">Y Position</Label>
-                  <Label Name="YPosition"  Grid.Row="1" Grid.Column="1">-</Label>
-                </Grid>
-              </Grid>
-            </Border>
-            </Border> <!--POSITION-->
-
-
-            <Border> <!--SPEED-->
-            <Border>
-              <Grid RowDefinitions="Auto, 1*">
-                <Label>Speed</Label>
-                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
-                  <Label>Mode</Label>
-                  <Label Name="SpeedMode" Grid.Row="1">-</Label>
-                  <Label Grid.Column="1">Blocks/30min</Label>
-                  <Label Name="BlockSpeed" Grid.Row="1" Grid.Column="1">-</Label>
-                </Grid>
-              </Grid>
-            </Border>
-            </Border> <!--SPEED-->
-
             
             <Border> <!--DISTANCE-->
             <Border>
@@ -90,6 +60,20 @@
             </Border>
             </Border> <!--DISTANCE-->
 
+
+            <Border> <!--SPEED-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Speed</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>Mode</Label>
+                  <Label Name="SpeedMode" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Blocks/30min</Label>
+                  <Label Name="BlockSpeed" Grid.Row="1" Grid.Column="1">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--SPEED-->
           </StackPanel>
           <StackPanel Grid.Column="1" Classes="WidgetContainer Yellow" Orientation="Vertical" Spacing="20">
             <Border> <!--MINERALS-->
@@ -115,6 +99,38 @@
               </Grid>
             </Border>
             </Border> <!--MINERALS-->
+
+
+            <Border> <!--TIME-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Time</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>Current</Label>
+                  <Label Name="CurrentTime" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Departure</Label>
+                  <Label Name="DeparuteTime" Grid.Row="1" Grid.Column="1">-</Label>
+                  <Label Grid.Column="2">Time left</Label>
+                  <Label Name="TimeLeft" Grid.Row="2" Grid.Column="2">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--TIME-->
+
+
+            <Border> <!--POSITION-->
+            <Border>
+              <Grid RowDefinitions="Auto, 1*">
+                <Label>Position</Label>
+                <Grid Grid.Row="1" ColumnDefinitions="1*, 1*" RowDefinitions="1*, 1*">
+                  <Label>X Position</Label>
+                  <Label Name="XPosition" Grid.Row="1">-</Label>
+                  <Label Grid.Column="1">Y Position</Label>
+                  <Label Name="YPosition"  Grid.Row="1" Grid.Column="1">-</Label>
+                </Grid>
+              </Grid>
+            </Border>
+            </Border> <!--POSITION-->
           </StackPanel>
         </Grid>
       </ScrollViewer>

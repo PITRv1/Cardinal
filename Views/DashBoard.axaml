@@ -29,9 +29,6 @@
           <TabItem Header="Rover">
             <ContentControl Content="{Binding RoverTabInstance}" Classes="TabContent"></ContentControl>
           </TabItem>
-          <TabItem Header="Logic">
-            <ContentControl Content="{Binding LogicTabInstance}" Classes="TabContent"></ContentControl>
-          </TabItem>
           <TabItem Header="Logs">
             <ContentControl Content="{Binding LoggingTabInstance}" Classes="TabContent"></ContentControl>
           </TabItem>

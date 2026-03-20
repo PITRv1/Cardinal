@@ -7,18 +7,19 @@
              xmlns:vm="using:Cardinal.ViewModels"
              x:Class="Cardinal.Views.MediaControls"
              x:DataType="vm:MediaControlsViewModel">
-
-    <Grid RowDefinitions="1*, 1*, 2*">
-      <Grid Height="20" Background="{DynamicResource ResourceKey=DarkGray}"></Grid>
-      <Slider Grid.Row="1" Name="TimeSlider"></Slider>
-      <Grid Grid.Row="2" ColumnDefinitions="1*" RowDefinitions="1*" Width="{Binding $parent.Bounds.Width}">
-        <Grid ColumnDefinitions="1*, 1*, 1*, 1*, 1*" HorizontalAlignment="Center" ColumnSpacing="10">
-          <Button Name="BackwardButton" Content="&lt;"></Button>
-          <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="TickTime">0:0</Label>
-          <Button Name="PlayButton" Grid.Column="2" Content="Play"></Button>
-          <Button Name="SpeedButton" Grid.Column="3" Content="2x"></Button>
-          <Button Name="ForwardButton" Grid.Column="4" Content="&gt;"></Button>
+    <Border Classes="Rounded">
+      <Border Background="{DynamicResource ResourceKey=DarkGray}">
+        <Grid RowDefinitions="1*, 2*" Margin="10">
+          <Slider Name="TimeSlider"></Slider>
+          <Grid Grid.Row="1" ColumnDefinitions="1*" RowDefinitions="1*" Width="{Binding $parent.Bounds.Width}">
+            <Grid ColumnDefinitions="1*, 1*, 1*, 1*, 1*" HorizontalAlignment="Center" ColumnSpacing="10">
+              <Button Name="BackwardButton" Content="&lt;"></Button>
+              <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="TickTime">0:0</Label>
+              <Button Name="PlayButton" Grid.Column="2" Content="Play"></Button>
+              <Button Name="ForwardButton" Grid.Column="4" Content="&gt;"></Button>
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
-    </Grid>
+      </Border>
+    </Border>
 </UserControl>

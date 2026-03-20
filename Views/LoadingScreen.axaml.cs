@@ -44,6 +44,7 @@ public partial class LoadingScreen : UserControl
 
         if (files.Count < 1) return;
 
+        MapFilePathLabel.Content = files[0].Name;
         mapPath = files[0].Path.AbsolutePath.ToString();
     }
 
@@ -73,14 +74,8 @@ public partial class LoadingScreen : UserControl
             else if (LoadProgress.Value == LoadProgress.Maximum)  {
                 IsVisible = false;
                 LoadingCompleted?.Invoke();
+                Global.ProgramEventManager.CurrentTick = 1;
             }
         }, DispatcherPriority.Render);
     }
-
-    private async void BeginLoad()
-    {
-
-    }
-
-
 }

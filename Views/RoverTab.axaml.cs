@@ -38,6 +38,8 @@ public partial class RoverTab : UserControl
     {
         Avalonia.Threading.Dispatcher.UIThread.InvokeAsync(() =>
         {
+            CurrentState.Content = stateModeLabels[(int)stepData.state];
+
             CurrentMaxDistance.Content = (int)stepData.batteryCharge / 2;
 
             BatteryPercentage.Content = stepData.batteryCharge + "%";
@@ -53,15 +55,28 @@ public partial class RoverTab : UserControl
 
             CoveredDistance.Content = GetTotalDistanceAtTick(stepData.tick);
 
+            int currentTime = stepData.tick * 30;
+            int depratureTime = Global.ProgramEventManager.stepDataList.Count * 30;
+
+            CurrentTime.Content = FormatMintes(currentTime);
+            DeparuteTime.Content = FormatMintes(depratureTime);
+            TimeLeft.Content = FormatMintes(depratureTime - currentTime);
+
             var mineralValues = UpdateMineralCount(Global.ProgramEventManager.GetPreviousAndCurrentMiningSteps(stepData.tick));
             
             CurrentYellowMineralsCount.Content = mineralValues[0];
             CurrentGreenMineralsCount.Content = mineralValues[1];
-            CurrentBlueMineralsCount.Content =mineralValues[2];
+            CurrentBlueMineralsCount.Content = mineralValues[2];
             CurrentTotalMineralsCount.Content = stepData.collectedMineralAmount;
-
-            CurrentState.Content = stateModeLabels[(int)stepData.state];
         });
+    }
+
+    private string FormatMintes(int value)
+    {
+        int hours = value/60;
+        int minutes = value%60;
+
+        return $"{(hours < 10 ? "0"+hours : hours)}:{(minutes < 10 ? "0"+minutes : minutes)}";
     }
 
     private int[] UpdateMineralCount(List<StepData> stepList)

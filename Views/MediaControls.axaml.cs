@@ -34,6 +34,7 @@ public partial class MediaControls : UserControl
     private void PlayOrStopRollBack(object? sender, PointerPressedEventArgs e)
     {
         Global.ProgramEventManager.ToggleTickTimer();
+        PlayButton.Content = Global.ProgramEventManager.TickTimer.Enabled ? "Stop" : "Play";
     }
 
     private void SkipInTime(object? sender, PointerPressedEventArgs e)
