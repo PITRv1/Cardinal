@@ -1,2 +1,2 @@
 #!/bin/bash
-dotnet build && dotnet run -ui 12
+dotnet build && dotnet run -ui
