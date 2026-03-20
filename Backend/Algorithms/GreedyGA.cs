@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Collections.Generic;
 using Cardinal.Backend;
+using Cardinal.Views;
 
 namespace Cardinal
 {
@@ -47,16 +48,19 @@ namespace Cardinal
             foreach (var c in clusters) nodes.Add(c[0]);
 
             Console.WriteLine("Precomputing paths...");
+            LoggingTab.WriteLine("Precomputing paths...");
             PrecomputeDistances();
             PrecomputeIntraCluster();
             PrecomputeDistToHome();
             Console.WriteLine("Done precomputing.");
+            LoggingTab.WriteSuccess("Done precomputing.");
 
             int avgClusterTicks = 20;
             maxChromosomeClusters = Math.Min(clusters.Count,
                                              (int)(timeLimit / avgClusterTicks * 1.5));
             activeClusterIndices = RankClusters();
             Console.WriteLine($"Active clusters in chromosome: {activeClusterIndices.Length}");
+            LoggingTab.WriteLine($"Active clusters in chromosome: {activeClusterIndices.Length}");
         }
 
         int[] RankClusters()
@@ -133,6 +137,7 @@ namespace Cardinal
         {
             var greedy = GreedySeed();
             Console.WriteLine($"Greedy seed: {Fitness(greedy)} minerals");
+            LoggingTab.WriteLine($"Greedy seed: {Fitness(greedy)} minerals");
 
             var pop = SeedPopulation(greedy);
             int[] best = greedy;
@@ -149,6 +154,7 @@ namespace Cardinal
                     bestFit = scored[0].fit;
                     best = scored[0].chr;
                     Console.WriteLine($"Gen {gen,3}: {bestFit} minerals");
+                    LoggingTab.WriteLine($"Gen {gen,3}: {bestFit} minerals");
                 }
 
                 var next = new List<int[]>();
@@ -168,11 +174,13 @@ namespace Cardinal
             }
 
             Console.WriteLine($"Best after GA: {bestFit} minerals");
+            LoggingTab.WriteSuccess($"Best after GA: {bestFit} minerals");
 
             best = TwoOpt(best);
             best = OrOpt(best);
             int localSearchFit = Fitness(best);
             Console.WriteLine($"Best after local search: {localSearchFit} minerals");
+            LoggingTab.WriteSuccess($"Best after local search: {localSearchFit} minerals");
 
             MissionLog.Clear();
             var (finalMinerals, finalPath) = Replay(best, log: true);

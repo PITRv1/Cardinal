@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Cardinal.Views;
 
 namespace Cardinal.Backend
 {
@@ -15,7 +16,16 @@ namespace Cardinal.Backend
 
         public static Map Load(string file)
         {
-            var lines = File.ReadAllLines(file);
+            string[] lines;
+            try
+            {
+                lines = File.ReadAllLines(file);
+            }
+            catch
+            {
+                LoggingTab.WriteError("Map couldn't be found!");
+                return null;
+            }
             int h = lines.Length, w = lines[0].Split(',').Length;
             var map = new Map { W = w, H = h };
             map.Grid = new char[w, h];
