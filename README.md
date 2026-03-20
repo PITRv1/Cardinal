@@ -7,7 +7,7 @@
 ## Logó
 
 ```
-![Csapat logó](Assets/logo.png)
+![Csapat logó](Assets\logo.png)
 ```
 
 ---
