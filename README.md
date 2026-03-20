@@ -14,11 +14,13 @@ Ide kerül a csapat logója
 
 ## Csapat
 
-| Név | Iskola | Felkészítő tanár | Kapcsolat |
-|-----|--------|-----------------|-----------|
-| *(1. csapattag)* | *(Iskola)* | *(Tanár)* | *(email@pelda.hu)* |
-| *(2. csapattag)* | *(Iskola)* | *(Tanár)* | *(email@pelda.hu)* |
-| *(3. csapattag)* | *(Iskola)* | *(Tanár)* | *(email@pelda.hu)* |
+| Név | Szerep |
+|-----|--------|
+| *Borók Máté* | *Útkereső algoritmus elkészítése* |
+| *Tóth Péter* | *3D-s megjelenés* |
+| *Kovács Dániel* | *Felhasználói felület* |
+| *Hagymási Gyula Levente* | *Tanár* |
+
 
 ---
 
