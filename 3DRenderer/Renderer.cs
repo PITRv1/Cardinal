@@ -14,6 +14,7 @@ namespace PETRenderer
 
         private Shader _shader;
         private PostProcessor _postProcessor;
+        public PostProcessor PostProcessor => _postProcessor;
 
         public void Initialize(GL gl, uint width, uint height) {
 

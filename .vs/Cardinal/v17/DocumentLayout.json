@@ -11,6 +11,38 @@
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:programeventmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\viewmodels\\loadingscreenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:viewmodels\\loadingscreenviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\views\\loadingscreen.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\loadingscreen.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\views\\loadingscreen.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\loadingscreen.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\views\\dashboard.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\dashboard.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\views\\dashboard.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:views\\dashboard.axaml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\postprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\postprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\3drenderer\\shaders\\crt.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:3drenderer\\shaders\\crt.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|c:\\users\\toth.peter.sandor\\documents\\github\\cardinal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{184E596C-5C6E-2F5D-C970-2A0680F7B6FF}|Cardinal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +58,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DashBoard.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\DashBoard.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\DashBoard.axaml.cs",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\DashBoard.axaml.cs",
+              "RelativeToolTip": "Views\\DashBoard.axaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T12:43:17.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DashBoard.axaml",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\DashBoard.axaml",
+              "RelativeDocumentMoniker": "Views\\DashBoard.axaml",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\DashBoard.axaml",
+              "RelativeToolTip": "Views\\DashBoard.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-20T12:43:15.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoadingScreen.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml.cs",
+              "RelativeDocumentMoniker": "Views\\LoadingScreen.axaml.cs",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml.cs",
+              "RelativeToolTip": "Views\\LoadingScreen.axaml.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T12:42:59.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "LoadingScreen.axaml",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml",
+              "RelativeDocumentMoniker": "Views\\LoadingScreen.axaml",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\LoadingScreen.axaml",
+              "RelativeToolTip": "Views\\LoadingScreen.axaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-20T12:42:41.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoadingScreenViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\ViewModels\\LoadingScreenViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoadingScreenViewModel.cs",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\ViewModels\\LoadingScreenViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoadingScreenViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T12:42:36.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\Renderer.cs",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\Renderer.cs",
+              "RelativeToolTip": "3DRenderer\\Renderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T12:39:27.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PostProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\PostProcessor.cs",
+              "RelativeDocumentMoniker": "3DRenderer\\PostProcessor.cs",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\PostProcessor.cs",
+              "RelativeToolTip": "3DRenderer\\PostProcessor.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAB8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T12:37:54.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "crt.frag",
+              "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\crt.frag",
+              "RelativeDocumentMoniker": "3DRenderer\\shaders\\crt.frag",
+              "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\3DRenderer\\shaders\\crt.frag",
+              "RelativeToolTip": "3DRenderer\\shaders\\crt.frag",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-03-20T12:36:53.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "MatrixMap.axaml.cs",
               "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Views\\MatrixMap.axaml.cs",
               "RelativeDocumentMoniker": "Views\\MatrixMap.axaml.cs",
@@ -55,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -63,8 +199,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-08T19:55:48.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-08T19:55:48.885Z"
             },
             {
               "$type": "Document",
@@ -74,7 +209,7 @@
               "RelativeDocumentMoniker": "PETRendererController.cs",
               "ToolTip": "C:\\Users\\toth.peter.sandor\\Documents\\GitHub\\Cardinal\\PETRendererController.cs",
               "RelativeToolTip": "PETRendererController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAgwFgAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAYwGQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-08T19:54:16.422Z",
               "EditorCaption": ""

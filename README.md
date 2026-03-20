@@ -4,15 +4,9 @@
 
 ---
 
-## Logó
-
-```
-Ide kerül a csapat logója
-```
-
----
-
 ## Csapat
+
+![Csapat logó](Assets/logo.png)
 
 | Név | Szerep |
 |-----|--------|

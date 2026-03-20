@@ -97,11 +97,25 @@ public class PETRendererController : OpenGlControlBase
 
     private void _OnStepDataRecieved(StepData stepData)
     {
-        Vector2 dir = new Vector2(prevRoverPos.X, prevRoverPos.Y) - new Vector2(stepData.position.X, stepData.position.Y);
+        Vector2 newPos = new Vector2(stepData.position.X, stepData.position.Y);
+        Vector2 dir = newPos - prevRoverPos;
 
-        roverModel.LocalTransform.Position = new Vector3(stepData.position.X,0, stepData.position.Y);
+        roverModel.LocalTransform = new Transform
+        {
+            Position = new Vector3(stepData.position.X, 0, stepData.position.Y)
+        };
 
-        prevRoverPos = new Vector2(stepData.position.X, stepData.position.Y);
+        if (dir.LengthSquared() > 0.001f) // only rotate if actually moved
+        {
+            float angle = MathF.Atan2(dir.X, dir.Y); // angle in XZ plane
+            roverModel.LocalTransform = new Transform
+            {
+                Position = new Vector3(stepData.position.X, 0, stepData.position.Y),
+                Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitY, angle)
+            };
+        }
+
+        prevRoverPos = newPos;
     }
 
     protected override void OnOpenGlRender(GlInterface glInterface, int fb) {
@@ -117,6 +131,9 @@ public class PETRendererController : OpenGlControlBase
         _lastTime = now;
 
         _scene.Update(now, deltaTime);
+
+        if (_renderer.PostProcessor.Effects.Count > 0)
+            _renderer.PostProcessor.Effects[0].SetUniform("uTime", (float)now);
 
         var size = new Vector2D<int>((int)width, (int)height);
         _renderer.Render(_scene, _camera, size, fb);
@@ -136,6 +153,9 @@ public class PETRendererController : OpenGlControlBase
         //pixelateShader.SetUniform("uResolution", new Vector2(framebufferSize.X, framebufferSize.Y));
         //pixelateShader.SetUniform("uPixelSize", 4f);
         //postProcessor.AddEffect(pixelateShader);
+
+        var crtShader = new Shader(_gl, "3DRenderer/shaders/post.vert", "3DRenderer/shaders/crt.frag");
+        postProcessor.AddEffect(crtShader);
     }
 
     private void OnPopulateScene(Scene scene) {
