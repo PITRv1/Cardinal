@@ -7,7 +7,7 @@
 ## Logó
 
 ```
-Ide kerül a csapat logója
+![Csapat logó](./Assets/logo.png)
 ```
 
 ---
