@@ -3,5 +3,16 @@
 
   
   <Style Selector="Grid.LoadingGrid">
+    <Setter Property="RowSpacing" Value="10"></Setter>
+    <Setter Property="ColumnSpacing" Value="10"></Setter>
+      
+    <Style Selector="^ Label, ^ TextBox, ^ Button">
+      <Setter Property="FontSize" Value="35"></Setter>
+      <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+    </Style>
+
+    <Style Selector="^ Button:nth-last-child()">
+      <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+    </Style>
   </Style>
 </Styles>

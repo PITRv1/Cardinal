@@ -22,6 +22,8 @@ public partial class LoadingScreen : UserControl
         PETRendererController.MineralsLoaded  += IncrementProgress;
 
         // Loaded += BeginLoad;
+
+        if (!string.IsNullOrEmpty(RoverTime)) TimeTextBox.Text = RoverTime;
     }
 
     private void IncrementProgress()
