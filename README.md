@@ -4,11 +4,9 @@
 
 ---
 
-![Csapat logó](Assets/logo.png)
-
----
-
 ## Csapat
+
+![Csapat logó](Assets/logo.png)
 
 | Név | Szerep |
 |-----|--------|
