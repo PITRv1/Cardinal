@@ -29,6 +29,8 @@ namespace PETRenderer
              1f,  1f,     1f, 1f
         };
 
+        public List<Shader> Effects => _effectShaders;
+
         public PostProcessor(GL gl, uint width, uint height) {
             _gl = gl;
             SetupQuad();

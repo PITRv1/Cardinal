@@ -21,7 +21,7 @@ public partial class LoadingScreen : UserControl
         ProgramEventManager.LogFileLoaded  += IncrementProgress;
         PETRendererController.MineralsLoaded  += IncrementProgress;
 
-        // Loaded += BeginLoad;
+        Loaded += BeginLoad;
     }
 
     private void IncrementProgress()

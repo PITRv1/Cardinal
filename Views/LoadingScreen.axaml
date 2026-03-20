@@ -9,16 +9,9 @@
              x:DataType="vm:LoadingScreenViewModel">
 
     <Grid Width="{Binding $parent[Window].Bounds.Width}" Height="{Binding $parent[Window].Bounds.Height}" Background="{DynamicResource ResourceKey=Gray}" RowDefinitions="1*" ColumnDefinitions="1*">
-        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" RowDefinitions="1*, 1*" IsVisible="False">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" RowDefinitions="1*, 1*">
             <Label FontSize="80" HorizontalAlignment="Center">Initializing</Label>
-            <ProgressBar Name="LoadProgress" Minimum="0" Maximum="3" Grid.Row="1" Height="10" Width="450" CornerRadius="0"  Foreground="{DynamicResource ResourceKey=Yellow}" Background="{DynamicResource ResourceKey=DarkerYellow}"/>
-        </Grid>
-        <Grid Classes="LoadingGrid" HorizontalAlignment="Center" VerticalAlignment="Center" RowDefinitions="1*, 1*, 1*" ColumnDefinitions="1*, 1*">
-            <Label FontSize="35">Time</Label>
-            <TextBox Grid.Column="1" FontSize="35" HorizontalAlignment="Stretch"></TextBox>
-            <Label Grid.Row="1" FontSize="35">Map</Label>
-            <Button Grid.Row="1" Grid.Column="1" Content="Choose" FontSize="35"></Button>
-            <Button Grid.ColumnSpan="1" Grid.Column="1" Grid.Row="2" Content="Start" FontSize="35"></Button>
+            <ProgressBar Name="LoadProgress" Minimum="0" Maximum="4" Grid.Row="1" Height="10" Width="450" CornerRadius="0"  Foreground="{DynamicResource ResourceKey=Yellow}" Background="{DynamicResource ResourceKey=DarkerYellow}"/>
         </Grid>
     </Grid>
 </UserControl>
