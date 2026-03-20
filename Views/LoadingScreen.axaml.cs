@@ -21,17 +21,16 @@ public partial class LoadingScreen : UserControl
         ProgramEventManager.LogFileLoaded  += IncrementProgress;
         PETRendererController.MineralsLoaded  += IncrementProgress;
 
-        Loaded += BeginLoad;
+        // Loaded += BeginLoad;
     }
 
     private void IncrementProgress()
     {
         LoadProgress.Value += 1;
-        
+
         if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
         Dispatcher.UIThread.Post(() =>
         {
-            if (LoadProgress.Value == LoadProgress.Maximum-2) Global.ProgramEventManager.LoadDataFromFile("mission_log.csv"); 
             if (LoadProgress.Value == LoadProgress.Maximum-1) dashBoardInstance?.Load3D(); 
             else if (LoadProgress.Value == LoadProgress.Maximum)  {
                 IsVisible = false;
@@ -44,6 +43,7 @@ public partial class LoadingScreen : UserControl
     {
         Loaded -= BeginLoad;
         RoverSolver.Run(["mars_map_50x50.csv", RoverTime, "--greedy-ga"]);
+        Global.ProgramEventManager.LoadDataFromFile("mission_log.csv"); 
         Global.ProgramEventManager.LoadRouteFromFile("route.txt");
     }
 }

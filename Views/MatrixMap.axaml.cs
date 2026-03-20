@@ -49,7 +49,7 @@ public partial class MatrixMap : UserControl
             var borderElement = new Border
             {
                 Background = Utility.GetResourceByName<IBrush>("DarkGreen"),
-                BorderBrush = new SolidColorBrush { Color = Colors.Green},
+                BorderBrush = Utility.GetResourceByName<IBrush>("Red"),
                 BorderThickness = Thickness.Parse("1")
             };
 

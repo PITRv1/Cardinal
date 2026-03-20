@@ -12,6 +12,7 @@ namespace Cardinal.Views;
 public partial class RoverTab : UserControl
 {
     readonly string[] speedModeLabels = ["Slow", "Normal", "Fast"];
+    readonly string[] stateModeLabels = ["Mining", "Navigating", "Returning"];
     Map map = new();
 
     public RoverTab()
@@ -58,6 +59,8 @@ public partial class RoverTab : UserControl
             CurrentGreenMineralsCount.Content = mineralValues[1];
             CurrentBlueMineralsCount.Content =mineralValues[2];
             CurrentTotalMineralsCount.Content = stepData.collectedMineralAmount;
+
+            CurrentState.Content = stateModeLabels[(int)stepData.state];
         });
     }
 

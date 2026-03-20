@@ -14,6 +14,7 @@
         <StyleInclude Source="avares://Cardinal/Styles/Style.axaml"/>
         <StyleInclude Source="avares://Cardinal/Styles/WidgetStyle.axaml"/>
         <StyleInclude Source="avares://Cardinal/Styles/LoggingStyle.axaml"/>
+        <StyleInclude Source="avares://Cardinal/Styles/LoadingStyle.axaml"/>
     </Application.Styles>
 
     <Application.Resources>

@@ -19,7 +19,7 @@
                 <Label>Rover</Label>
                 <Grid Grid.Row="1" ColumnDefinitions="1*" RowDefinitions="1*, 1*">
                   <Label>Current state</Label>
-                  <Label Name="CurrentState" Grid.Row="1">-</Label>
+                  <Label Name="CurrentState" Grid.Row="1" FontSize="40">-</Label>
                 </Grid>
               </Grid>
             </Border>

@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Icon="/Assets/avalonia-logo.ico"
         Title="Cardinal"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" WindowState="Maximized"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450" WindowState="FullScreen"
         xmlns:local="clr-namespace:Cardinal"
         xmlns:vm="using:Cardinal.ViewModels"
         x:Class="Cardinal.Views.MainWindow"
