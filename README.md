@@ -19,7 +19,7 @@ Ide kerül a csapat logója
 | *Borók Máté* | *Útkereső algoritmus elkészítése* |
 | *Tóth Péter* | *3D-s megjelenés* |
 | *Kovács Dániel* | *Felhasználói felület* |
-| *Hagymási Gyula Levente* | *Tanár* |
+| *Hagymási Gyula Levente* | *Felkészítő tanár* |
 
 
 ---
@@ -82,7 +82,7 @@ Egy idővonal-csúszka segítségével tetszőleges pillanatra lehet tekerni a k
 
 A Cardinal egy egyedi, Silk.NET-re épülő OpenGL izometrikus megjelenítőt tartalmaz, amely a küldetés egy második, háromdimenziós nézetét biztosítja, párhuzamosan a 2D térképpel. A megjelenítő egy teljes 3D modellt jelenít meg a marsi terepről: sziklák, valamint kék, sárga és zöld kristálymodellek a térképen meghatározott koordinátáikon. A rover modellje szinkronban mozog a küldetés lejátszásával, és lépésről lépésre követi a pozíciófrissítéseket. A megjelenítő teljes egészében játékmotor nélkül készült.
 
-> **Megjegyzés:** A 3D modellek és textúrafájlok méretük miatt nem szerepelnek a repozitóriumban.
+> **Megjegyzés:** A 3D modellek és textúrafájlok a csapat által lettek elkészítve.
 
 ---
 
