@@ -4,8 +4,6 @@
 
 ---
 
-## Logó
-
 ![Csapat logó](Assets/logo.png)
 
 ---
