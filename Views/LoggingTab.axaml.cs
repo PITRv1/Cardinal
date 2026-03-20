@@ -5,6 +5,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using Avalonia.Threading;
 
 namespace Cardinal.Views;
 
@@ -60,18 +61,21 @@ public partial class LoggingTab : UserControl
     {
         if (printToConsole) Console.WriteLine(message);
 
-        var Registry = new Label
+        Dispatcher.UIThread.Post(() =>
         {
-            Foreground = Utility.GetResourceByName<IBrush>(colorResourceName),
-            Content = message
-        };
+            var registry = new Label
+            {
+                Foreground = Utility.GetResourceByName<IBrush>(colorResourceName),
+                Content = message
+            };
 
-        if (loggingStackPanel == null)
-        {
-            savedLogs.Add(Registry);
-            return;
-        }
+            if (loggingStackPanel == null)
+            {
+                savedLogs.Add(registry);
+                return;
+            }
 
-        loggingStackPanel.Children.Add(Registry);
+            loggingStackPanel.Children.Add(registry);
+        });
     }
 }
