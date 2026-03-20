@@ -88,7 +88,7 @@ public class PETRendererController : OpenGlControlBase
 
         Global.ProgramEventManager.StepDataSent += _OnStepDataRecieved;
 
-        map = Map.Load("./Backend/maps/mars_map_50x50.csv");
+        map = Map.Load(RoverSolver.MapFileName);
 
 
         _renderer.Initialize(_gl, width, height);

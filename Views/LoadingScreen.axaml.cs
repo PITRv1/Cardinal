@@ -1,9 +1,13 @@
 using System;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Platform.Storage;
 using Avalonia.Threading;
 using Cardinal.Backend;
+using Tmds.DBus.Protocol;
 
 
 namespace Cardinal.Views;
@@ -11,7 +15,10 @@ namespace Cardinal.Views;
 public partial class LoadingScreen : UserControl
 {
     public static event Action? LoadingCompleted;
-    public static string RoverTime = "";
+
+    private string mapPath = "";
+    private string time = "";
+
     public DashBoard? dashBoardInstance;
     public LoadingScreen()
     {
@@ -21,18 +28,47 @@ public partial class LoadingScreen : UserControl
         ProgramEventManager.LogFileLoaded  += IncrementProgress;
         PETRendererController.MineralsLoaded  += IncrementProgress;
 
-        // Loaded += BeginLoad;
+        MapFileButton.Click += OpenExolorerAndGetMapPath;
+        StartButton.Click += InitiateLoad;
+    }
 
-        if (!string.IsNullOrEmpty(RoverTime)) TimeTextBox.Text = RoverTime;
+    private async void OpenExolorerAndGetMapPath(object? sender, RoutedEventArgs? args)
+    {
+        var topLevel = TopLevel.GetTopLevel(this)!;
+
+        var files = await topLevel.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        {
+            Title = "Select and open map file",
+            AllowMultiple = false
+        });
+
+        if (files.Count < 1) return;
+
+        mapPath = files[0].Path.AbsolutePath.ToString();
+    }
+
+    private async void InitiateLoad(object? sender, RoutedEventArgs? args)
+    {
+        if (string.IsNullOrEmpty(mapPath) || !int.TryParse(TimeTextBox.Text, out _)) return;
+
+        var time = TimeTextBox.Text;
+
+        LoadGrid.IsVisible = true;
+        InfoGrid.IsVisible = false;
+
+        await Task.Run(() => RoverSolver.Run([mapPath, time, "--greedy-ga"]));
+        Global.ProgramEventManager.LoadDataFromFile("mission_log.csv");
+        Global.ProgramEventManager.LoadRouteFromFile("route.txt");
     }
 
     private void IncrementProgress()
     {
-        LoadProgress.Value += 1;
-
-        if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
         Dispatcher.UIThread.Post(() =>
         {
+            LoadProgress.Value += 1;
+
+            if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
+
             if (LoadProgress.Value == LoadProgress.Maximum-1) dashBoardInstance?.Load3D(); 
             else if (LoadProgress.Value == LoadProgress.Maximum)  {
                 IsVisible = false;
@@ -41,11 +77,10 @@ public partial class LoadingScreen : UserControl
         }, DispatcherPriority.Render);
     }
 
-    public void BeginLoad(object? sender, EventArgs e)
+    private async void BeginLoad()
     {
-        Loaded -= BeginLoad;
-        RoverSolver.Run(["mars_map_50x50.csv", RoverTime, "--greedy-ga"]);
-        Global.ProgramEventManager.LoadDataFromFile("mission_log.csv"); 
-        Global.ProgramEventManager.LoadRouteFromFile("route.txt");
+
     }
+
+
 }

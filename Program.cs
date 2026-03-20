@@ -16,8 +16,6 @@ sealed class Program
     public static void Main(string[] args) {
         if (args[0] == "-ui")
         {
-            LoadingScreen.RoverTime = args[1];
-
             BuildAvaloniaApp().StartWithClassicDesktopLifetime([]);
         }
         else if (args.Length >= 1)
