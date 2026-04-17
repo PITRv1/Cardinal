@@ -70,8 +70,8 @@ public partial class LoadingScreen : UserControl
 
             if (LoadProgress.Value == LoadProgress.Maximum) IsVisible = false;
 
-            if (LoadProgress.Value == LoadProgress.Maximum-1) dashBoardInstance?.Load3D(); 
-            else if (LoadProgress.Value == LoadProgress.Maximum)  {
+            // if (LoadProgress.Value == LoadProgress.Maximum-1) dashBoardInstance?.Load3D(); 
+            else if (LoadProgress.Value == LoadProgress.Maximum-1)  {
                 IsVisible = false;
                 LoadingCompleted?.Invoke();
                 Global.ProgramEventManager.CurrentTick = 1;
